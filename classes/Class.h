@@ -7,12 +7,16 @@
 
 #include <string>
 #include <vector>
+
 using namespace std;
 
 class Class {
 private:
     int classCode;
-    //tem um horário associado
+public:
+    // falta o construtor e o resto como o horário etc
+
+    int get_classCode();
 };
 
 
