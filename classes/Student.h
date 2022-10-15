@@ -7,14 +7,23 @@
 
 #include <string>
 #include <vector>
+#include "Schedule.h"
+
 using namespace std;
 
 
 class Student {
 private:
-    int StudentCode;
-    string StudentName;
-    //tem um horário associad
+    int studentCode;
+    string studentName;
+    Schedule studentSchedule;
+public:
+
+    void Student(int code, string name, Schedule schedule);
+    int getCode(){return studentCode;}
+    string getName(){return studentName;}
+    Schedule getSchedule(){return studentSchedule;};
+    void setSchedule(Schedule schedule);
 };
 
 
