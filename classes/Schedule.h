@@ -12,7 +12,12 @@ using namespace std;
 
 class Schedule {
 private:
-    vector<Class> schedudlesclasses; // alterar depois;
+    vector<Class> schedudleClasses; // alterar depois;
+public:
+    void addClass(Class nClass );
+    vector<Class> getClasses{return scheduleClasses};
+
+
 };
 
 
