@@ -2,6 +2,7 @@
 using namespace std;
 
 int main() {
+    int test;
     bool flag = true;
     char tecla;
     while (flag){
@@ -9,6 +10,7 @@ int main() {
         cin >> tecla;
         switch (tecla) {
             case '1':
+                cout << (" Turmas");
                 //fará algo
                 break;
             case 'q':
