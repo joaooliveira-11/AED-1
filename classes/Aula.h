@@ -1,11 +1,11 @@
-#ifndef AED_1_LECTURE_H
-#define AED_1_LECTURE_H
+#ifndef AED_1_AULA_H
+#define AED_1_AULA_H
 
 #include <string>
 #include <vector>
 using namespace std;
 
-class Lecture {
+class Aula {
 private:
     string UcCode;
     string WeekDay;
@@ -13,7 +13,7 @@ private:
     float Duration;
     string Type;
 public:
-    Lecture(string UcCode, string WeekDay, float StartHour, float Duration, string Type){
+    Aula(string UcCode, string WeekDay, float StartHour, float Duration, string Type){
         this->UcCode = UcCode;
         this->WeekDay = WeekDay;
         this->StartHour = StartHour;
@@ -27,4 +27,4 @@ public:
     string get_Type();
 };
 
-#endif //AED_1_LECTURE_H
+#endif
