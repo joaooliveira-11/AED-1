@@ -1,7 +1,3 @@
-//
-// Created by nikas on 13/10/2022.
-//
-
 #ifndef AED_1_LECTURE_H
 #define AED_1_LECTURE_H
 
