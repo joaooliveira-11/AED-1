@@ -1,7 +1,3 @@
-//
-// Created by nikas on 13/10/2022.
-//
-
 #include "Class.h"
 
 int Class::get_classCode(){
