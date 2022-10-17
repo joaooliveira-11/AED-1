@@ -1,7 +1,9 @@
 #include <iostream>
 using namespace std;
+#include "classes/Reading.h"
 
 int main() {
+    /*
     int test, turma, tecla;
     bool flag = true;
 
@@ -31,4 +33,8 @@ int main() {
                 break;
         }
     }
+     */
+    Reading reading = Reading();
+    reading.readAulas();
+    return 0;
 }

@@ -1,5 +1,7 @@
 #include "Aula.h"
 
+Aula::Aula(string classcode,string ucCode, string weekDay, float startHour, float duration, string type): ClassCode(classcode),UcCode(ucCode), WeekDay(weekDay), StartHour(startHour), Duration(duration), Type(type){}
+
 string Aula::get_UcCode(){
     return UcCode;
 }
@@ -14,4 +16,7 @@ float Aula::get_Duration(){
 }
 string Aula::get_Type(){
     return Type;
+}
+string Aula::get_ClassCode(){
+    return ClassCode;
 }

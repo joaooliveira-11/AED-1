@@ -2,7 +2,7 @@
 #define AED_1_TURMA_H
 
 #include <string>
-#include <vector
+#include <vector>
 using namespace std;
 
 class Turma {
