@@ -12,7 +12,7 @@ private:
 public:
     void addAula(Aula nAula);
     void removeAula(Aula nAula);
-    vector<Aula> getAulas{return aulasMarcadas};
+    vector<Aula> getAulas();
 };
 
 #endif

@@ -13,13 +13,7 @@ private:
     float Duration;
     string Type;
 public:
-    Aula(string UcCode, string WeekDay, float StartHour, float Duration, string Type){
-        this->UcCode = UcCode;
-        this->WeekDay = WeekDay;
-        this->StartHour = StartHour;
-        this->Duration = Duration;
-        this->Type = Type;
-    }
+    Aula(string ucCode, string weekDay, float startHour, float duration, string type): UcCode(ucCode), WeekDay(weekDay), StartHour(startHour), Duration(duration), Type(type){}
     string get_UcCode();
     string get_WeekDay();
     float get_StartHour();

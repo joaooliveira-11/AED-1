@@ -1,15 +1,19 @@
 #include "Aluno.h"
 using namespace std;
 
-class Aluno{
+Aluno::Aluno(int studentcode, string studentname, Horario horario): StudentCode(studentcode), StudentName(studentname), horarioAluno(horario){}
 
-    void Aluno::Aluno(int codigo, string nome, Horario horario){
-        codigoAluno = codigo;
-        nomeAluno = nome;
-        horarioAluno = horario;
-    }
+int Aluno::getStudentCode(){
+    return StudentCode;
+}
+string Aluno::getStudentName(){
+    return StudentName;
+}
+Horario Aluno::getHorario(){
+    return horarioAluno;
+}
 
-    void Aluno::setSchedule(Horario horario){
-        horarioAluno = horario;
-    }
-};
+void Aluno::setHorario(Horario horario){
+    this->horarioAluno = horario;
+}
+

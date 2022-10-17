@@ -8,14 +8,14 @@ using namespace std;
 
 class Aluno {
 private:
-    int codigoAluno;
-    string nomeAluno;
+    int StudentCode;
+    string StudentName;
     Horario horarioAluno;
 public:
-    void Aluno(int code, string name, Schedule schedule);
-    int getCodigo(){return codigoAluno;}
-    string getNome(){return nomeAluno;}
-    Horario getHorario(){return horarioAluno;};
+    Aluno(int StudentCode, string StudentName, Horario horario);
+    int getStudentCode();
+    string getStudentName();
+    Horario getHorario();
     void setHorario(Horario horario);
 };
 

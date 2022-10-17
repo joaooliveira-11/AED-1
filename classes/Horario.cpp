@@ -1,13 +1,12 @@
 #include "Horario.h"
 using namespace std;
 
-class Horario{
+void Horario::addAula(Aula nAula){
+    aulasMarcadas.push_back(nAula);
+}
+void Horario::removeAula(Aula nAula){
 
-    void Horario::addAula(Turma nAula){
-        aulasMarcadas.push_back(nAula);
-    }
-    void Horario::removeAula(Turma nAula){
-
-    }
-
-};
+}
+vector<Aula> Horario::getAulas() {
+    return aulasMarcadas;
+}

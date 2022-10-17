@@ -9,11 +9,7 @@ class Turma {
 private:
     int codigoTurma;
 public:
-    Turma(int codigoTurma){
-        this-> codigoTurma = codigoTurma;
-    }
-    // falta o resto como o horário etc
-
+    Turma(int codigoTurma);
     int get_codigoTurma();
 };
 
