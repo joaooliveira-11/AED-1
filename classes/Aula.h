@@ -21,6 +21,7 @@ public:
     float get_StartHour();
     float get_Duration();
     string get_Type();
+    bool operator<(const Aula& ) const;
 };
 
 #endif

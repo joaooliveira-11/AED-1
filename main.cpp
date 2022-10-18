@@ -2,18 +2,10 @@
 using namespace std;
 #include "classes/Reading.h"
 
-int main() {
-    /*
-    int test, turma, tecla;
+
+void menu(){
+    int tecla;
     bool flag = true;
-
-    cout << ("What class are you in? \n");
-    cin >> turma;
-    while (turma<1 or turma>16) {
-        cout << ("Write a number between 1 and 16. \n");
-        cin >> turma;
-    }
-
     while (flag){
         cout << ("Press a key according to what you want to do: \n 1 : See schedule. \n 2 : Edit schedule. \n 3 : Quit \n");
         cin >> tecla;
@@ -33,8 +25,24 @@ int main() {
                 break;
         }
     }
+}
+
+int main() {
+    /*
+    int test, turma;
+
+    cout << ("What class are you in? \n");
+    cin >> turma;
+    while (turma<1 or turma>16) {
+        cout << ("Write a number between 1 and 16. \n");
+        cin >> turma;
+    }
+
+
+    }
      */
     Reading reading = Reading();
     reading.readAulas();
+    menu();
     return 0;
 }
