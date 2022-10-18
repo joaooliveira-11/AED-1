@@ -16,4 +16,9 @@ Horario Aluno::getHorario(){
 void Aluno::setHorario(Horario horario){
     this->horarioAluno = horario;
 }
-
+void Aluno::setStudentCode(int studentcode){
+    this->StudentCode = studentcode;
+}
+void Aluno::setStudentName(std::string studentname){
+    this->StudentName = studentname;
+}

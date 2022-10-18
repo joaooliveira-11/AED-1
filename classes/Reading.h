@@ -6,11 +6,12 @@
 #define AED_1_READING_H
 #include <string>
 using namespace std;
+#include "Aula.h"
 
 
 class Reading {
 public:
-    string readAulas();
+    vector<Aula*> readAulas();
 };
 
 

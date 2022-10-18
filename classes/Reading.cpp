@@ -9,26 +9,36 @@
 using namespace std;
 
 void Reading() {}
-/*
-string Reading::readAulas() {
-    ifstream in("../classes.csv");
-    int count = 0;
-    for (string line; getline(in, line, ',');) {
-        istringstream iss(line);
-        if (count != 0) {
-            for (string el; iss >> el;) {
-                cout << el;
-            }
-            cout << "\n";
-        }
-        count++;
-    }
-}
-*/
-string Reading::readAulas() {
 
-    vector<Aula> aulas;
-    string classCode;string ucCode;string weekDay;float startHour;float duration;string type;
+vector<Aula *> Reading::readAulas() {
+    vector<Aula*> aulas;
+    string CLASSCODE;
+    string UCCODE;
+    string WEEKDAY;
+    double STARTHOUR;
+    double DURATION;
+    string TYPE;
+    char c;
+    ifstream in("../classes.csv");
+    in >> CLASSCODE >> c;
+    for (string line; getline(in, line);) {
+        istringstream iss(line);
+        getline(iss, CLASSCODE, ',');
+        getline(iss, UCCODE, ',');
+        getline(iss, WEEKDAY, ',');
+        iss >> STARTHOUR >> c;
+        iss >> DURATION >> c;
+        getline(iss, TYPE, ',');
+        Aula* raula = new Aula(CLASSCODE, UCCODE, WEEKDAY, (STARTHOUR), (DURATION), TYPE);
+        aulas.push_back(raula);
+    }
+    return aulas;
+}
+
+/*vector<Aula*> Reading::readAulas() {
+
+    vector<Aula*> aulas;
+    string CLASSCODE;string UCCODE;string WEEKDAY;double STARTHOUR;double DURATION;string TYPE;
 
     std::ifstream data("../classes.csv");
     if (!data.is_open())
@@ -44,16 +54,16 @@ string Reading::readAulas() {
         while (std::getline(iss, str, ','))
         {
             // process each token
-            std::cout << str;
-            cout << "\n";
-
-            /*
-             iss >> classCode >> ucCode >>weekDay >> startHour >> duration >> type ;
-            aulas.push_back(Aula(classCode, ucCode, weekDay, startHour, duration, type));
-             */
+            //std::cout << str;
+            //cout << "\n";
+            str >> CLASSCODE >> UCCODE >> WEEKDAY >> STARTHOUR >> DURATION >> TYPE;
+            Aula* raula = new Aula(CLASSCODE, UCCODE, WEEKDAY, (STARTHOUR), (DURATION), TYPE);
+            aulas.push_back(raula);
 
         }
-        std::cout << std::endl;
+        //std::cout << std::endl;
     }
+    return aulas;
 }
 
+*/

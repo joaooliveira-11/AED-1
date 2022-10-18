@@ -1,8 +1,9 @@
 #include <iostream>
 using namespace std;
 #include "classes/Reading.h"
+#include "classes/Menu.h"
 
-int main(){
+int main() {
     /*
     int test, turma, tecla;
 
@@ -44,8 +45,16 @@ int main() {
 
     }
      */
+    /*
+    Menu menu = Menu();
+    menu.readmenu();
+     */
     Reading reading = Reading();
-    reading.readAulas();
-    menu();
+    vector<Aula*> res = reading.readAulas();
+    for(Aula* aula: res){
+        cout << "Aulas=("<< aula->get_ClassCode() << "," << aula ->get_UcCode() << "," << aula ->get_WeekDay() << "," << aula->get_StartHour() << "," << aula->get_Duration() << "," << aula->get_Type() << ")" << endl;
+    }
+   // menu();
     return 0;
 }
+
