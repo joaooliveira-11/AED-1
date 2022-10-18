@@ -2,7 +2,7 @@
 using namespace std;
 #include "classes/Reading.h"
 
-int main() {
+int main(){
     /*
     int test, turma, tecla;
     bool flag = true;
