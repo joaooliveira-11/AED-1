@@ -13,6 +13,7 @@ public:
     void addAula(Aula nAula);
     void removeAula(Aula nAula);
     vector<Aula> getAulas();
+    void printHorario();
 };
 
 #endif
