@@ -10,8 +10,8 @@ using namespace std;
 
 void Reading() {}
 
-vector<Aula *> Reading::readAulas() {
-    vector<Aula*> aulas;
+vector<Aula> Reading::readAulas() {
+    vector<Aula> aulas;
     string CLASSCODE;
     string UCCODE;
     string WEEKDAY;
@@ -29,7 +29,8 @@ vector<Aula *> Reading::readAulas() {
         iss >> STARTHOUR >> c;
         iss >> DURATION >> c;
         getline(iss, TYPE, ',');
-        Aula* raula = new Aula(CLASSCODE, UCCODE, WEEKDAY, (STARTHOUR), (DURATION), TYPE);
+        //Aula* raula = new Aula(CLASSCODE, UCCODE, WEEKDAY, (STARTHOUR), (DURATION), TYPE);
+        Aula raula = Aula(CLASSCODE, UCCODE, WEEKDAY, (STARTHOUR), (DURATION), TYPE);
         aulas.push_back(raula);
     }
     return aulas;

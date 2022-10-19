@@ -50,9 +50,9 @@ int main() {
     menu.readmenu();
      */
     Reading reading = Reading();
-    vector<Aula*> res = reading.readAulas();
-    for(Aula* aula: res){
-        cout << "Aulas=("<< aula->get_ClassCode() << "," << aula ->get_UcCode() << "," << aula ->get_WeekDay() << "," << aula->get_StartHour() << "," << aula->get_Duration() << "," << aula->get_Type() << ")" << endl;
+    vector<Aula> res = reading.readAulas();
+    for(Aula aula: res){
+        cout << "Aulas=("<< aula.get_ClassCode() << "," << aula.get_UcCode() << "," << aula.get_WeekDay() << "," << aula.get_StartHour() << "," << aula.get_Duration() << "," << aula.get_Type() << ")" << endl;
     }
    // menu();
     return 0;

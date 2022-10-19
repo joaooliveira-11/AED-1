@@ -11,7 +11,7 @@ using namespace std;
 
 class Reading {
 public:
-    vector<Aula*> readAulas();
+    vector<Aula> readAulas();
 };
 
 
