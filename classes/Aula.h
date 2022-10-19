@@ -7,14 +7,10 @@ using namespace std;
 
 class Aula {
 private:
-    string UcCode;
-    string ClassCode;
-    string WeekDay;
-    float StartHour;
-    float Duration;
-    string Type;
+    string UcCode, ClassCode, Type, WeekDay;
+    float StartHour, Duration;
 public:
-    Aula(string classcode,string ucCode, string weekDay, double startHour, double duration, string type);
+    Aula(string classCode, string ucCode, string weekDay, double startHour, double duration, string type);
     string get_UcCode() const;
     string get_ClassCode() const;
     string get_WeekDay() const;
@@ -27,7 +23,7 @@ public:
     void setStartHour(double startHour);
     void setDuration(double duration);
     void setClassType(string classType);
-    //bool operator<(const Aula& ) const;
+    bool operator<(const Aula&) const;
 };
 
 #endif

@@ -1,24 +1,19 @@
-#include "Reading.h"
+#include "ReadingClasses.h"
 #include "Aula.h"
 #include <string>
 #include <iostream>
 #include <iomanip>
 #include <fstream>
 #include <sstream>
-
 using namespace std;
 
 void Reading() {}
-
-vector<Aula *> Reading::readAulas() {
+    vector<Aula*> ReadingClasses::readAulas() {
     vector<Aula*> aulas;
-    string CLASSCODE;
-    string UCCODE;
-    string WEEKDAY;
-    double STARTHOUR;
-    double DURATION;
-    string TYPE;
+    string CLASSCODE, UCCODE, WEEKDAY, TYPE;
+    double STARTHOUR, DURATION;
     char c;
+
     ifstream in("../classes.csv");
     in >> CLASSCODE >> c;
     for (string line; getline(in, line);) {
@@ -32,10 +27,11 @@ vector<Aula *> Reading::readAulas() {
         Aula* raula = new Aula(CLASSCODE, UCCODE, WEEKDAY, (STARTHOUR), (DURATION), TYPE);
         aulas.push_back(raula);
     }
+
     return aulas;
 }
 
-/*vector<Aula*> Reading::readAulas() {
+/*vector<Aula*> ReadingClasses::readAulas() {
 
     vector<Aula*> aulas;
     string CLASSCODE;string UCCODE;string WEEKDAY;double STARTHOUR;double DURATION;string TYPE;
