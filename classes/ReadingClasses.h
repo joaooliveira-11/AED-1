@@ -2,12 +2,14 @@
 #define AED_1_READINGCLASSES_H
 
 #include "Aula.h"
+#include "Aluno.h"
 #include <string>
 using namespace std;
 
 class ReadingClasses {
 public:
-    vector<Aula*> readAulas();
+    vector<Aluno> readAlunos();
+    vector<Aula> readAulas();
 };
 
 #endif

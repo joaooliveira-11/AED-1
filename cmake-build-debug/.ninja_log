@@ -1,0 +1,24 @@
+# ninja log v5
+27	503	6879152276043881	CMakeFiles/AED_1.dir/classes/Turma.cpp.obj	d393096c90b03c15
+16	568	6879152276707822	CMakeFiles/AED_1.dir/classes/Aula.cpp.obj	5a25949f5f9008ed
+33	656	6879152277583069	CMakeFiles/AED_1.dir/classes/Menu.cpp.obj	253923974459b75b
+11	687	6879152277873040	CMakeFiles/AED_1.dir/classes/Aluno.cpp.obj	7d4a00edfdacebce
+1	755	6879152278583650	CMakeFiles/AED_1.dir/main.cpp.obj	bb5eb0de8aadce12
+6	877	6879152279801057	CMakeFiles/AED_1.dir/classes/ReadingClasses.cpp.obj	31010c731988f22d
+21	986	6879152280890709	CMakeFiles/AED_1.dir/classes/Horario.cpp.obj	647d590e3112846c
+987	1188	6879152282882591	AED_1.exe	78773f3d18ab3a97
+5	592	6879153013726090	CMakeFiles/AED_1.dir/main.cpp.obj	bb5eb0de8aadce12
+592	747	6879153015243563	AED_1.exe	78773f3d18ab3a97
+2	417	6879240511842116	CMakeFiles/AED_1.dir/main.cpp.obj	bb5eb0de8aadce12
+6	553	6879240513195801	CMakeFiles/AED_1.dir/classes/ReadingClasses.cpp.obj	31010c731988f22d
+2	396	6879244183051441	CMakeFiles/AED_1.dir/main.cpp.obj	bb5eb0de8aadce12
+6	550	6879244184575550	CMakeFiles/AED_1.dir/classes/ReadingClasses.cpp.obj	31010c731988f22d
+550	676	6879244185815506	AED_1.exe	78773f3d18ab3a97
+3	423	6879244419369335	CMakeFiles/AED_1.dir/main.cpp.obj	bb5eb0de8aadce12
+423	541	6879244420510802	AED_1.exe	78773f3d18ab3a97
+3	399	6879244632441944	CMakeFiles/AED_1.dir/main.cpp.obj	bb5eb0de8aadce12
+399	516	6879244633571920	AED_1.exe	78773f3d18ab3a97
+2	530	6879254753326838	CMakeFiles/AED_1.dir/classes/ReadingClasses.cpp.obj	31010c731988f22d
+531	656	6879254754551307	AED_1.exe	78773f3d18ab3a97
+2	533	6879256354336323	CMakeFiles/AED_1.dir/classes/ReadingClasses.cpp.obj	31010c731988f22d
+534	654	6879256355516404	AED_1.exe	78773f3d18ab3a97

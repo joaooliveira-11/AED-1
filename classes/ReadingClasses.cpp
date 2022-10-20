@@ -1,5 +1,6 @@
 #include "ReadingClasses.h"
 #include "Aula.h"
+#include "Aluno.h"
 #include <string>
 #include <iostream>
 #include <iomanip>
@@ -9,21 +10,15 @@ using namespace std;
 
 void Reading() {}
 
-vector<Aula> Reading::readAulas() {
+vector<Aula> ReadingClasses::readAulas() {
     vector<Aula> aulas;
-    string CLASSCODE;
-    string UCCODE;
-    string WEEKDAY;
-    double STARTHOUR;
-    double DURATION;
-    string TYPE;
-    vector<Aula*> ReadingClasses::readAulas() {
-    vector<Aula*> aulas;
     string CLASSCODE, UCCODE, WEEKDAY, TYPE;
     double STARTHOUR, DURATION;
     char c;
-
     ifstream in("../classes.csv");
+    if (!in.is_open()) {
+        std::exit(EXIT_FAILURE);
+    }
     in >> CLASSCODE >> c;
     for (string line; getline(in, line);) {
         istringstream iss(line);
@@ -41,35 +36,37 @@ vector<Aula> Reading::readAulas() {
     return aulas;
 }
 
-/*vector<Aula*> ReadingClasses::readAulas() {
+vector<Aluno> ReadingClasses::readAlunos(){
 
-    vector<Aula*> aulas;
-    string CLASSCODE;string UCCODE;string WEEKDAY;double STARTHOUR;double DURATION;string TYPE;
-
-    std::ifstream data("../classes.csv");
-    if (!data.is_open())
-    {
+    vector<Aula> aulas = readAulas();
+    vector<Aluno> alunos;
+    vector<Aula> aulasAluno;
+    int STUDENTCODE;
+    string STUDENTNAME, UCCODE, CLASSCODE;
+    char c;
+    ifstream in("../students_classes.csv");
+    if (!in.is_open()) {
         std::exit(EXIT_FAILURE);
     }
-    std::string line;
-    std::getline(data, line); // skip the first line
-    while (std::getline(data, line))
-    {
-        std::istringstream iss(line);
-        std::string str;
-        while (std::getline(iss, str, ','))
-        {
-            // process each token
-            //std::cout << str;
-            //cout << "\n";
-            str >> CLASSCODE >> UCCODE >> WEEKDAY >> STARTHOUR >> DURATION >> TYPE;
-            Aula* raula = new Aula(CLASSCODE, UCCODE, WEEKDAY, (STARTHOUR), (DURATION), TYPE);
-            aulas.push_back(raula);
-
+    in >> CLASSCODE >> c;
+    for (string line; getline(in, line);) {
+        istringstream iss(line);
+        iss >> STUDENTCODE >> c;
+        getline(iss, STUDENTNAME, ',');
+        getline(iss, UCCODE, ',');
+        getline(iss, CLASSCODE, ',');
+        //StudentCode,StudentName,UcCode,ClassCode
+        //UcCode,ClassCode
+        //string classCode, string ucCode, string weekDay, double startHour, double duration, string type
+        for (Aula aula: aulas) {
+            if (aula.get_UcCode() == UCCODE && aula.get_ClassCode() == CLASSCODE) {
+                Aula aulateste = Aula(CLASSCODE, UCCODE, aula.get_WeekDay(), aula.get_StartHour(), aula.get_Duration(),
+                                      aula.get_Type());
+                aulasAluno.push_back(aulateste);
+            }
         }
-        //std::cout << std::endl;
+        Aluno aluno = Aluno(STUDENTCODE, STUDENTNAME, aulasAluno);
+        alunos.push_back(aluno);
     }
-    return aulas;
+    return alunos;
 }
-
-*/
