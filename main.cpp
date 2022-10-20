@@ -2,6 +2,7 @@
 #include "classes/Aluno.h"
 #include "classes/Menu.h"
 #include <iostream>
+#include <list>
 #include <map>
 using namespace std;
 
@@ -10,14 +11,14 @@ int main() {
     Menu menu = Menu();
     menu.readmenu();
      */
-
+    int i = 0;
     ReadingClasses reading = ReadingClasses();
     vector<Aluno> res = reading.readAlunos();
+    vector<Aula> res1 = res[i].getHorario().getAulas();
 
-    for(Aluno aluno : res){
-        cout << "Aluno:" << " " << aluno.getStudentCode() << endl;
-    }
-
+    cout << res[i].getHorario().printHorario() << endl;
+    cout << res1.size() << endl;
+    cout <<  res[i].getStudentCode();
     /*
     for(Aula aula: res) {
         cout << "Aulas=(" << aula.get_ClassCode() << "," << aula.get_UcCode() << "," << aula.get_WeekDay() << ","

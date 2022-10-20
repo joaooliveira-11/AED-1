@@ -6,6 +6,7 @@
 #include <iomanip>
 #include <fstream>
 #include <sstream>
+#include <list>
 using namespace std;
 
 void Reading() {}
@@ -36,19 +37,22 @@ vector<Aula> ReadingClasses::readAulas() {
     return aulas;
 }
 
-vector<Aluno> ReadingClasses::readAlunos(){
+vector<Aluno> ReadingClasses::readAlunos() {
 
     vector<Aula> aulas = readAulas();
     vector<Aluno> alunos;
     vector<Aula> aulasAluno;
-    int STUDENTCODE;
+    vector<int> check;
+    check.push_back(2020202523299823);
+    int i = 0;
+    int STUDENTCODE, SAVESTUDENTCODE;
     string STUDENTNAME, UCCODE, CLASSCODE;
     char c;
     ifstream in("../students_classes.csv");
     if (!in.is_open()) {
         std::exit(EXIT_FAILURE);
     }
-    in >> CLASSCODE >> c;
+    in >> STUDENTNAME >> c;
     for (string line; getline(in, line);) {
         istringstream iss(line);
         iss >> STUDENTCODE >> c;
@@ -65,8 +69,12 @@ vector<Aluno> ReadingClasses::readAlunos(){
                 aulasAluno.push_back(aulateste);
             }
         }
-        Aluno aluno = Aluno(STUDENTCODE, STUDENTNAME, aulasAluno);
-        alunos.push_back(aluno);
+        if (check[i] != STUDENTCODE) {
+            Aluno aluno = Aluno(STUDENTCODE, STUDENTNAME, aulasAluno);
+            alunos.push_back(aluno);
+            check[i] = STUDENTCODE;
+            aulasAluno.clear();
+        }
     }
     return alunos;
 }

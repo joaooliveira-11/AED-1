@@ -21,7 +21,7 @@ bool Aula::operator<(const Aula &other) const {
         return true;
     }
     if ((this->get_WeekDay() != "Monday") and ( other.get_WeekDay() == "Monday")){
-        return true;
+        return false;
     }
     if ((this->get_WeekDay() == "Monday") and ( other.get_WeekDay() == "Monday")){
         return ( this->get_StartHour() < other.get_StartHour() );
@@ -30,7 +30,7 @@ bool Aula::operator<(const Aula &other) const {
         return true;
     }
     if ((this->get_WeekDay() != "Tuesday") and ( other.get_WeekDay() == "Tuesday")){
-        return true;
+        return false;
     }
     if ((this->get_WeekDay() == "Tuesday") and ( other.get_WeekDay() == "Tuesday")){
         return ( this->get_StartHour() < other.get_StartHour() );
@@ -39,7 +39,7 @@ bool Aula::operator<(const Aula &other) const {
         return true;
     }
     if ((this->get_WeekDay() != "Wednesday") and ( other.get_WeekDay() == "Wednesday")){
-        return true;
+        return false;
     }
     if ((this->get_WeekDay() == "Wednesday") and ( other.get_WeekDay() == "Wednesday")){
         return ( this->get_StartHour() < other.get_StartHour() );
@@ -48,7 +48,7 @@ bool Aula::operator<(const Aula &other) const {
         return true;
     }
     if ((this->get_WeekDay() != "Thursday") and ( other.get_WeekDay() == "Thursday")){
-        return true;
+        return false;
     }
     if ((this->get_WeekDay() == "Thursday") and ( other.get_WeekDay() == "Thursday")){
         return ( this->get_StartHour() < other.get_StartHour() );
@@ -60,7 +60,7 @@ bool Aula::operator<(const Aula &other) const {
         return true;
     }
     if ((this->get_WeekDay() != "Friday") and ( other.get_WeekDay() == "Friday")){
-        return true;
+        return false;
     }
     if ((this->get_WeekDay() == "Friday") and ( other.get_WeekDay() == "Friday")) {
         return (this->get_StartHour() < other.get_StartHour());

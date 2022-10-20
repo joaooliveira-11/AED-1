@@ -4,6 +4,7 @@
 #include "Aula.h"
 #include "Aluno.h"
 #include <string>
+#include <list>
 using namespace std;
 
 class ReadingClasses {
