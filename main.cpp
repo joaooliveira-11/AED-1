@@ -11,14 +11,23 @@ int main() {
     Menu menu = Menu();
     menu.readmenu();
      */
-    int i = 0;
+    int i = 3   ;
     ReadingClasses reading = ReadingClasses();
     vector<Aluno> res = reading.readAlunos();
     vector<Aula> res1 = res[i].getHorario().getAulas();
 
+    cout << "Horario do aluno:" << res[i].getStudentCode() << endl;
     cout << res[i].getHorario().printHorario() << endl;
-    cout << res1.size() << endl;
-    cout <<  res[i].getStudentCode();
+    cout << "Numero total de aulas" << " " << res1.size();
+    /*
+    ReadingClasses reading = ReadingClasses();
+    vector<Aula> res = reading.readAulas();
+     */
+    /*
+    for(Aula aula : res){
+        cout << aula.get_UcCode() << " " << aula.get_ClassCode() << " " << aula.get_Type() << endl;
+    }
+*/
     /*
     for(Aula aula: res) {
         cout << "Aulas=(" << aula.get_ClassCode() << "," << aula.get_UcCode() << "," << aula.get_WeekDay() << ","

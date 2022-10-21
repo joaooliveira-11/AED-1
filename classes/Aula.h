@@ -8,7 +8,7 @@ using namespace std;
 class Aula {
 private:
     string UcCode, ClassCode, Type, WeekDay;
-    float StartHour, Duration;
+    double StartHour, Duration;
 public:
     Aula(string classCode, string ucCode, string weekDay, double startHour, double duration, string type);
     string get_UcCode() const;
