@@ -1,9 +1,10 @@
 #include "classes/ReadingClasses.h"
 #include "classes/Aluno.h"
 #include "classes/Menu.h"
+#include "classes/Bst.h"
 #include <iostream>
+#include <list>
 #include <map>
-#include "list"
 using namespace std;
 
 int main() {
@@ -13,19 +14,17 @@ int main() {
      */
 
     ReadingClasses reading = ReadingClasses();
-    vector<Aluno> res = reading.readAlunos();
-    cout << res[292].getStudentName();
-    Horario hor = Horario(res[292].getHorario());
-    vector<Aula> a = hor.getAulas();
-    cout << a.size() << endl;
-    hor.printHorario();
+    Bst test = Bst();
+    Bst* res = reading.readAlunos();
+    test.view( res);
 
     /*
-    for(Aula aula: res) {
-        cout << "Aulas=(" << aula.get_ClassCode() << "," << aula.get_UcCode() << "," << aula.get_WeekDay() << ","
-             << aula.get_StartHour() << "," << aula.get_Duration() << "," << aula.get_Type() << ")" << endl;
-    }
-     /*
+    vector<Aula> res1 = res[i].getHorario().getAulas();
+
+    cout << "Horario do aluno:" << res[i].getStudentCode() << endl;
+    cout << res[i].getHorario().printHorario() << endl;
+    cout << "Numero total de aulas" << " " << res1.size();
+     */
     /*
     map<string, string> UcCodeToName = {{"L.EIC001", "ALGA"},
                                         {"L.EIC002", "AMI"},
@@ -57,11 +56,8 @@ int main() {
                                         {"L.EIC028", "CPD"},
                                         {"L.EIC029", "IA"},
                                         {"L.EIC030", "PI"}};
-    /*for(Aula* aula: res){
-        auto it = UcCodeToName.find(aula->get_UcCode());
-        cout << "Aulas=("<< aula->get_ClassCode() << "," << it->second << "," << aula->get_WeekDay() << "," << aula->get_StartHour() << "," << aula->get_Duration() << "," << aula->get_Type() << ")" << endl;
-    }
-     */
+
+    */
     return 0;
 }
 

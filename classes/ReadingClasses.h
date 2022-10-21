@@ -4,12 +4,13 @@
 #include "Aula.h"
 #include "Aluno.h"
 #include <string>
-#include "list"
+#include <list>
+#include "Bst.h"
 using namespace std;
 
 class ReadingClasses {
 public:
-    vector<Aluno> readAlunos();
+    Bst* readAlunos();
     vector<Aula> readAulas();
 };
 
