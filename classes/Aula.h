@@ -7,21 +7,23 @@ using namespace std;
 
 class Aula {
 private:
-    string UcCode;
-    string ClassCode;
-    string WeekDay;
-    float StartHour;
-    float Duration;
-    string Type;
+    string UcCode, ClassCode, Type, WeekDay;
+    float StartHour, Duration;
 public:
-    Aula(string classcode,string ucCode, string weekDay, float startHour, float duration, string type);
-    string get_UcCode();
-    string get_ClassCode();
-    string get_WeekDay();
-    float get_StartHour();
-    float get_Duration();
-    string get_Type();
-    bool operator<(const Aula& ) const;
+    Aula(string classCode, string ucCode, string weekDay, double startHour, double duration, string type);
+    string get_UcCode() const;
+    string get_ClassCode() const;
+    string get_WeekDay() const;
+    double get_StartHour() const;
+    double get_Duration() const;
+    string get_Type() const;
+    void setClassCode(string classCode);
+    void setUcCode(string ucCode);
+    void setWeekDay(string weekDay);
+    void setStartHour(double startHour);
+    void setDuration(double duration);
+    void setClassType(string classType);
+    bool operator<(const Aula&) const;
 };
 
 #endif

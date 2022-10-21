@@ -16,7 +16,9 @@ public:
     int getStudentCode();
     string getStudentName();
     Horario getHorario();
+    void setStudentCode(int studentcode);
+    void setStudentName(string studentname);
     void setHorario(Horario horario);
 };
 
-#endif //AED_1_ALUNO_H
+#endif
