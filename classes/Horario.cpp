@@ -23,8 +23,7 @@ vector<Aula> Horario::getAulas() {
 void Horario::printHorario() {
     vector<Aula> Aulas = this->getAulas();
     sort(Aulas.begin(),Aulas.end());
-    string temp = "Monday";
-    cout << "Monday : ";
+    string temp = " ";
     for(Aula& aula : Aulas){
         if (aula.get_WeekDay()== temp){
             cout << ", " << aula.get_UcCode() << " " << "from " << aula.get_StartHour() << "h to" << (aula.get_StartHour()+aula.get_Duration()) <<"h ";
