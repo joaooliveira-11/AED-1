@@ -11,7 +11,7 @@ int main() {
     Menu menu = Menu();
     menu.readmenu();
      */
-    int i = 3   ;
+    int i = 600    ;
     ReadingClasses reading = ReadingClasses();
     vector<Aluno> res = reading.readAlunos();
     vector<Aula> res1 = res[i].getHorario().getAulas();
