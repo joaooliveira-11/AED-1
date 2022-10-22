@@ -12,6 +12,7 @@ Bst::Bst(Aluno imp){
     atual = imp;
     Left = Right = NULL;
 }
+
 Bst* Bst::insert_by_upcode(Bst* base, Aluno imp){
     if (!base){
         return new Bst(imp);
@@ -30,7 +31,8 @@ void Bst::view(Bst* base){
         return;
     }
     view(base->Left);
-    cout << base->atual.getStudentCode() << endl;
+    cout << base->atual.getStudentCode() << " | ";
+    cout << base->atual.getStudentName()  << endl;
     view(base->Right);
 
 }

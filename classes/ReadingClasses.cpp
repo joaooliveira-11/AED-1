@@ -79,7 +79,12 @@ Bst* ReadingClasses::readAlunos(){
         getline(iss, CLASSCODE, ',');
         if (temp_code != STUDENTCODE) {
             Aluno aluno = Aluno(temp_code, tem_name, aulasAluno);
-            test.insert_by_upcode( alunos , aluno);
+            if (!alunos){
+                alunos = test.insert_by_upcode( alunos , aluno);
+            }
+            else {
+                test.insert_by_upcode(alunos, aluno);
+            }
             temp_code = STUDENTCODE;
             tem_name = STUDENTNAME;
             aulasAluno.clear() ;

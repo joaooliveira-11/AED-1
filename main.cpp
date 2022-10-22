@@ -12,10 +12,22 @@ int main() {
     Menu menu = Menu();
     menu.readmenu();
      */
-
-    ReadingClasses reading = ReadingClasses();
     Bst test = Bst();
-    Bst* res = reading.readAlunos();
+    Bst* res = NULL;
+    ReadingClasses reading = ReadingClasses();
+    /*
+    vector<Aula> a;
+    Horario hor = a;
+    Aluno aluno = Aluno(1,"aha", hor);
+    Aluno aluno2 = Aluno(2,"aha", hor);
+    Aluno aluno3 = Aluno(-1,"aha", hor);
+    Bst test = Bst();
+    Bst* res = NULL;
+    res = test.insert_by_upcode(res, aluno );
+    test.insert_by_upcode(res, aluno2);
+    test.insert_by_upcode(res, aluno3);
+     */
+    res = reading.readAlunos() ;
     test.view( res);
 
     /*
