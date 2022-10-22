@@ -42,9 +42,9 @@ Aluno Bst::find_by_upcode(Bst *base, int upcode){
         return base->atual;
     }
     else if( upcode > base->atual.getStudentCode()){
-        find_by_upcode(base->Right, upcode);
+        return find_by_upcode(base->Right, upcode);
     }
     else if( upcode < base->atual.getStudentCode()) {
-        find_by_upcode(base->Left, upcode);
+        return find_by_upcode(base->Left, upcode);
     }
 }

@@ -15,6 +15,7 @@ int main() {
     Bst test = Bst();
     Bst* res = NULL;
     ReadingClasses reading = ReadingClasses();
+    Aluno aluno;
     /*
     vector<Aula> a;
     Horario hor = a;
@@ -28,7 +29,9 @@ int main() {
     test.insert_by_upcode(res, aluno3);
      */
     res = reading.readAlunos() ;
-    test.view( res);
+    //test.view( res);
+    aluno = test.find_by_upcode(res, 202055152);
+    aluno.getHorario().printHorario();
 
     /*
     vector<Aula> res1 = res[i].getHorario().getAulas();
