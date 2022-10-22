@@ -10,11 +10,12 @@ class Horario {
 private:
     vector<Aula> horarioAluno; // alterar depois;
 public:
+    Horario();
     Horario(vector<Aula> horarioaluno);
     void addAula(Aula nAula);
     void removeAula(Aula nAula);
     vector<Aula> getAulas();
-    string printHorario();
+    void printHorario();
 };
 
 #endif

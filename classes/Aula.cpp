@@ -65,4 +65,5 @@ bool Aula::operator<(const Aula &other) const {
     if ((this->get_WeekDay() == "Friday") and ( other.get_WeekDay() == "Friday")) {
         return (this->get_StartHour() < other.get_StartHour());
     }
+    return true;
 }

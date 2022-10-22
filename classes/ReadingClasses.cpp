@@ -1,6 +1,7 @@
 #include "ReadingClasses.h"
 #include "Aula.h"
 #include "Aluno.h"
+#include "Bst.h"
 #include <string>
 #include <iostream>
 #include <iomanip>
@@ -38,10 +39,11 @@ vector<Aula> ReadingClasses::readAulas() {
     return aulas;
 }
 
-vector<Aluno> ReadingClasses::readAlunos(){
+Bst* ReadingClasses::readAlunos(){
 
     vector<Aula> aulas = readAulas();
-    vector<Aluno> alunos;
+    Bst* alunos = NULL;
+    Bst test = Bst();
     vector<Aula> aulasAluno;
     int STUDENTCODE, temp_code;
     temp_code = -1;
@@ -77,7 +79,12 @@ vector<Aluno> ReadingClasses::readAlunos(){
         getline(iss, CLASSCODE, ',');
         if (temp_code != STUDENTCODE) {
             Aluno aluno = Aluno(temp_code, tem_name, aulasAluno);
-            alunos.push_back(aluno);
+            if (!alunos){
+                alunos = test.insert_by_upcode( alunos , aluno);
+            }
+            else {
+                test.insert_by_upcode(alunos, aluno);
+            }
             temp_code = STUDENTCODE;
             tem_name = STUDENTNAME;
             aulasAluno.clear() ;
@@ -91,7 +98,7 @@ vector<Aluno> ReadingClasses::readAlunos(){
         }
     }
     Aluno aluno = Aluno(temp_code, tem_name, aulasAluno);
-    alunos.push_back(aluno);
+    test.insert_by_upcode( alunos , aluno);
     return alunos;
 }
 

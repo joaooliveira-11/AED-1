@@ -1,6 +1,7 @@
 #include "classes/ReadingClasses.h"
 #include "classes/Aluno.h"
 #include "classes/Menu.h"
+#include "classes/Bst.h"
 #include <iostream>
 #include <list>
 #include <map>
@@ -11,28 +12,36 @@ int main() {
     Menu menu = Menu();
     menu.readmenu();
      */
+
     int i = 600    ;
+
+    Bst test = Bst();
+    Bst* res = NULL;
     ReadingClasses reading = ReadingClasses();
-    vector<Aluno> res = reading.readAlunos();
+    Aluno aluno;
+    /*
+    vector<Aula> a;
+    Horario hor = a;
+    Aluno aluno = Aluno(1,"aha", hor);
+    Aluno aluno2 = Aluno(2,"aha", hor);
+    Aluno aluno3 = Aluno(-1,"aha", hor);
+    Bst test = Bst();
+    Bst* res = NULL;
+    res = test.insert_by_upcode(res, aluno );
+    test.insert_by_upcode(res, aluno2);
+    test.insert_by_upcode(res, aluno3);
+     */
+    res = reading.readAlunos() ;
+    //test.view( res);
+    aluno = test.find_by_upcode(res, 202055152);
+    aluno.getHorario().printHorario();
+
+    /*
     vector<Aula> res1 = res[i].getHorario().getAulas();
 
     cout << "Horario do aluno:" << res[i].getStudentCode() << endl;
     cout << res[i].getHorario().printHorario() << endl;
     cout << "Numero total de aulas" << " " << res1.size();
-    /*
-    ReadingClasses reading = ReadingClasses();
-    vector<Aula> res = reading.readAulas();
-     */
-    /*
-    for(Aula aula : res){
-        cout << aula.get_UcCode() << " " << aula.get_ClassCode() << " " << aula.get_Type() << endl;
-    }
-*/
-    /*
-    for(Aula aula: res) {
-        cout << "Aulas=(" << aula.get_ClassCode() << "," << aula.get_UcCode() << "," << aula.get_WeekDay() << ","
-             << aula.get_StartHour() << "," << aula.get_Duration() << "," << aula.get_Type() << ")" << endl;
-    }
      */
     /*
     map<string, string> UcCodeToName = {{"L.EIC001", "ALGA"},
@@ -65,11 +74,8 @@ int main() {
                                         {"L.EIC028", "CPD"},
                                         {"L.EIC029", "IA"},
                                         {"L.EIC030", "PI"}};
-    /*for(Aula* aula: res){
-        auto it = UcCodeToName.find(aula->get_UcCode());
-        cout << "Aulas=("<< aula->get_ClassCode() << "," << it->second << "," << aula->get_WeekDay() << "," << aula->get_StartHour() << "," << aula->get_Duration() << "," << aula->get_Type() << ")" << endl;
-    }
-     */
+
+    */
     return 0;
 }
 
