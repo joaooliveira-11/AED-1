@@ -31,8 +31,8 @@ vector<Aula> ReadingClasses::readAulas() {
         iss >> STARTHOUR >> c;
         iss >> DURATION >> c;
         getline(iss, TYPE, ',');
-        //Aula* raula = new Aula(CLASSCODE, UCCODE, WEEKDAY, (STARTHOUR), (DURATION), TYPE);
-        Aula raula = Aula(CLASSCODE, UCCODE, WEEKDAY, (STARTHOUR), (DURATION), TYPE);
+        Aula raula = Aula(CLASSCODE, UCCODE, WEEKDAY, STARTHOUR, DURATION,
+                          TYPE);
         aulas.push_back(raula);
     }
 
@@ -46,6 +46,7 @@ Bst* ReadingClasses::readAlunos(){
     Bst test = Bst();
     vector<Aula> aulasAluno;
     int STUDENTCODE, temp_code;
+    int UCS_al = 0; //nº UCS do aluno atual
     temp_code = -1;
     string tem_name = "";
     string STUDENTNAME, UCCODE, CLASSCODE, line;
@@ -68,6 +69,7 @@ Bst* ReadingClasses::readAlunos(){
             Aula aulateste = Aula(CLASSCODE, UCCODE, aula.get_WeekDay(), aula.get_StartHour(), aula.get_Duration(),
                                   aula.get_Type());
             aulasAluno.push_back(aulateste);
+            UCS_al++;
         }
     }
 
@@ -78,26 +80,30 @@ Bst* ReadingClasses::readAlunos(){
         getline(iss, UCCODE, ',');
         getline(iss, CLASSCODE, ',');
         if (temp_code != STUDENTCODE) {
-            Aluno aluno = Aluno(temp_code, tem_name, aulasAluno);
+            Aluno aluno = Aluno(temp_code, tem_name, aulasAluno, UCS_al);
             if (!alunos){
                 alunos = test.insert_by_upcode( alunos , aluno);
             }
             else {
                 test.insert_by_upcode(alunos, aluno);
             }
+            UCS_al = 0;
             temp_code = STUDENTCODE;
             tem_name = STUDENTNAME;
-            aulasAluno.clear() ;
+            aulasAluno.clear();
         }
         for (Aula aula: aulas) {
             if (aula.get_UcCode() == UCCODE && aula.get_ClassCode() == CLASSCODE) {
                 Aula aulateste = Aula(CLASSCODE, UCCODE, aula.get_WeekDay(), aula.get_StartHour(), aula.get_Duration(),
                                       aula.get_Type());
                 aulasAluno.push_back(aulateste);
+                if(aulateste.get_Type() == "TP" or aulateste.get_Type()== "PL" ){
+                    UCS_al++;
+                }
             }
         }
     }
-    Aluno aluno = Aluno(temp_code, tem_name, aulasAluno);
+    Aluno aluno = Aluno(temp_code, tem_name, aulasAluno, UCS_al);
     test.insert_by_upcode( alunos , aluno);
     return alunos;
 }

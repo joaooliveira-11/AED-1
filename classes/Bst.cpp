@@ -34,9 +34,19 @@ void Bst::view(Bst* base){
     cout << base->atual.getStudentCode() << " | ";
     cout << base->atual.getStudentName()  << endl;
     view(base->Right);
-
 }
 
+void Bst::view_by_NUCS(Bst* base, int x){
+    if(!base){
+        return;
+    }
+    view_by_NUCS(base->Left, x);
+    if ( base->atual.getNUCS() > x ){
+        cout << base->atual.getStudentCode() << " | ";
+        cout << base->atual.getStudentName()  << endl;
+    }
+    view_by_NUCS(base->Right, x);
+}
 Aluno Bst::find_by_upcode(Bst *base, int upcode){
     if ( upcode == base->atual.getStudentCode()){
         return base->atual;

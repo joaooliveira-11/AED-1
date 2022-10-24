@@ -8,31 +8,20 @@
 using namespace std;
 
 int main() {
-    /*
     Menu menu = Menu();
     menu.readmenu();
-     */
+    
+    /*
     Bst test = Bst();
     Bst* res = NULL;
     ReadingClasses reading = ReadingClasses();
     Aluno aluno;
-    /*
-    vector<Aula> a;
-    Horario hor = a;
-    Aluno aluno = Aluno(1,"aha", hor);
-    Aluno aluno2 = Aluno(2,"aha", hor);
-    Aluno aluno3 = Aluno(-1,"aha", hor);
-    Bst test = Bst();
-    Bst* res = NULL;
-    res = test.insert_by_upcode(res, aluno );
-    test.insert_by_upcode(res, aluno2);
-    test.insert_by_upcode(res, aluno3);
-     */
+
     res = reading.readAlunos() ;
-    //test.view( res);
+
     aluno = test.find_by_upcode(res, 202055152);
     aluno.getHorario().printHorario();
-
+    */
     /*
     vector<Aula> res1 = res[i].getHorario().getAulas();
 
