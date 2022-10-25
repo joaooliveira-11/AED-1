@@ -11,13 +11,7 @@ int main() {
     Menu menu = Menu();
     menu.readmenu();
 
-     */
-
-    int i = 600    ;
-     
-    
-    /*
-
+/*
     Bst test = Bst();
     Bst* res = NULL;
     ReadingClasses reading = ReadingClasses();
