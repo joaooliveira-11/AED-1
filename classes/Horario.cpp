@@ -2,8 +2,11 @@
 #include "iostream"
 #include "algorithm"
 using namespace std;
+#include <string>
+#include <iostream>
 #include <cmath>
 #include <map>
+#include <iomanip>
 
 
 Horario::Horario() {
@@ -20,6 +23,12 @@ void Horario::removeAula(Aula nAula){
 }
 vector<Aula> Horario::getAulas() {
     return horarioAluno;
+}
+string Horario::Double_to_hour(double time){
+    string hour = to_string(int(time));
+    int minutes = int(((time - int(time)) * 100) * 0.6);
+    if(int(minutes) == 0) return hour + ":" + to_string(minutes) + "0";
+    return hour + ":" + to_string(minutes);
 }
 string Horario::UcCodeToName(string uccode){
     map<string, string> UcCode_Name = {{"L.EIC001", "ALGA"},
@@ -63,12 +72,12 @@ void Horario::printHorario() {
     for (Aula &aula: Aulas) {
         if (aula.get_WeekDay() == temp) {
             cout << ", " << UcCodeToName(aula.get_UcCode()) << "(" << aula.get_Type() << ")" << " " << "from "
-                 << aula.get_StartHour() << "h to " << (aula.get_StartHour() + aula.get_Duration()) << "h ";
+                 << Double_to_hour(aula.get_StartHour()) << " to " << Double_to_hour(aula.get_StartHour() + aula.get_Duration());
         } else {
             temp = aula.get_WeekDay();
             cout << "\n" << temp << " : ";
             cout << UcCodeToName(aula.get_UcCode()) << "(" << aula.get_Type() << ")" << " " << "from "
-                 << aula.get_StartHour() << "h to " << (aula.get_StartHour() + aula.get_Duration()) << "h ";
+                 << Double_to_hour(aula.get_StartHour()) << " to " << Double_to_hour(aula.get_StartHour() + aula.get_Duration());
         }
     }
     cout <<endl << endl;
