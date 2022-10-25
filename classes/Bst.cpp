@@ -48,13 +48,14 @@ void Bst::view_by_NUCS(Bst* base, int x){
     view_by_NUCS(base->Right, x);
 }
 Aluno Bst::find_by_upcode(Bst *base, int upcode){
-    if ( upcode == base->atual.getStudentCode()){
+    if ( !base){
+        return Aluno();
+    }
+    else if ( upcode == base->atual.getStudentCode()){
         return base->atual;
     }
     else if( upcode > base->atual.getStudentCode()){
         return find_by_upcode(base->Right, upcode);
     }
-    else if( upcode < base->atual.getStudentCode()) {
-        return find_by_upcode(base->Left, upcode);
-    }
+    return find_by_upcode(base->Left, upcode);
 }
