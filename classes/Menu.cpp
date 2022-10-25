@@ -9,6 +9,7 @@ void Menu::readmenu() {
     int test, up, NUCS;
     char tecla;
     bool flag = true;
+    bool flag2 = true;
     string again = "No";
     Bst aux = Bst();
     Bst* Alunos = NULL;
@@ -29,12 +30,18 @@ void Menu::readmenu() {
         cin >> tecla;
         switch (tecla) {
             case '1':
-                //Horario horario = Horario();
-                //horario.printHorario();
                 cout << "Insert your UPCode \n";
-                cin >> up;
-                cout << aux.find_by_upcode( Alunos, up).getNUCS();
-                aux.find_by_upcode( Alunos, up).getHorario().printHorario();
+                while (flag2) {
+                    cin >> up;
+                    if ( aux.find_by_upcode(Alunos, up).getStudentName() == ""){
+                        cout << "This student doesn't exist in this database, inster a valid number " << endl;
+                    }
+                    else{
+                        cout << aux.find_by_upcode(Alunos, up).getNUCS();
+                        aux.find_by_upcode(Alunos, up).getHorario().printHorario();
+                        break;
+                    }
+                }
                 break;
             case '2':
                 //mudar o horario
