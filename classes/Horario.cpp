@@ -55,6 +55,7 @@ string Horario::UcCodeToName(string uccode){
     return UcCode_Name[uccode];
 }
 
+
 void Horario::printHorario() {
     vector<Aula> Aulas = this->getAulas();
     sort(Aulas.begin(), Aulas.end());
@@ -70,5 +71,6 @@ void Horario::printHorario() {
                  << aula.get_StartHour() << "h to " << (aula.get_StartHour() + aula.get_Duration()) << "h ";
         }
     }
+    cout <<endl << endl;
 }
 
