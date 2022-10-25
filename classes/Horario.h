@@ -16,6 +16,7 @@ public:
     void removeAula(Aula nAula);
     vector<Aula> getAulas();
     void printHorario();
+    string UcCodeToName(string uccode);
 };
 
 #endif
