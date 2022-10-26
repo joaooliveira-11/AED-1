@@ -27,9 +27,9 @@ vector<Aula> Horario::getAulas() {
 string Horario::Double_to_hour(double time){
     string hour = to_string(int(time));
     int minutes = int(((time - int(time)) * 100) * 0.6);
-    if(int(minutes) == 0) return hour + ":" + to_string(minutes) + "0";
-    return hour + ":" + to_string(minutes);
+    return int(minutes) == 0 ? hour + ":" + to_string(minutes) + "0" : hour + ":" + to_string(minutes);
 }
+
 string Horario::UcCodeToName(string uccode){
     map<string, string> UcCode_Name = {{"L.EIC001", "ALGA"},
                                         {"L.EIC002", "AMI"},

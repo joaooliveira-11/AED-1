@@ -8,8 +8,17 @@
 using namespace std;
 
 int main() {
+
     Menu menu = Menu();
     menu.readmenu();
+    /*
+    ReadingClasses readingClasses = ReadingClasses();
+    vector<Aula> aulas = readingClasses.readAulas();
+
+    for(Aula aula : aulas){
+        cout << aula.get_ClassCode() << endl;
+    }
+     */
 
 /*
     Bst test = Bst();

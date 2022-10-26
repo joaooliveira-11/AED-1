@@ -14,6 +14,7 @@ using namespace std;
 void Reading() {}
 
 vector<Aula> ReadingClasses::readAulas() {
+    int verify = 0;
     vector<Aula> aulas;
     string CLASSCODE, UCCODE, WEEKDAY, TYPE, header1;
     double STARTHOUR, DURATION;
@@ -22,9 +23,19 @@ vector<Aula> ReadingClasses::readAulas() {
     if (!in.is_open()) {
         std::exit(EXIT_FAILURE);
     }
-    in >> header1 >> c;
+
+
     for (string line; getline(in, line);) {
+
+        //Adicionei novo metodo para dar skip à 1 linha
+
         istringstream iss(line);
+        if (verify == 0) {
+            verify++;
+            continue;
+        }
+
+        //
         getline(iss, CLASSCODE, ',');
         getline(iss, UCCODE, ',');
         getline(iss, WEEKDAY, ',');
@@ -39,10 +50,13 @@ vector<Aula> ReadingClasses::readAulas() {
     return aulas;
 }
 
-Bst* ReadingClasses::readAlunos(){
-
+Bst *ReadingClasses::readAlunos() {
+    int verify = 0;
+    string helper = "T";
+    string helper1 = "TP";
+    string helper2 = "PL";
     vector<Aula> aulas = readAulas();
-    Bst* alunos = NULL;
+    Bst *alunos = NULL;
     Bst test = Bst();
     vector<Aula> aulasAluno;
     int STUDENTCODE, temp_code;
@@ -55,7 +69,24 @@ Bst* ReadingClasses::readAlunos(){
     if (!in.is_open()) {
         std::exit(EXIT_FAILURE);
     }
+
+    //metodo antigo, comia "20"
+    /*
     in >> CLASSCODE >> c;
+     */
+    //
+
+    //Adicionei novo método de skip da 1 linha, não sei se funciona:
+
+    if (verify == 0) {
+        for (string line; getline(in, line);) {
+            istringstream iss2(line);
+            verify++;
+            break;
+        }
+    }
+
+    //
     getline(in, line);
     istringstream iss(line);
     iss >> STUDENTCODE >> c;
@@ -69,7 +100,7 @@ Bst* ReadingClasses::readAlunos(){
             Aula aulateste = Aula(CLASSCODE, UCCODE, aula.get_WeekDay(), aula.get_StartHour(), aula.get_Duration(),
                                   aula.get_Type());
             aulasAluno.push_back(aulateste);
-            UCS_al++;
+            if((aula.get_Type() != helper && aula.get_Type() != helper1) ||aula.get_Type() != helper && aula.get_Type() != helper2)UCS_al++;
         }
     }
 
@@ -81,10 +112,9 @@ Bst* ReadingClasses::readAlunos(){
         getline(iss, CLASSCODE, ',');
         if (temp_code != STUDENTCODE) {
             Aluno aluno = Aluno(temp_code, tem_name, aulasAluno, UCS_al);
-            if (!alunos){
-                alunos = test.insert_by_upcode( alunos , aluno);
-            }
-            else {
+            if (!alunos) {
+                alunos = test.insert_by_upcode(alunos, aluno);
+            } else {
                 test.insert_by_upcode(alunos, aluno);
             }
             UCS_al = 0;
@@ -94,17 +124,17 @@ Bst* ReadingClasses::readAlunos(){
         }
         for (Aula aula: aulas) {
             if (aula.get_UcCode() == UCCODE && aula.get_ClassCode() == CLASSCODE) {
-                Aula aulateste = Aula(CLASSCODE, UCCODE, aula.get_WeekDay(), aula.get_StartHour(), aula.get_Duration(),
+                Aula aulateste = Aula(CLASSCODE, UCCODE, aula.get_WeekDay(), aula.get_StartHour(),
+                                      aula.get_Duration(),
                                       aula.get_Type());
                 aulasAluno.push_back(aulateste);
-                if(aulateste.get_Type() == "TP" or aulateste.get_Type()== "PL" ){
+                if (aulateste.get_Type() == "TP" or aulateste.get_Type() == "PL") {
                     UCS_al++;
                 }
             }
         }
     }
     Aluno aluno = Aluno(temp_code, tem_name, aulasAluno, UCS_al);
-    test.insert_by_upcode( alunos , aluno);
+    test.insert_by_upcode(alunos, aluno);
     return alunos;
 }
-

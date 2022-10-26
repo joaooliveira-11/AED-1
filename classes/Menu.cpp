@@ -26,7 +26,7 @@ void Menu::readmenu() {
     */
     while (flag) {
         cout << ("Press a key according to what you want to do: \n 1 : See schedule. \n 2 : Edit schedule. \n "
-                 "3 : See all students.  \n  4 : See the number of students with more than x UCs \n  ");
+                 "3 : See all students. \n 4 : See the number of students with more than x UCs \n  ");
         cin >> tecla;
         switch (tecla) {
             case '1':
@@ -74,7 +74,6 @@ void Menu::readmenu() {
             }
             cout << "Please type \"Yes\" or \"No\" ." <<  endl ;
             cin >> again;
-
         }
     }
 }
