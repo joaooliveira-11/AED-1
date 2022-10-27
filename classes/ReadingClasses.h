@@ -6,12 +6,14 @@
 #include <string>
 #include <list>
 #include "Bst.h"
+#include "Turma.h"
 using namespace std;
 
 class ReadingClasses {
 public:
     Bst* readAlunos();
     vector<Aula> readAulas();
+    list<Turma> readTurmas();
 };
 
 #endif

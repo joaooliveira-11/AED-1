@@ -7,6 +7,8 @@ using namespace std;
 
 void Menu::readmenu() {
     int test, up, NUCS;
+    string Classcode, Uccode;
+    list<Turma> turmas;
     char tecla;
     bool flag = true;
     bool flag2 = true;
@@ -16,6 +18,9 @@ void Menu::readmenu() {
     ReadingClasses reading = ReadingClasses();
 
     Alunos = reading.readAlunos() ;
+    turmas = reading.readTurmas();
+    aux.counter_turmas(Alunos,turmas);
+
     // cout << ("What class are you in? \n");
     //cin >> turma;
     /*
@@ -25,8 +30,13 @@ void Menu::readmenu() {
     }
     */
     while (flag) {
-        cout << ("Press a key according to what you want to do: \n 1 : See schedule. \n 2 : Edit schedule. \n "
-                 "3 : See all students. \n 4 : See the number of students with more than x UCs \n  ");
+        cout << "Press a key according to what you want to do: \n"
+                 "1 : See schedule. \n"
+                 "2 : Edit schedule. \n"
+                 "3 : See all students. \n"
+                 "4 : See the number of students with more than x UCs \n"
+                 "5 : See students in a certain Class. \n"
+                 "6 : See students in a certain UC. \n";
         cin >> tecla;
         switch (tecla) {
             case '1':
@@ -55,11 +65,29 @@ void Menu::readmenu() {
                 cin >> NUCS;
                 aux.view_by_NUCS(Alunos, NUCS);
                 break;
-            /*
-            case '3':
-                flag = false;
+            case '5' :
+                cout << "Insert the class UCcode: ";
+                cin >> Uccode;
+                cout << "Insert the class Classcode: ";
+                cin >> Classcode;
+                aux.view_by_turma(Alunos, Uccode, Classcode);
                 break;
-                */
+            case '6' :
+                cout << "Insert the UCode: ";
+                cin >> Uccode;
+                aux.view_by_uc(Alunos, Uccode);
+                break;
+            case '7' :
+                cout << "Insert the class UCcode: ";
+                cin >> Uccode;
+                cout << "Insert the class Classcode: ";
+                cin >> Classcode;
+                for (Turma turma : turmas){
+                    if(turma.get_classcode()== Classcode and turma.get_uccode() == Uccode){
+                        cout << turma.get_numeroalunos() << endl;
+                    }
+                }
+                break;
             default:
                 cout << "Press a valid key! \n";
                 break;

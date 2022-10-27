@@ -18,6 +18,8 @@ public:
     void printHorario();
     string UcCodeToName(string uccode);
     string Double_to_hour(double hour);
+
+
 };
 
 #endif

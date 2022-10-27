@@ -1,6 +1,10 @@
 #include "Bst.h"
 #include "Aluno.h"
 #include <iostream>
+#include "Aula.h"
+#include "Horario.h"
+#include "Turma.h"
+#include <list>
 using namespace std;
 
 Bst::Bst() {
@@ -58,4 +62,55 @@ Aluno Bst::find_by_upcode(Bst *base, int upcode){
         return find_by_upcode(base->Right, upcode);
     }
     return find_by_upcode(base->Left, upcode);
+}
+
+void Bst::view_by_turma(Bst* base, string uccode, string classcode ){
+    if(!base){
+        return;
+    }
+    view_by_turma(base->Left, uccode, classcode);
+    vector<Aula> aulas = base->atual.getHorario().getAulas();
+    for (Aula aula : aulas){
+        if (aula.get_UcCode()==uccode and  aula.get_ClassCode() == classcode){
+            cout << base->atual.getStudentCode() << " | ";
+            cout << base->atual.getStudentName()  << endl;
+            break;
+        }
+    }
+    view_by_turma(base->Right, uccode, classcode);
+}
+
+void Bst::view_by_uc(Bst* base, string uccode){
+    if(!base){
+        return;
+    }
+    view_by_uc(base->Left, uccode);
+    vector<Aula> aulas = base->atual.getHorario().getAulas();
+    for (Aula aula : aulas){
+        if (aula.get_UcCode() == uccode ){
+            cout << base->atual.getStudentCode() << " | ";
+            cout << base->atual.getStudentName()  << endl;
+            break;
+        }
+    }
+    view_by_uc(base->Right, uccode);
+}
+
+void Bst::counter_turmas(Bst* base, list<Turma> &turmas){
+    if(!base){
+        return ;
+    }
+    counter_turmas(base->Left, turmas);
+    vector<Aula> aulas = base->atual.getHorario().getAulas();
+    for (Aula aula : aulas){
+            if (aula.get_Type() == "TP" or aula.get_Type() == "PL") {
+                for (Turma &turma: turmas) {
+                    if (turma.get_classcode() == aula.get_ClassCode() and turma.get_uccode() == aula.get_UcCode()) {
+                        turma.adder();
+                    }
+                }
+            }
+
+    }
+    counter_turmas(base->Right, turmas);
 }
