@@ -9,10 +9,15 @@ using namespace std;
 
 class Turma {
 private:
-    int codigoTurma;
+    string Classcode;
+    string Uccode;
+    int numeroAlunos;
 public:
-    Turma(int codigoTurma);
-    int get_codigoTurma();
+    Turma(string Classcode,string Uccode,int numeroAlunos);
+    string get_classcode();
+    string get_uccode();
+    int get_numeroalunos();
+    void adder();
 };
 
 #endif

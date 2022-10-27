@@ -8,6 +8,8 @@
 #include <fstream>
 #include <sstream>
 #include <list>
+#include "Turma.h"
+
 
 using namespace std;
 
@@ -138,3 +140,33 @@ Bst *ReadingClasses::readAlunos() {
     test.insert_by_upcode(alunos, aluno);
     return alunos;
 }
+
+list<Turma> ReadingClasses::readTurmas() {
+    int verify = 0;
+    list<Turma> turmas;
+    string CLASSCODE, UCCODE;
+    char c;
+    ifstream in("../classes_per_uc.csv");
+    if (!in.is_open()) {
+        std::exit(EXIT_FAILURE);
+    }
+
+    for (string line; getline(in, line);) {
+
+        //Adicionei novo metodo para dar skip à 1 linha
+
+        istringstream iss(line);
+        if (verify == 0) {
+            verify++;
+            continue;
+        }
+
+        //
+        getline(iss, UCCODE, ',');
+        getline(iss, CLASSCODE, ',');
+        Turma turma = Turma(CLASSCODE, UCCODE, 0);
+        turmas.push_back(turma);
+    }
+    return turmas;
+}
+
