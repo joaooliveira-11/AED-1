@@ -85,8 +85,8 @@ Bst *ReadingClasses::readAlunos() {
             break;
         }
     }
-
     //
+
     getline(in, line);
     istringstream iss(line);
     iss >> STUDENTCODE >> c;

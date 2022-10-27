@@ -3,6 +3,8 @@
 
 #include <string>
 #include <vector>
+#include <set>
+#include "Aula.h"
 using namespace std;
 
 class Turma {
