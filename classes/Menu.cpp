@@ -31,10 +31,6 @@ void Menu::readmenu() {
                  "5 : See students in a certain UC-CLASS. \n"
                  "6 : See students in a certain UC. \n"
                  "7 : See the number of students in a certain UC-CLASS. \n";
-                 "4 : See the number of students with more than x UCs \n"
-                 "5 : See students in a certain Class. \n"
-                 "6 : See students in a certain UC. \n"
-                 "7 : See the number of students in a certain Class. \n";
         cin >> tecla;
         switch (tecla) {
             case '1':
@@ -45,7 +41,8 @@ void Menu::readmenu() {
                         cout << "This student doesn't exist in this database, inster a valid number " << endl;
                     }
                     else{
-                        cout << aux.find_by_upcode(Alunos, up).getNUCS();
+                        cout << "Numero de ucs do aluno/aluna" << " " << aux.find_by_upcode(Alunos, up).getStudentName() << ":" << " " << aux.find_by_upcode(Alunos, up).getNUCS() << endl;
+                        cout << "Horario:" << endl;
                         aux.find_by_upcode(Alunos, up).getHorario().printHorario();
                         break;
                     }
@@ -59,14 +56,14 @@ void Menu::readmenu() {
                 aux.view( Alunos);
                 break;
             case '4' :
-                cout << "Type the number minimum of UCs: ";
+                cout << "Type the number minimum of UCs:";
                 cin >> NUCS;
                 aux.view_by_NUCS(Alunos, NUCS);
                 break;
             case '5' :
-                cout << "Insert the class UCcode: ";
+                cout << "Insert the class UCcode:";
                 cin >> Uccode;
-                cout << "Insert the class Classcode: ";
+                cout << "Insert the class Classcode:";
                 cin >> Classcode;
                 aux.view_by_turma(Alunos, Uccode, Classcode);
                 break;
@@ -76,9 +73,9 @@ void Menu::readmenu() {
                 aux.view_by_uc(Alunos, Uccode);
                 break;
             case '7' :
-                cout << "Insert the class UCcode: ";
+                cout << "Insert the class UCcode:";
                 cin >> Uccode;
-                cout << "Insert the class Classcode: ";
+                cout << "Insert the class Classcode:";
                 cin >> Classcode;
                 for (Turma turma : turmas){
                     if(turma.get_classcode()== Classcode and turma.get_uccode() == Uccode){
