@@ -34,9 +34,10 @@ void Menu::readmenu() {
                  "1 : See schedule. \n"
                  "2 : Edit schedule. \n"
                  "3 : See all students. \n"
-                 "4 : See the number of students with more than x UCs \n"
-                 "5 : See students in a certain Class. \n"
-                 "6 : See students in a certain UC. \n";
+                 "4 : See the number of students with more than x UCs. \n"
+                 "5 : See students in a certain UC-CLASS. \n"
+                 "6 : See students in a certain UC. \n"
+                 "7 : See the number of students in a certain UC-CLASS. \n";
         cin >> tecla;
         switch (tecla) {
             case '1':
