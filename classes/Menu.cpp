@@ -21,14 +21,7 @@ void Menu::readmenu() {
     turmas = reading.readTurmas();
     aux.counter_turmas(Alunos,turmas);
 
-    // cout << ("What class are you in? \n");
-    //cin >> turma;
-    /*
-    while (turma < 1 or turma > 16) {
-        cout << ("Write a number between 1 and 16. \n");
-        cin >> turma;
-    }
-    */
+
     while (flag) {
         cout << "Press a key according to what you want to do: \n"
                  "1 : See schedule. \n"
@@ -38,6 +31,10 @@ void Menu::readmenu() {
                  "5 : See students in a certain UC-CLASS. \n"
                  "6 : See students in a certain UC. \n"
                  "7 : See the number of students in a certain UC-CLASS. \n";
+                 "4 : See the number of students with more than x UCs \n"
+                 "5 : See students in a certain Class. \n"
+                 "6 : See students in a certain UC. \n"
+                 "7 : See the number of students in a certain Class. \n";
         cin >> tecla;
         switch (tecla) {
             case '1':
