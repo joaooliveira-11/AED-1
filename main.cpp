@@ -1,4 +1,4 @@
-#include "classes/ReadingClasses.h"
+#include "classes/Reading.h"
 #include "classes/Aluno.h"
 #include "classes/Menu.h"
 #include "classes/Bst.h"
@@ -12,7 +12,7 @@ int main() {
     Menu menu = Menu();
     menu.readmenu();
     /*
-    ReadingClasses readingClasses = ReadingClasses();
+    Reading readingClasses = Reading();
     vector<Aula> aulas = readingClasses.readAulas();
 
     for(Aula aula : aulas){
@@ -23,7 +23,7 @@ int main() {
 /*
     Bst test = Bst();
     Bst* res = NULL;
-    ReadingClasses reading = ReadingClasses();
+    Reading reading = Reading();
     Aluno aluno;
 
     res = reading.readAlunos() ;

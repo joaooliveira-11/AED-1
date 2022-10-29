@@ -1,26 +1,22 @@
 #include "Menu.h"
 #include "Horario.h"
 #include "Aluno.h"
-#include "ReadingClasses.h"
+#include "Reading.h"
 #include <iostream>
 using namespace std;
 
 void Menu::readmenu() {
     int test, up, NUCS;
-    string Classcode, Uccode;
+    string Classcode, Uccode, again = "No";
     list<Turma> turmas;
     char tecla;
-    bool flag = true;
-    bool flag2 = true;
-    string again = "No";
+    bool flag = true, flag2 = true;
     Bst aux = Bst();
     Bst* Alunos = NULL;
-    ReadingClasses reading = ReadingClasses();
-
+    Reading reading = Reading();
     Alunos = reading.readAlunos() ;
     turmas = reading.readTurmas();
     aux.counter_turmas(Alunos,turmas);
-
 
     while (flag) {
         cout << "Press a key according to what you want to do: \n"
@@ -38,10 +34,10 @@ void Menu::readmenu() {
                 while (flag2) {
                     cin >> up;
                     if ( aux.find_by_upcode(Alunos, up).getStudentName() == ""){
-                        cout << "This student doesn't exist in this database, inster a valid number " << endl;
+                        cout << "This student doesn't exist in this database, insert a valid number " << endl;
                     }
                     else{
-                        cout << "Numero de ucs do aluno/aluna" << " " << aux.find_by_upcode(Alunos, up).getStudentName() << ":" << " " << aux.find_by_upcode(Alunos, up).getNUCS() << endl;
+                        cout << "Numero de ucs do aluno/aluna" << " " << aux.find_by_upcode(Alunos, up).getStudentName() << ": " << aux.find_by_upcode(Alunos, up).getNUCS() << endl;
                         cout << "Horario:" << endl;
                         aux.find_by_upcode(Alunos, up).getHorario().printHorario();
                         break;

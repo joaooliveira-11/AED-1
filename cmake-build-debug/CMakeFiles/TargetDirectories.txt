@@ -1,3 +1,4 @@
-C:/Users/nikas/Desktop/AED-1/cmake-build-debug/CMakeFiles/AED_1.dir
-C:/Users/nikas/Desktop/AED-1/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/nikas/Desktop/AED-1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/diana/Desktop/AED-1/cmake-build-debug/CMakeFiles/AED_1.dir
+C:/Users/diana/Desktop/AED-1/cmake-build-debug/CMakeFiles/Doxygen.dir
+C:/Users/diana/Desktop/AED-1/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/diana/Desktop/AED-1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
