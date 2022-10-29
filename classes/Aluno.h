@@ -37,7 +37,7 @@ class Aluno {
         Horario getHorario();
 
         ///@returns The number of UC's a student's enrolled in.
-        int getNUCS();
+        int getNUCS() const;
 
         ///@returns Our student's code as the parameter it receives.
         void setStudentCode(int studentcode);

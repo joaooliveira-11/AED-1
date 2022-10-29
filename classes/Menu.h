@@ -7,7 +7,7 @@
 class Menu {
     public:
         ///@brief Runs the interactive user menu.
-        void readmenu();
+        static void readmenu();
 };
 
 #endif

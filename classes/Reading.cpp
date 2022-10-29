@@ -45,7 +45,7 @@ Bst *Reading::readAlunos() {
     int verify = 0, STUDENTCODE, temp_code = -1, UCS_aluno = 0;
     string helper = "T", helper1 = "TP", helper2 = "PL", STUDENTNAME, UCCODE, CLASSCODE, line, tem_name = "";
     vector<Aula> aulas = readAulas();
-    Bst *alunos = NULL;
+    Bst *alunos = nullptr;
     Bst test = Bst();
     vector<Aula> aulasAluno;
     char c;
@@ -71,7 +71,7 @@ Bst *Reading::readAlunos() {
     temp_code = STUDENTCODE;
     tem_name = STUDENTNAME;
 
-    for (Aula aula : aulas) {
+    for (const Aula& aula : aulas) {
         if (aula.get_UcCode() == UCCODE and aula.get_ClassCode() == CLASSCODE) {
             Aula aulateste = Aula(CLASSCODE, UCCODE, aula.get_WeekDay(), aula.get_StartHour(), aula.get_Duration(),aula.get_Type());
             aulasAluno.push_back(aulateste);
@@ -96,7 +96,7 @@ Bst *Reading::readAlunos() {
             aulasAluno.clear();
         }
 
-        for (Aula aula: aulas) {
+        for (const Aula& aula: aulas) {
             if (aula.get_UcCode() == UCCODE && aula.get_ClassCode() == CLASSCODE) {
                 Aula aulateste = Aula(CLASSCODE, UCCODE, aula.get_WeekDay(), aula.get_StartHour(),aula.get_Duration(),aula.get_Type());
                 aulasAluno.push_back(aulateste);
@@ -113,7 +113,6 @@ list<Turma> Reading::readTurmas() {
     int verify = 0;
     list<Turma> turmas;
     string CLASSCODE, UCCODE;
-    char c;
 
     ifstream in("../classes_per_uc.csv");
 

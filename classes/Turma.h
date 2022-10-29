@@ -28,7 +28,7 @@ class Turma {
         string get_uccode();
 
         ///@returns The amount of students in our class/UC.
-        int get_numeroalunos();
+        int get_numeroalunos() const;
 
         ///@brief Increments the number of students in this class/UC.
         void adder();

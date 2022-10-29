@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 C:/Users/diana/Desktop/AED-1/cmake-build-debug/CMakeFiles/AED_1.dir
 C:/Users/diana/Desktop/AED-1/cmake-build-debug/CMakeFiles/Doxygen.dir
 C:/Users/diana/Desktop/AED-1/cmake-build-debug/CMakeFiles/edit_cache.dir
 C:/Users/diana/Desktop/AED-1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+=======
+D:/prog/AED_proj/AED/AED-1/cmake-build-debug/CMakeFiles/AED_1.dir
+D:/prog/AED_proj/AED/AED-1/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/prog/AED_proj/AED/AED-1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+>>>>>>> cb3d087681400f6218f8d35c16f923b2f02595bc

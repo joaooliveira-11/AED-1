@@ -17,18 +17,18 @@ class Reading {
         ///@brief Reads classes.csv.
         ///@returns All the classes.
         ///@see Aula.h
-        vector<Aula> readAulas();
+        static vector<Aula> readAulas();
 
         ///@brief Reads classes_per_uc.
         ///@returns All the classes per UC.
         ///@see Turma.h
-        list<Turma> readTurmas();
+        static list<Turma> readTurmas();
 
         ///@brief Reads students_classes.csv.
         ///@returns All the students.
         ///@see Aula.h
         ///@see Aluno.h
-        Bst* readAlunos();
+        static Bst* readAlunos();
 };
 
 #endif

@@ -2,10 +2,8 @@
 #include "iostream"
 #include "algorithm"
 #include <string>
-#include <iostream>
-#include <cmath>
 #include <map>
-#include <iomanip>
+#include <vector>
 using namespace std;
 
 Horario::Horario() {vector<Aula> horarioAluno;}
@@ -13,7 +11,9 @@ Horario::Horario(vector<Aula> horarioaluno) : horarioAluno(horarioaluno) {}
 
 vector<Aula> Horario::getAulas() {return horarioAluno;}
 
-void Horario::addAula(Aula nAula) {return horarioAluno.push_back(nAula);}
+void Horario::setHorario(vector<Aula> aulas) {this->horarioAluno=aulas;}
+
+void Horario::addAula(const Aula& nAula) {return horarioAluno.push_back(nAula);}
 
 string Horario::Double_to_hour(double time){
     string hour = to_string(int(time));
@@ -21,7 +21,7 @@ string Horario::Double_to_hour(double time){
     return int(minutes) == 0 ? hour + ":" + to_string(minutes) + "0" : hour + ":" + to_string(minutes);
 }
 
-string Horario::UcCodeToName(string uccode){
+string Horario::UcCodeToName(const string& uccode){
     map<string, string> UcCode_Name = {{"L.EIC001", "ALGA"},
                                         {"L.EIC002", "AMI"},
                                         {"L.EIC003", "FP"},
@@ -60,17 +60,31 @@ void Horario::printHorario() {
     vector<Aula> Aulas = this->getAulas();
     sort(Aulas.begin(), Aulas.end());
     string temp = " ";
-    for (Aula &aula : Aulas) {
+    for (Aula &aula: Aulas) {
         if (aula.get_WeekDay() == temp) {
             cout << ", " << UcCodeToName(aula.get_UcCode()) << "(" << aula.get_Type() << ")" << " " << "from "
-                 << Double_to_hour(aula.get_StartHour()) << " to " << Double_to_hour(aula.get_StartHour() + aula.get_Duration());
+                 << Double_to_hour(aula.get_StartHour()) << " to "
+                 << Double_to_hour(aula.get_StartHour() + aula.get_Duration());
         } else {
             temp = aula.get_WeekDay();
             cout << "\n" << temp << " : ";
             cout << UcCodeToName(aula.get_UcCode()) << "(" << aula.get_Type() << ")" << " " << "from "
-                 << Double_to_hour(aula.get_StartHour()) << " to " << Double_to_hour(aula.get_StartHour() + aula.get_Duration());
+                 << Double_to_hour(aula.get_StartHour()) << " to "
+                 << Double_to_hour(aula.get_StartHour() + aula.get_Duration());
         }
     }
     cout << endl << endl;
 }
 
+void Horario::removerAula(const string& Uccode,const string& Classcode){
+    vector<Aula> novo;
+    for (const Aula& aula : horarioAluno){
+        if (aula.get_ClassCode()==Classcode and aula.get_UcCode() ==Uccode){
+            continue;
+        }
+        else{
+            novo.push_back(aula);
+        }
+    }
+    setHorario(novo);
+}

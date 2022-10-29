@@ -23,19 +23,24 @@ class Horario {
         ///@returns A student's schedule.
         vector<Aula> getAulas();
 
+        ///@returns Our schedule as the parameter it receives.
+        void setHorario(vector<Aula> aulas );
+
         ///@brief Add new class to schedule.
-        void addAula(Aula nAula);
+        void addAula(const Aula& nAula);
 
         ///@brief Prints a student's schedule.
         ///@see Aula.h
         void printHorario();
 
         ///@returns A classe's name given it's UC code.
-        string UcCodeToName(string uccode);
+        static string UcCodeToName(const string& uccode);
 
         ///@returns A classe's starting time.
         ///@param hour The classe's starting hour as a double that needs to be converted to time.
-        string Double_to_hour(double hour);
+        static string Double_to_hour(double hour);
+
+        void removerAula(const string& Uccode, const string& Classcode);
 };
 
 #endif

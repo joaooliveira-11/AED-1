@@ -1,20 +1,19 @@
 #include "Menu.h"
 #include "Horario.h"
-#include "Aluno.h"
 #include "Reading.h"
 #include <iostream>
 using namespace std;
 
 void Menu::readmenu() {
-    int test, up, NUCS;
+    int up, NUCS;
     string Classcode, Uccode, again = "No";
     list<Turma> turmas;
     char tecla;
-    bool flag = true, flag2 = true;
+    bool flag = true, flag2 = true, flag3 = true;
     Bst aux = Bst();
-    Bst* Alunos = NULL;
+    Bst* Alunos = nullptr;
     Reading reading = Reading();
-    Alunos = reading.readAlunos() ;
+    Alunos = reading.readAlunos();
     turmas = reading.readTurmas();
     aux.counter_turmas(Alunos,turmas);
 
@@ -33,7 +32,7 @@ void Menu::readmenu() {
                 cout << "Insert your UPCode \n";
                 while (flag2) {
                     cin >> up;
-                    if ( aux.find_by_upcode(Alunos, up).getStudentName() == ""){
+                    if (aux.find_by_upcode(Alunos, up).getStudentName() == ""){
                         cout << "This student doesn't exist in this database, insert a valid number " << endl;
                     }
                     else{
@@ -78,6 +77,24 @@ void Menu::readmenu() {
                         cout << turma.get_numeroalunos() << endl;
                     }
                 }
+                break;
+            case '8' :
+                cout << "Insert your UPCode \n";
+                while (flag3) {
+                    cin >> up;
+                    if ( aux.find_by_upcode(Alunos, up).getStudentName() == ""){
+                        cout << "This student doesn't exist in this database, inster a valid number " << endl;
+                    }
+                    else{
+                        flag3 = false;
+                    }
+                }
+                cout << "Insert the class UCcode:";
+                cin >> Uccode;
+                cout << "Insert the class Classcode:";
+                cin >> Classcode;
+                aux.removerAula(Alunos, up, Uccode, Classcode);
+                flag3 = true;
                 break;
             default:
                 cout << "Press a valid key! \n";

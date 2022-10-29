@@ -27,13 +27,13 @@ class Bst {
 
         ///@brief Constructor of a new binary search tree given a student.
         ///@see Aluno.h
-        Bst(Aluno imp);
+        explicit Bst(Aluno imp);
 
         ///@returns Updated BST after adding a new student.
         ///@param base The student's BST we want to add a new student to.
         ///@param atual The student we are going to add to the BST.
         ///@see Aluno.h
-        Bst* insert_by_upcode(Bst* base, Aluno atual);
+        Bst* insert_by_upcode(Bst* base, const Aluno& atual);
 
         ///@brief Prints all students (sorted by UC code by default).
         ///@see Aluno.h
@@ -52,13 +52,13 @@ class Bst {
         ///@see Aluno.h
         ///@see Horario.h
         ///@see Aula.h
-        void view_by_turma(Bst* base, string uccode, string classcode);
+        void view_by_turma(Bst* base, const string& uccode, const string& classcode);
 
         ///@brief Prints all students that are in an UC.
         ///@see Aluno.h
         ///@see Horario.h
         ///@see Aula.h
-        void view_by_uc(Bst* base, string uccode);
+        void view_by_uc(Bst* base, const string& uccode);
 
         ///@brief Count the amount of students in class.
         ///@see Aluno.h
@@ -66,6 +66,8 @@ class Bst {
         ///@see Aula.h
         ///@see Turma.h
         void counter_turmas(Bst* base, list<Turma> &turmas);
+
+        void removerAula(Bst* base, int upcode, const string& uccode, const string& classcode);
 };
 
 #endif
