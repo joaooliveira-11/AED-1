@@ -38,7 +38,7 @@ void Menu::readmenu() {
                 while (flag2) {
                     cin >> up;
                     if ( aux.find_by_upcode(Alunos, up).getStudentName() == ""){
-                        cout << "This student doesn't exist in this database, inster a valid number " << endl;
+                        cout << "This student doesn't exist in this database, insert a valid number " << endl;
                     }
                     else{
                         cout << "Numero de ucs do aluno/aluna" << " " << aux.find_by_upcode(Alunos, up).getStudentName() << ":" << " " << aux.find_by_upcode(Alunos, up).getNUCS() << endl;
@@ -99,6 +99,6 @@ void Menu::readmenu() {
             cin >> again;
         }
     }
-}
+}Y
 
 
