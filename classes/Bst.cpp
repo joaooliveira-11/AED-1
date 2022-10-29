@@ -114,3 +114,8 @@ void Bst::counter_turmas(Bst* base, list<Turma> &turmas){
     }
     counter_turmas(base->Right, turmas);
 }
+void Bst::removerAula(Bst* base, int upcode, string uccode, string classcode){
+    find_by_upcode(base, upcode).getHorario().removerAula(uccode, classcode);
+}
+
+

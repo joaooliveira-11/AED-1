@@ -7,6 +7,8 @@ using namespace std;
 #include <cmath>
 #include <map>
 #include <iomanip>
+#include <vector>
+#include <bits/stdc++.h>
 
 
 Horario::Horario() {
@@ -17,9 +19,6 @@ Horario::Horario(vector<Aula> horarioaluno) : horarioAluno(horarioaluno) {}
 
 void Horario::addAula(Aula nAula){
     horarioAluno.push_back(nAula);
-}
-void Horario::removeAula(Aula nAula){
-
 }
 vector<Aula> Horario::getAulas() {
     return horarioAluno;
@@ -82,4 +81,21 @@ void Horario::printHorario() {
     }
     cout <<endl << endl;
 }
+void Horario::setHorario(vector<Aula> aulas ){
+    this->horarioAluno=aulas;
+}
+
+void Horario::removerAula(string Uccode,string Classcode){
+    vector<Aula> novo;
+    for (Aula aula : horarioAluno){
+        if (aula.get_ClassCode()==Classcode and aula.get_UcCode() ==Uccode){
+            continue;
+        }
+        else{
+            novo.push_back(aula);
+        }
+    }
+    setHorario(novo);
+}
+
 

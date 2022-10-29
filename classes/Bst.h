@@ -20,5 +20,6 @@ class Bst {
         void view_by_turma(Bst* base, string uccode, string classcode );
         void view_by_uc(Bst* base, string uccode);
         void counter_turmas(Bst* base, list<Turma> &turmas );
+        void removerAula(Bst* base, int upcode, string uccode, string classcode);
 };
 #endif

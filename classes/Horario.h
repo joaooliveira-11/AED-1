@@ -13,13 +13,12 @@ public:
     Horario();
     Horario(vector<Aula> horarioaluno);
     void addAula(Aula nAula);
-    void removeAula(Aula nAula);
     vector<Aula> getAulas();
     void printHorario();
     string UcCodeToName(string uccode);
     string Double_to_hour(double hour);
-
-
+    void removerAula( string Uccode,string Classcode );
+    void setHorario(vector<Aula> aulas );
 };
 
 #endif

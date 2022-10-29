@@ -12,6 +12,7 @@ void Menu::readmenu() {
     char tecla;
     bool flag = true;
     bool flag2 = true;
+    bool flag3 = true;
     string again = "No";
     Bst aux = Bst();
     Bst* Alunos = NULL;
@@ -82,6 +83,24 @@ void Menu::readmenu() {
                         cout << turma.get_numeroalunos() << endl;
                     }
                 }
+                break;
+            case '8' :
+                cout << "Insert your UPCode \n";
+                while (flag3) {
+                    cin >> up;
+                    if ( aux.find_by_upcode(Alunos, up).getStudentName() == ""){
+                        cout << "This student doesn't exist in this database, inster a valid number " << endl;
+                    }
+                    else{
+                        flag3 = false;
+                    }
+                }
+                cout << "Insert the class UCcode:";
+                cin >> Uccode;
+                cout << "Insert the class Classcode:";
+                cin >> Classcode;
+                aux.removerAula(Alunos, up, Uccode, Classcode);
+                flag3 = true;
                 break;
             default:
                 cout << "Press a valid key! \n";

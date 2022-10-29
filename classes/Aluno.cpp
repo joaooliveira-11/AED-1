@@ -1,4 +1,5 @@
 #include "Aluno.h"
+#include "Turma.h"
 using namespace std;
 
 Aluno::Aluno(){
