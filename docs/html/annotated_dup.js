@@ -4,7 +4,7 @@ var annotated_dup =
     [ "Aula", "class_aula.html", "class_aula" ],
     [ "Bst", "class_bst.html", "class_bst" ],
     [ "Horario", "class_horario.html", "class_horario" ],
-    [ "Menu", "class_menu.html", "class_menu" ],
-    [ "Reading", "class_reading_classes.html", "class_reading_classes" ],
+    [ "Menu", "class_menu.html", null ],
+    [ "Reading", "class_reading.html", null ],
     [ "Turma", "class_turma.html", "class_turma" ]
 ];

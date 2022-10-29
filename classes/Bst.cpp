@@ -34,7 +34,7 @@ void Bst::view(Bst* base){
 void Bst::view_by_NUCS(Bst* base, int x){
     if(!base) return;
     view_by_NUCS(base->Left, x);
-    if ( base->atual.getNUCS() > x ){
+    if (base->atual.getNUCS() > x){
         cout << base->atual.getStudentCode() << " | ";
         cout << base->atual.getStudentName()  << endl;
     }
@@ -75,9 +75,9 @@ void Bst::view_by_uc(Bst* base, const string& uccode){
     view_by_uc(base->Right, uccode);
 }
 
-void Bst::counter_turmas(Bst* base, list<Turma> &turmas){
+void Bst::num_students_uc(Bst* base, list<Turma> &turmas){
     if(!base) return;
-    counter_turmas(base->Left, turmas);
+    num_students_uc(base->Left, turmas);
     vector<Aula> aulas = base->atual.getHorario().getAulas();
     for (const Aula& aula : aulas){
         if (aula.get_Type() == "TP" or aula.get_Type() == "PL") {
@@ -88,8 +88,9 @@ void Bst::counter_turmas(Bst* base, list<Turma> &turmas){
             }
         }
     }
-    counter_turmas(base->Right, turmas);
+    num_students_uc(base->Right, turmas);
 }
+
 void Bst::removerAula(Bst* base, int upcode, const string& uccode, const string& classcode){
     find_by_upcode(base, upcode).getHorario().removerAula(uccode, classcode);
 }

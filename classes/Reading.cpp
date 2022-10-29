@@ -43,7 +43,7 @@ vector<Aula> Reading::readAulas() {
 
 Bst *Reading::readAlunos() {
     int verify = 0, STUDENTCODE, temp_code = -1, UCS_aluno = 0;
-    string helper = "T", helper1 = "TP", helper2 = "PL", STUDENTNAME, UCCODE, CLASSCODE, line, tem_name = "";
+    string helper = "T", helper1 = "TP", helper2 = "PL", STUDENTNAME, UCCODE, CLASSCODE, line, temp_name;
     vector<Aula> aulas = readAulas();
     Bst *alunos = nullptr;
     Bst test = Bst();
@@ -69,13 +69,15 @@ Bst *Reading::readAlunos() {
     getline(iss, UCCODE, ',');
     getline(iss, CLASSCODE, ',');
     temp_code = STUDENTCODE;
-    tem_name = STUDENTNAME;
+    temp_name = STUDENTNAME;
 
     for (const Aula& aula : aulas) {
         if (aula.get_UcCode() == UCCODE and aula.get_ClassCode() == CLASSCODE) {
-            Aula aulateste = Aula(CLASSCODE, UCCODE, aula.get_WeekDay(), aula.get_StartHour(), aula.get_Duration(),aula.get_Type());
+            Aula aulateste = Aula(CLASSCODE, UCCODE, aula.get_WeekDay(),
+                                  aula.get_StartHour(), aula.get_Duration(),aula.get_Type());
             aulasAluno.push_back(aulateste);
-            if((aula.get_Type() != helper and aula.get_Type() != helper1) || (aula.get_Type() != helper and aula.get_Type() != helper2)) UCS_aluno++;
+            if((aula.get_Type() != helper and aula.get_Type() != helper1) ||
+            (aula.get_Type() != helper and aula.get_Type() != helper2)) UCS_aluno++;
         }
     }
 
@@ -87,24 +89,24 @@ Bst *Reading::readAlunos() {
         getline(iss, CLASSCODE, ',');
 
         if (temp_code != STUDENTCODE) {
-            Aluno aluno = Aluno(temp_code, tem_name, aulasAluno, UCS_aluno);
+            Aluno aluno = Aluno(temp_code, temp_name, aulasAluno, UCS_aluno);
             if (!alunos) alunos = test.insert_by_upcode(alunos, aluno);
             else test.insert_by_upcode(alunos, aluno);
             UCS_aluno = 0;
             temp_code = STUDENTCODE;
-            tem_name = STUDENTNAME;
+            temp_name = STUDENTNAME;
             aulasAluno.clear();
         }
 
-        for (const Aula& aula: aulas) {
-            if (aula.get_UcCode() == UCCODE && aula.get_ClassCode() == CLASSCODE) {
+        for (const Aula& aula : aulas) {
+            if (aula.get_UcCode() == UCCODE and aula.get_ClassCode() == CLASSCODE) {
                 Aula aulateste = Aula(CLASSCODE, UCCODE, aula.get_WeekDay(), aula.get_StartHour(),aula.get_Duration(),aula.get_Type());
                 aulasAluno.push_back(aulateste);
                 if (aulateste.get_Type() == "TP" or aulateste.get_Type() == "PL") UCS_aluno++;
             }
         }
     }
-    Aluno aluno = Aluno(temp_code, tem_name, aulasAluno, UCS_aluno);
+    Aluno aluno = Aluno(temp_code, temp_name, aulasAluno, UCS_aluno);
     test.insert_by_upcode(alunos, aluno);
     return alunos;
 }

@@ -1,6 +1,6 @@
 #include "Turma.h"
 
-Turma::Turma(string Classcode,string Uccode,int numeroAlunos){
+Turma::Turma(string Classcode, string Uccode, int numeroAlunos){
     this->Classcode = Classcode;
     this->Uccode = Uccode;
     this->numeroAlunos = numeroAlunos;

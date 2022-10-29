@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['readalunos_0',['readAlunos',['../class_reading_classes.html#aa4489b9cfa91e61122b50faf2bcf4c81',1,'Reading']]],
-  ['readaulas_1',['readAulas',['../class_reading_classes.html#aec88ccf1fd61f4d32869e2daccc459a2',1,'Reading']]],
-  ['reading_2',['Reading',['../_reading_classes_8cpp.html#abb9cab563ccd06f98289aeb716bfa31a',1,'Reading.cpp']]],
-  ['readingclasses_3',['Reading',['../class_reading_classes.html',1,'']]],
-  ['readingclasses_2ecpp_4',['Reading.cpp',['../_reading_classes_8cpp.html',1,'']]],
-  ['readingclasses_2eh_5',['Reading.h',['../_reading_classes_8h.html',1,'']]],
-  ['readmenu_6',['readmenu',['../class_menu.html#ad8572ff8d66ae357cbfa15112375dc07',1,'Menu']]],
-  ['readturmas_7',['readTurmas',['../class_reading_classes.html#ab200fb75f0a87320d8da50e8ceba9338',1,'Reading']]]
+  ['readalunos_0',['readAlunos',['../class_reading.html#ab1af0e0ea769cbe8691eaeef8dddc239',1,'Reading']]],
+  ['readaulas_1',['readAulas',['../class_reading.html#ac928350e5016fbc18b86f5b9f33a7f48',1,'Reading']]],
+  ['reading_2',['Reading',['../class_reading.html',1,'Reading'],['../_reading_8cpp.html#abb9cab563ccd06f98289aeb716bfa31a',1,'Reading():&#160;Reading.cpp']]],
+  ['reading_2ecpp_3',['Reading.cpp',['../_reading_8cpp.html',1,'']]],
+  ['reading_2eh_4',['Reading.h',['../_reading_8h.html',1,'']]],
+  ['readmenu_5',['readmenu',['../class_menu.html#ad8572ff8d66ae357cbfa15112375dc07',1,'Menu']]],
+  ['readturmas_6',['readTurmas',['../class_reading.html#a8e37875197e4ae34d77151aa3ac5c232',1,'Reading']]],
+  ['removeraula_7',['removerAula',['../class_bst.html#ab956a9e8afe15e3ccecb4aee6ea7b2d1',1,'Bst::removerAula()'],['../class_horario.html#a0d31be9e43b828c5128521955bdde746',1,'Horario::removerAula()']]]
 ];

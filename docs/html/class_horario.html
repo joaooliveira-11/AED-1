@@ -92,31 +92,48 @@ $(document).ready(function(){initNavTree('class_horario.html',''); initResizable
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="class_horario-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Horario Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Class for schedules.  
+ <a href="class_horario.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_horario_8h_source.html">Horario.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a46801f79049e424c1a520838c33397b2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_horario.html#a46801f79049e424c1a520838c33397b2">Horario</a> ()</td></tr>
+<tr class="memdesc:a46801f79049e424c1a520838c33397b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Empty schedule constructor.  <a href="class_horario.html#a46801f79049e424c1a520838c33397b2">More...</a><br /></td></tr>
 <tr class="separator:a46801f79049e424c1a520838c33397b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6b586cceb7ea8d72fc37f16507c7ca8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_horario.html#af6b586cceb7ea8d72fc37f16507c7ca8">Horario</a> (vector&lt; <a class="el" href="class_aula.html">Aula</a> &gt; horarioaluno)</td></tr>
+<tr class="memdesc:af6b586cceb7ea8d72fc37f16507c7ca8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of a new schedule given a student's classes.  <a href="class_horario.html#af6b586cceb7ea8d72fc37f16507c7ca8">More...</a><br /></td></tr>
 <tr class="separator:af6b586cceb7ea8d72fc37f16507c7ca8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a225a8565088cde107030e56a01a0ee9f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_horario.html#a225a8565088cde107030e56a01a0ee9f">addAula</a> (<a class="el" href="class_aula.html">Aula</a> nAula)</td></tr>
-<tr class="separator:a225a8565088cde107030e56a01a0ee9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4eeb96fa5d34b2ce3e01bc548f9b73aa"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="class_aula.html">Aula</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_horario.html#a4eeb96fa5d34b2ce3e01bc548f9b73aa">getAulas</a> ()</td></tr>
 <tr class="separator:a4eeb96fa5d34b2ce3e01bc548f9b73aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a7aa55ba2e1c230d4cd1c63bb693d88"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_horario.html#a3a7aa55ba2e1c230d4cd1c63bb693d88">setHorario</a> (vector&lt; <a class="el" href="class_aula.html">Aula</a> &gt; aulas)</td></tr>
+<tr class="separator:a3a7aa55ba2e1c230d4cd1c63bb693d88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0980752679277527ccbea76bfc7d2463"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_horario.html#a0980752679277527ccbea76bfc7d2463">addAula</a> (const <a class="el" href="class_aula.html">Aula</a> &amp;nAula)</td></tr>
+<tr class="memdesc:a0980752679277527ccbea76bfc7d2463"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add new class to schedule.  <a href="class_horario.html#a0980752679277527ccbea76bfc7d2463">More...</a><br /></td></tr>
+<tr class="separator:a0980752679277527ccbea76bfc7d2463"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26619944afddca13bb2301c6776fb60f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_horario.html#a26619944afddca13bb2301c6776fb60f">printHorario</a> ()</td></tr>
+<tr class="memdesc:a26619944afddca13bb2301c6776fb60f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints a student's schedule.  <a href="class_horario.html#a26619944afddca13bb2301c6776fb60f">More...</a><br /></td></tr>
 <tr class="separator:a26619944afddca13bb2301c6776fb60f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a59037a2765fb634cfdd92885708cc36b"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_horario.html#a59037a2765fb634cfdd92885708cc36b">UcCodeToName</a> (string uccode)</td></tr>
-<tr class="separator:a59037a2765fb634cfdd92885708cc36b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a72c6e108fea43c13108248ac59f595aa"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_horario.html#a72c6e108fea43c13108248ac59f595aa">Double_to_hour</a> (double hour)</td></tr>
+<tr class="memitem:a0d31be9e43b828c5128521955bdde746"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_horario.html#a0d31be9e43b828c5128521955bdde746">removerAula</a> (const string &amp;Uccode, const string &amp;Classcode)</td></tr>
+<tr class="separator:a0d31be9e43b828c5128521955bdde746"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:af9b19a49bc4068d158117ced29134f05"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_horario.html#af9b19a49bc4068d158117ced29134f05">UcCodeToName</a> (const string &amp;uccode)</td></tr>
+<tr class="separator:af9b19a49bc4068d158117ced29134f05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72c6e108fea43c13108248ac59f595aa"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_horario.html#a72c6e108fea43c13108248ac59f595aa">Double_to_hour</a> (double hour)</td></tr>
 <tr class="separator:a72c6e108fea43c13108248ac59f595aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Class for schedules. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a46801f79049e424c1a520838c33397b2" name="a46801f79049e424c1a520838c33397b2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a46801f79049e424c1a520838c33397b2">&#9670;&#160;</a></span>Horario() <span class="overload">[1/2]</span></h2>
 
@@ -131,6 +148,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Empty schedule constructor. </p>
 
 </div>
 </div>
@@ -150,11 +169,13 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Constructor of a new schedule given a student's classes. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a225a8565088cde107030e56a01a0ee9f" name="a225a8565088cde107030e56a01a0ee9f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a225a8565088cde107030e56a01a0ee9f">&#9670;&#160;</a></span>addAula()</h2>
+<a id="a0980752679277527ccbea76bfc7d2463" name="a0980752679277527ccbea76bfc7d2463"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0980752679277527ccbea76bfc7d2463">&#9670;&#160;</a></span>addAula()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -162,12 +183,14 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void Horario::addAula </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_aula.html">Aula</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="class_aula.html">Aula</a> &amp;&#160;</td>
           <td class="paramname"><em>nAula</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Add new class to schedule. </p>
 
 </div>
 </div>
@@ -176,6 +199,9 @@ Public Member Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">string Horario::Double_to_hour </td>
@@ -185,7 +211,19 @@ Public Member Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>A classe's starting time. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hour</td><td>The classe's starting hour as a double that needs to be converted to time. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -203,6 +241,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>A student's schedule. </dd></dl>
 
 </div>
 </div>
@@ -221,23 +260,82 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Prints a student's schedule. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_aula_8h.html">Aula.h</a> </dd></dl>
+
 </div>
 </div>
-<a id="a59037a2765fb634cfdd92885708cc36b" name="a59037a2765fb634cfdd92885708cc36b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a59037a2765fb634cfdd92885708cc36b">&#9670;&#160;</a></span>UcCodeToName()</h2>
+<a id="a0d31be9e43b828c5128521955bdde746" name="a0d31be9e43b828c5128521955bdde746"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d31be9e43b828c5128521955bdde746">&#9670;&#160;</a></span>removerAula()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string Horario::UcCodeToName </td>
+          <td class="memname">void Horario::removerAula </td>
           <td>(</td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>uccode</em></td><td>)</td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>Uccode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>Classcode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3a7aa55ba2e1c230d4cd1c63bb693d88" name="a3a7aa55ba2e1c230d4cd1c63bb693d88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a7aa55ba2e1c230d4cd1c63bb693d88">&#9670;&#160;</a></span>setHorario()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Horario::setHorario </td>
+          <td>(</td>
+          <td class="paramtype">vector&lt; <a class="el" href="class_aula.html">Aula</a> &gt;&#160;</td>
+          <td class="paramname"><em>aulas</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Our schedule as the parameter it receives. </dd></dl>
+
+</div>
+</div>
+<a id="af9b19a49bc4068d158117ced29134f05" name="af9b19a49bc4068d158117ced29134f05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9b19a49bc4068d158117ced29134f05">&#9670;&#160;</a></span>UcCodeToName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Horario::UcCodeToName </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>uccode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>A classe's name given it's UC code. </dd></dl>
 
 </div>
 </div>

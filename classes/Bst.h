@@ -44,9 +44,9 @@ class Bst {
         ///@see Aluno.h
         void view_by_NUCS(Bst* base, int x);
 
-        ///@returns Student in bst which is found by UP code.
+        ///@returns Student in BST who's UP code is the same as the upcode the function receives.
         ///@see Aluno.h
-        Aluno find_by_upcode(Bst* base,int upcode);
+        Aluno find_by_upcode(Bst* base, int upcode);
 
         ///@brief Prints all students that are in the same UC/class.
         ///@see Aluno.h
@@ -60,12 +60,12 @@ class Bst {
         ///@see Aula.h
         void view_by_uc(Bst* base, const string& uccode);
 
-        ///@brief Count the amount of students in class.
+        ///@brief Counts the number of students in an UC.
         ///@see Aluno.h
         ///@see Horario.h
         ///@see Aula.h
         ///@see Turma.h
-        void counter_turmas(Bst* base, list<Turma> &turmas);
+        void num_students_uc(Bst* base, list<Turma> &turmas);
 
         void removerAula(Bst* base, int upcode, const string& uccode, const string& classcode);
 };

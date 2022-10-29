@@ -15,7 +15,7 @@ void Menu::readmenu() {
     Reading reading = Reading();
     Alunos = reading.readAlunos();
     turmas = reading.readTurmas();
-    aux.counter_turmas(Alunos,turmas);
+    aux.num_students_uc(Alunos,turmas);
 
     while (flag) {
         cout << "Press a key according to what you want to do: \n"

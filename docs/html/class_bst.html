@@ -110,8 +110,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae5f0b4b968b645faecb41a07b5d108b3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bst.html#ae5f0b4b968b645faecb41a07b5d108b3">Bst</a> (<a class="el" href="class_aluno.html">Aluno</a> imp)</td></tr>
 <tr class="memdesc:ae5f0b4b968b645faecb41a07b5d108b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of a new binary search tree given a student.  <a href="class_bst.html#ae5f0b4b968b645faecb41a07b5d108b3">More...</a><br /></td></tr>
 <tr class="separator:ae5f0b4b968b645faecb41a07b5d108b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d6190b2d77093ac28214d1fe38d1133"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_bst.html">Bst</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bst.html#a7d6190b2d77093ac28214d1fe38d1133">insert_by_upcode</a> (<a class="el" href="class_bst.html">Bst</a> *base, <a class="el" href="class_aluno.html">Aluno</a> atual)</td></tr>
-<tr class="separator:a7d6190b2d77093ac28214d1fe38d1133"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abefd5b922412b2819306b64ae3d739d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_bst.html">Bst</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bst.html#abefd5b922412b2819306b64ae3d739d6">insert_by_upcode</a> (<a class="el" href="class_bst.html">Bst</a> *base, const <a class="el" href="class_aluno.html">Aluno</a> &amp;atual)</td></tr>
+<tr class="separator:abefd5b922412b2819306b64ae3d739d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afbb8010ba4bd8d2976e7b7692988786d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bst.html#afbb8010ba4bd8d2976e7b7692988786d">view</a> (<a class="el" href="class_bst.html">Bst</a> *base)</td></tr>
 <tr class="memdesc:afbb8010ba4bd8d2976e7b7692988786d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints all students (sorted by UC code by default).  <a href="class_bst.html#afbb8010ba4bd8d2976e7b7692988786d">More...</a><br /></td></tr>
 <tr class="separator:afbb8010ba4bd8d2976e7b7692988786d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -120,15 +120,17 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a5167bba895f62ce55d0f9efe6e7ec97b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5670db9eed71387b3f21ddbd6c5e0088"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_aluno.html">Aluno</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bst.html#a5670db9eed71387b3f21ddbd6c5e0088">find_by_upcode</a> (<a class="el" href="class_bst.html">Bst</a> *base, int upcode)</td></tr>
 <tr class="separator:a5670db9eed71387b3f21ddbd6c5e0088"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9439cc27dfafadf499e96b0ba6a1e775"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bst.html#a9439cc27dfafadf499e96b0ba6a1e775">view_by_turma</a> (<a class="el" href="class_bst.html">Bst</a> *base, string uccode, string classcode)</td></tr>
-<tr class="memdesc:a9439cc27dfafadf499e96b0ba6a1e775"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints all students that are in the same UC/class.  <a href="class_bst.html#a9439cc27dfafadf499e96b0ba6a1e775">More...</a><br /></td></tr>
-<tr class="separator:a9439cc27dfafadf499e96b0ba6a1e775"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb3ce69cc5d3ced3129ec88fc9293b3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bst.html#abb3ce69cc5d3ced3129ec88fc9293b3c">view_by_uc</a> (<a class="el" href="class_bst.html">Bst</a> *base, string uccode)</td></tr>
-<tr class="memdesc:abb3ce69cc5d3ced3129ec88fc9293b3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints all students that are in an UC.  <a href="class_bst.html#abb3ce69cc5d3ced3129ec88fc9293b3c">More...</a><br /></td></tr>
-<tr class="separator:abb3ce69cc5d3ced3129ec88fc9293b3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ce39be8292b134329d721df75eaf295"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bst.html#a8ce39be8292b134329d721df75eaf295">view_by_turma</a> (<a class="el" href="class_bst.html">Bst</a> *base, const string &amp;uccode, const string &amp;classcode)</td></tr>
+<tr class="memdesc:a8ce39be8292b134329d721df75eaf295"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints all students that are in the same UC/class.  <a href="class_bst.html#a8ce39be8292b134329d721df75eaf295">More...</a><br /></td></tr>
+<tr class="separator:a8ce39be8292b134329d721df75eaf295"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25f3a5d5f334fc42b679659c13be9f77"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bst.html#a25f3a5d5f334fc42b679659c13be9f77">view_by_uc</a> (<a class="el" href="class_bst.html">Bst</a> *base, const string &amp;uccode)</td></tr>
+<tr class="memdesc:a25f3a5d5f334fc42b679659c13be9f77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints all students that are in an UC.  <a href="class_bst.html#a25f3a5d5f334fc42b679659c13be9f77">More...</a><br /></td></tr>
+<tr class="separator:a25f3a5d5f334fc42b679659c13be9f77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71f99d17fbc2ddd4788959f92e26111d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bst.html#a71f99d17fbc2ddd4788959f92e26111d">counter_turmas</a> (<a class="el" href="class_bst.html">Bst</a> *base, list&lt; <a class="el" href="class_turma.html">Turma</a> &gt; &amp;turmas)</td></tr>
 <tr class="memdesc:a71f99d17fbc2ddd4788959f92e26111d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Count the amount of students in class.  <a href="class_bst.html#a71f99d17fbc2ddd4788959f92e26111d">More...</a><br /></td></tr>
 <tr class="separator:a71f99d17fbc2ddd4788959f92e26111d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab956a9e8afe15e3ccecb4aee6ea7b2d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bst.html#ab956a9e8afe15e3ccecb4aee6ea7b2d1">removerAula</a> (<a class="el" href="class_bst.html">Bst</a> *base, int upcode, const string &amp;uccode, const string &amp;classcode)</td></tr>
+<tr class="separator:ab956a9e8afe15e3ccecb4aee6ea7b2d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Class for all the bst we need (i.e.: all students, the students enrolled in more than n UC's). </p>
@@ -158,6 +160,9 @@ Public Member Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">Bst::Bst </td>
@@ -167,6 +172,11 @@ Public Member Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Constructor of a new binary search tree given a student. </p>
@@ -242,8 +252,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a7d6190b2d77093ac28214d1fe38d1133" name="a7d6190b2d77093ac28214d1fe38d1133"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7d6190b2d77093ac28214d1fe38d1133">&#9670;&#160;</a></span>insert_by_upcode()</h2>
+<a id="abefd5b922412b2819306b64ae3d739d6" name="abefd5b922412b2819306b64ae3d739d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abefd5b922412b2819306b64ae3d739d6">&#9670;&#160;</a></span>insert_by_upcode()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -257,7 +267,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_aluno.html">Aluno</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="class_aluno.html">Aluno</a> &amp;&#160;</td>
           <td class="paramname"><em>atual</em>&#160;</td>
         </tr>
         <tr>
@@ -276,6 +286,46 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="_aluno_8h.html">Aluno.h</a> </dd></dl>
+
+</div>
+</div>
+<a id="ab956a9e8afe15e3ccecb4aee6ea7b2d1" name="ab956a9e8afe15e3ccecb4aee6ea7b2d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab956a9e8afe15e3ccecb4aee6ea7b2d1">&#9670;&#160;</a></span>removerAula()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Bst::removerAula </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_bst.html">Bst</a> *&#160;</td>
+          <td class="paramname"><em>base</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>upcode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>uccode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>classcode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -337,8 +387,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a9439cc27dfafadf499e96b0ba6a1e775" name="a9439cc27dfafadf499e96b0ba6a1e775"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9439cc27dfafadf499e96b0ba6a1e775">&#9670;&#160;</a></span>view_by_turma()</h2>
+<a id="a8ce39be8292b134329d721df75eaf295" name="a8ce39be8292b134329d721df75eaf295"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ce39be8292b134329d721df75eaf295">&#9670;&#160;</a></span>view_by_turma()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -352,13 +402,13 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">string&#160;</td>
+          <td class="paramtype">const string &amp;&#160;</td>
           <td class="paramname"><em>uccode</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">string&#160;</td>
+          <td class="paramtype">const string &amp;&#160;</td>
           <td class="paramname"><em>classcode</em>&#160;</td>
         </tr>
         <tr>
@@ -378,8 +428,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="abb3ce69cc5d3ced3129ec88fc9293b3c" name="abb3ce69cc5d3ced3129ec88fc9293b3c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb3ce69cc5d3ced3129ec88fc9293b3c">&#9670;&#160;</a></span>view_by_uc()</h2>
+<a id="a25f3a5d5f334fc42b679659c13be9f77" name="a25f3a5d5f334fc42b679659c13be9f77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25f3a5d5f334fc42b679659c13be9f77">&#9670;&#160;</a></span>view_by_uc()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -393,7 +443,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">string&#160;</td>
+          <td class="paramtype">const string &amp;&#160;</td>
           <td class="paramname"><em>uccode</em>&#160;</td>
         </tr>
         <tr>

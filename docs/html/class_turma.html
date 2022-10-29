@@ -97,22 +97,29 @@ $(document).ready(function(){initNavTree('class_turma.html',''); initResizable()
 </div><!--header-->
 <div class="contents">
 
+<p>Class for classes.  
+ <a href="class_turma.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_turma_8h_source.html">Turma.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab7da2810dd11eca3d808a54f99801f1e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_turma.html#ab7da2810dd11eca3d808a54f99801f1e">Turma</a> (string Classcode, string Uccode, int numeroAlunos)</td></tr>
+<tr class="memdesc:ab7da2810dd11eca3d808a54f99801f1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of a new class given it's class code, the UC code and the number of students in the class/UC.  <a href="class_turma.html#ab7da2810dd11eca3d808a54f99801f1e">More...</a><br /></td></tr>
 <tr class="separator:ab7da2810dd11eca3d808a54f99801f1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65d9bee26f102646a227858b0f22c244"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_turma.html#a65d9bee26f102646a227858b0f22c244">get_classcode</a> ()</td></tr>
 <tr class="separator:a65d9bee26f102646a227858b0f22c244"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41956203cec17345359b245b74481086"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_turma.html#a41956203cec17345359b245b74481086">get_uccode</a> ()</td></tr>
 <tr class="separator:a41956203cec17345359b245b74481086"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18315e180cf6cfb42587513cde1e3d66"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_turma.html#a18315e180cf6cfb42587513cde1e3d66">get_numeroalunos</a> ()</td></tr>
-<tr class="separator:a18315e180cf6cfb42587513cde1e3d66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c933d6319561d698bbc7f928bee64fc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_turma.html#a9c933d6319561d698bbc7f928bee64fc">get_numeroalunos</a> () const</td></tr>
+<tr class="separator:a9c933d6319561d698bbc7f928bee64fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aafdbddbeab9e6765575d0603be5edc85"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_turma.html#aafdbddbeab9e6765575d0603be5edc85">adder</a> ()</td></tr>
+<tr class="memdesc:aafdbddbeab9e6765575d0603be5edc85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increments the number of students in this class/UC.  <a href="class_turma.html#aafdbddbeab9e6765575d0603be5edc85">More...</a><br /></td></tr>
 <tr class="separator:aafdbddbeab9e6765575d0603be5edc85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Class for classes. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ab7da2810dd11eca3d808a54f99801f1e" name="ab7da2810dd11eca3d808a54f99801f1e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab7da2810dd11eca3d808a54f99801f1e">&#9670;&#160;</a></span>Turma()</h2>
 
@@ -145,6 +152,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Constructor of a new class given it's class code, the UC code and the number of students in the class/UC. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -163,6 +172,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Increments the number of students in this class/UC. </p>
+
 </div>
 </div>
 <a id="a65d9bee26f102646a227858b0f22c244" name="a65d9bee26f102646a227858b0f22c244"></a>
@@ -179,11 +190,12 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Our class's code. </dd></dl>
 
 </div>
 </div>
-<a id="a18315e180cf6cfb42587513cde1e3d66" name="a18315e180cf6cfb42587513cde1e3d66"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a18315e180cf6cfb42587513cde1e3d66">&#9670;&#160;</a></span>get_numeroalunos()</h2>
+<a id="a9c933d6319561d698bbc7f928bee64fc" name="a9c933d6319561d698bbc7f928bee64fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c933d6319561d698bbc7f928bee64fc">&#9670;&#160;</a></span>get_numeroalunos()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -192,10 +204,11 @@ Public Member Functions</h2></td></tr>
           <td class="memname">int Turma::get_numeroalunos </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>The amount of students in our class/UC. </dd></dl>
 
 </div>
 </div>
@@ -213,6 +226,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Our UC's code. </dd></dl>
 
 </div>
 </div>
