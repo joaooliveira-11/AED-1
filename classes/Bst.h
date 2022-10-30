@@ -46,7 +46,7 @@ class Bst {
 
         ///@returns Student in BST who's UP code is the same as the upcode the function receives.
         ///@see Aluno.h
-        Aluno find_by_upcode(Bst* base, int upcode);
+        Aluno& find_by_upcode(Bst* base, int upcode);
 
         ///@brief Prints all students that are in the same UC/class.
         ///@see Aluno.h

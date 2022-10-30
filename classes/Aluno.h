@@ -34,7 +34,7 @@ class Aluno {
         string getStudentName();
 
         ///@returns A student's schedule.
-        Horario getHorario();
+        Horario& getHorario();
 
         ///@returns The number of UC's a student's enrolled in.
         int getNUCS() const;
@@ -46,7 +46,7 @@ class Aluno {
         void setStudentName(string studentname);
 
         ///@returns Our student's schedule as the parameter it receives.
-        void setHorario(Horario horario);
+        void setHorario(Horario& horario);
 
         ///@returns Our student's number of UC's as the parameter it receives.
         void setNUCS(int NUCS);
@@ -58,6 +58,8 @@ class Aluno {
         ///@brief Operator> overload.
         ///@returns True if our student's code is higher than the one from the student received as parameter.
         bool operator>(const Aluno&) const;
+
+        void removeUcs();
 };
 
 #endif

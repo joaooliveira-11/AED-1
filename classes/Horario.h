@@ -6,6 +6,7 @@
 #include <string>
 #include <vector>
 #include "Aula.h"
+
 using namespace std;
 
 ///@brief Class for schedules.
@@ -24,7 +25,7 @@ class Horario {
         vector<Aula> getAulas();
 
         ///@returns Our schedule as the parameter it receives.
-        void setHorario(vector<Aula> aulas );
+         void setHorario(vector<Aula> aulas);
 
         ///@brief Add new class to schedule.
         void addAula(const Aula& nAula);
@@ -41,6 +42,7 @@ class Horario {
         static string Double_to_hour(double hour);
 
         void removerAula(const string& Uccode, const string& Classcode);
+
 };
 
 #endif
