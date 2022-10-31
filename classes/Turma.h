@@ -38,7 +38,7 @@ class Turma {
         ///@see menu.cpp
         bool can_add(map<string, int> Max_students_by_UC);
 
-        bool check_classes_overlap();
+
 };
 
 #endif

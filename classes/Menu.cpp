@@ -3,7 +3,10 @@
 #include "Reading.h"
 #include <iostream>
 #include "map"
+#include "queue"
+#include "Pedido.h"
 using namespace std;
+
 
 void Menu::readmenu() {
     int up, NUCS;
@@ -17,6 +20,9 @@ void Menu::readmenu() {
     Alunos = Reading::readAlunos();
     turmas = Reading::readTurmas();
     aux.num_students_uc(Alunos, turmas);
+
+    queue<Pedido> pedidos;
+    Pedido novo_pedido;
 
     map<string, int> Max_students_by_UC = {{"L.EIC001", 0},
                                            {"L.EIC002", 0},
@@ -133,12 +139,12 @@ void Menu::readmenu() {
                 cin >> Uccode;
                 cout << "Insert the class' Classcode.";
                 cin >> Classcode;
-                aux.removerAula(Alunos, up, Uccode, Classcode);
+                novo_pedido = Pedido("remover", up, Uccode, Classcode, " ");
+                /*
+                pedidos.push(novo_pedido);
                 aux.find_by_upcode(Alunos, up).removeUcs();
+                 */
                 flag3 = true;
-                break;
-            case '9' :
-
                 break;
             default:
                 cout << "Press a valid key! \n";
@@ -155,6 +161,14 @@ void Menu::readmenu() {
             }
             cout << "Please type \"Yes\" or \"No\" ." <<  endl ;
             cin >> again;
+        }
+    }
+    while (!pedidos.empty()){
+        Pedido ped_at = pedidos.front(); //pedido atual da queueueue
+        if ( ped_at.getType() == "remover"){
+            aux.removerAula(Alunos, ped_at.getUp(), ped_at.getUc(), ped_at.getClass_antiga() );
+            aux.find_by_upcode(Alunos, ped_at.getUp()).removeUcs();
+            pedidos.pop();
         }
     }
 }

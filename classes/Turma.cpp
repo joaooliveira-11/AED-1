@@ -17,6 +17,3 @@ bool Turma::can_add(map<string, int> Max_students_by_UC){
     return (Max_students_by_UC[this->Uccode] - this->numeroAlunos+1 >= 4);
 }
 
-bool Turma::check_classes_overlap(){
-    return false;
-}
