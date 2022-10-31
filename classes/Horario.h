@@ -17,8 +17,8 @@ public:
     void printHorario();
     string UcCodeToName(string uccode);
     string Double_to_hour(double hour);
-    void removerAula( string Uccode,string Classcode );
-    void setHorario(vector<Aula> aulas );
+    vector<Aula> removerAula( string Uccode,string Classcode );
+    void setHorario(Horario hor );
 };
 
 #endif

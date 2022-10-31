@@ -14,6 +14,7 @@ void Menu::readmenu() {
     bool flag2 = true;
     bool flag3 = true;
     string again = "No";
+    Horario hor;
     Bst aux = Bst();
     Bst* Alunos = NULL;
     ReadingClasses reading = ReadingClasses();
@@ -99,7 +100,8 @@ void Menu::readmenu() {
                 cin >> Uccode;
                 cout << "Insert the class Classcode:";
                 cin >> Classcode;
-                aux.removerAula(Alunos, up, Uccode, Classcode);
+                aux.removerAula(Alunos,up, Uccode, Classcode);
+                aux.find_by_upcode(Alunos,up).getHorario().printHorario();
                 flag3 = true;
                 break;
             default:

@@ -81,11 +81,12 @@ void Horario::printHorario() {
     }
     cout <<endl << endl;
 }
+/*
 void Horario::setHorario(vector<Aula> aulas ){
     this->horarioAluno=aulas;
 }
-
-void Horario::removerAula(string Uccode,string Classcode){
+*/
+vector<Aula> Horario::removerAula(string Uccode,string Classcode){
     vector<Aula> novo;
     for (Aula aula : horarioAluno){
         if (aula.get_ClassCode()==Classcode and aula.get_UcCode() ==Uccode){
@@ -95,7 +96,7 @@ void Horario::removerAula(string Uccode,string Classcode){
             novo.push_back(aula);
         }
     }
-    setHorario(novo);
+    return novo;
 }
 
 

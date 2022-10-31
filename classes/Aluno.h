@@ -1,3 +1,5 @@
+///@file Aluno.h
+
 #ifndef AED_1_ALUNO_H
 #define AED_1_ALUNO_H
 
@@ -7,25 +9,57 @@
 #include "Horario.h"
 using namespace std;
 
+///@brief Class for students.
 class Aluno {
-    private:
-        int StudentCode;
-        string StudentName;
-        Horario horarioAluno;
-        int NUCS;
-    public:
-        Aluno();
-        Aluno(int StudentCode, string StudentName, Horario horario, int NUCS);
-        int getStudentCode() const;
-        string getStudentName();
-        Horario getHorario();
-        int getNUCS();
-        void setStudentCode(int studentcode);
-        void setStudentName(string studentname);
-        void setHorario(Horario horario);
-        void setNUCS(int NUCS);
-        bool operator<(const Aluno&) const;
-        bool operator>(const Aluno&) const;
+private:
+    ///@brief The student's code and the number of UC's he has.
+    int StudentCode, NUCS;
+
+    ///@brief The student's name.
+    string StudentName;
+
+    ///@brief The student's schedule.
+    Horario horarioAluno;
+public:
+    ///@brief Empty stuconstructor.
+    Aluno();
+
+    ///@brief Constructor of new student given it's student code, name, schedule and number of UC's.
+    Aluno(int StudentCode, string StudentName, Horario horario, int NUCS);
+
+    ///@returns A student's code.
+    int getStudentCode() const;
+
+    ///@returns A student's name.
+    string getStudentName();
+
+    ///@returns A student's schedule.
+    Horario& getHorario();
+
+    ///@returns The number of UC's a student's enrolled in.
+    int getNUCS() const;
+
+    ///@returns Our student's code as the parameter it receives.
+    void setStudentCode(int studentcode);
+
+    ///@returns Our student's code as the parameter it receives.
+    void setStudentName(string studentname);
+
+    ///@returns Our student's schedule as the parameter it receives.
+    void setHorario(Horario& horario);
+
+    ///@returns Our student's number of UC's as the parameter it receives.
+    void setNUCS(int NUCS);
+
+    ///@brief Operator< overload.
+    ///@returns True if our student's code is lower than the one from the student received as parameter.
+    bool operator<(const Aluno&) const;
+
+    ///@brief Operator> overload.
+    ///@returns True if our student's code is higher than the one from the student received as parameter.
+    bool operator>(const Aluno&) const;
+
+    void removeUcs();
 };
 
 #endif
