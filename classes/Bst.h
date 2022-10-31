@@ -68,6 +68,8 @@ class Bst {
         void num_students_uc(Bst* base, list<Turma> &turmas);
 
         void removerAula(Bst* base, int upcode, const string& uccode, const string& classcode);
+
+        void adicionarAula(Bst* base, int upcode,const string& uccode, const string& classcode);
 };
 
 #endif

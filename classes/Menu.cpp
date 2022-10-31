@@ -8,7 +8,7 @@ void Menu::readmenu() {
     string Classcode, Uccode, again = "No";
     list<Turma> turmas;
     char tecla;
-    bool flag = true, flag2 = true, flag3 = true;
+    bool flag = true, flag2 = true, flag3 = true, flag4 = true;
     Bst aux = Bst();
     Bst *Alunos = nullptr;
     Reading reading = Reading();
@@ -25,7 +25,8 @@ void Menu::readmenu() {
                 "5 : See students in a certain UC-CLASS. \n"
                 "6 : See students in a certain UC. \n"
                 "7 : See the number of students in a certain UC-CLASS. \n"
-                "8 : Remove a UC-CLASS from a student. \n";
+                "8 : Remove a UC-CLASS from a student. \n"
+                "9 : Add a UC-CLASS to a student";
         cin >> tecla;
         switch (tecla) {
             case '1':
@@ -95,6 +96,25 @@ void Menu::readmenu() {
                 aux.removerAula(Alunos, up, Uccode, Classcode);
                 aux.find_by_upcode(Alunos, up).removeUcs();
                 flag3 = true;
+                break;
+            case '9' :
+                cout << "Insert your UPCode \n";
+                while (flag4) {
+                    cin >> up;
+                    if (aux.find_by_upcode(Alunos, up).getStudentName() == "") {
+                        cout << "This student doesn't exist in this database, inster a valid number " << endl;
+                    } else {
+                        flag4 = false;
+                    }
+                }
+                cout << "Insert the class UCcode:";
+                cin >> Uccode;
+                cout << "Insert the class Classcode:";
+                cin >> Classcode;
+                //aux.removerAula(Alunos, up, Uccode, Classcode);
+                //aux.find_by_upcode(Alunos, up).removeUcs();
+                aux.adicionarAula(Alunos, up, Uccode, Classcode);
+                flag4 = true;
                 break;
             default:
                 cout << "Press a valid key! \n";

@@ -43,6 +43,7 @@ class Horario {
 
         void removerAula(const string& Uccode, const string& Classcode);
 
+        void adicionarAula(const string& Uccode, const string& Classcode);
 };
 
 #endif
