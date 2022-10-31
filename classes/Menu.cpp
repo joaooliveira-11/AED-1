@@ -2,7 +2,9 @@
 #include "Horario.h"
 #include "Reading.h"
 #include <iostream>
+#include "map"
 using namespace std;
+
 void Menu::readmenu() {
     int up, NUCS;
     string Classcode, Uccode, again = "No";
@@ -15,6 +17,42 @@ void Menu::readmenu() {
     Alunos = reading.readAlunos();
     turmas = reading.readTurmas();
     aux.num_students_uc(Alunos, turmas);
+
+    map<string, int> Max_students_by_UC = {{"L.EIC001", 0},
+                                           {"L.EIC002", 0},
+                                           {"L.EIC003", 0},
+                                           {"L.EIC004", 0},
+                                           {"L.EIC005", 0},
+                                           {"L.EIC006", 0},
+                                           {"L.EIC007", 0},
+                                           {"L.EIC008", 0},
+                                           {"L.EIC009", 0},
+                                           {"L.EIC010", 0},
+                                           {"L.EIC011", 0},
+                                           {"L.EIC012", 0},
+                                           {"L.EIC013", 0},
+                                           {"L.EIC014", 0},
+                                           {"L.EIC015", 0},
+                                           {"L.EIC016", 0},
+                                           {"L.EIC017", 0},
+                                           {"L.EIC018", 0},
+                                           {"L.EIC019", 0},
+                                           {"L.EIC020", 0},
+                                           {"L.EIC021", 0},
+                                           {"L.EIC022", 0},
+                                           {"L.EIC023", 0},
+                                           {"L.EIC024", 0},
+                                           {"L.EIC025", 0},
+                                           {"L.EIC026", 0},
+                                           {"L.EIC027", 0},
+                                           {"L.EIC028", 0},
+                                           {"L.EIC029", 0},
+                                           {"L.EIC030", 0}};
+    for (Turma turma : turmas){
+        if (Max_students_by_UC[turma.get_uccode()] < turma.get_numeroalunos()){
+            Max_students_by_UC.at(turma.get_uccode()) = turma.get_numeroalunos();
+        }
+    }
 
     while (flag) {
         cout << "Press a key according to what you want to do: \n"

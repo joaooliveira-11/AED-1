@@ -108,7 +108,7 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:ac928350e5016fbc18b86f5b9f33a7f48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads classes.csv.  <a href="class_reading.html#ac928350e5016fbc18b86f5b9f33a7f48">More...</a><br /></td></tr>
 <tr class="separator:ac928350e5016fbc18b86f5b9f33a7f48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e37875197e4ae34d77151aa3ac5c232"><td class="memItemLeft" align="right" valign="top">static list&lt; <a class="el" href="class_turma.html">Turma</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_reading.html#a8e37875197e4ae34d77151aa3ac5c232">readTurmas</a> ()</td></tr>
-<tr class="memdesc:a8e37875197e4ae34d77151aa3ac5c232"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads classes_per_uc.  <a href="class_reading.html#a8e37875197e4ae34d77151aa3ac5c232">More...</a><br /></td></tr>
+<tr class="memdesc:a8e37875197e4ae34d77151aa3ac5c232"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads classes_per_uc.csv.  <a href="class_reading.html#a8e37875197e4ae34d77151aa3ac5c232">More...</a><br /></td></tr>
 <tr class="separator:a8e37875197e4ae34d77151aa3ac5c232"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1af0e0ea769cbe8691eaeef8dddc239"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_bst.html">Bst</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_reading.html#ab1af0e0ea769cbe8691eaeef8dddc239">readAlunos</a> ()</td></tr>
 <tr class="memdesc:ab1af0e0ea769cbe8691eaeef8dddc239"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads students_classes.csv.  <a href="class_reading.html#ab1af0e0ea769cbe8691eaeef8dddc239">More...</a><br /></td></tr>
@@ -141,7 +141,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reads students_classes.csv. </p>
-<dl class="section return"><dt>Returns</dt><dd>All the students. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>All the students with their classes updated. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The function gets the StudentCode, StudentName, UcCode and ClassCode of each student and it's classes from the file, stores them in variables and updates each student's classes. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="_aula_8h.html">Aula.h</a> </dd>
 <dd>
 <a class="el" href="_aluno_8h.html">Aluno.h</a> </dd></dl>
@@ -173,6 +174,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Reads classes.csv. </p>
 <dl class="section return"><dt>Returns</dt><dd>All the classes. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The function gets the ClassCode, UcCode, Weekday, StartHour, Duration and Type of each class from the file, stores them all in variables and creates a new class with them, which is then added to vector with all the classes that'll be returned. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="_aula_8h.html">Aula.h</a> </dd></dl>
 
 </div>
@@ -200,8 +202,9 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reads classes_per_uc. </p>
+<p>Reads classes_per_uc.csv. </p>
 <dl class="section return"><dt>Returns</dt><dd>All the classes per UC. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The function gets the UcCode and ClassCode of each class/UC from the file, stores them in variables and creates a new class/UC with them, which is then added to vector with all the classes per UC that'll be returned. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="_turma_8h.html">Turma.h</a> </dd></dl>
 
 </div>

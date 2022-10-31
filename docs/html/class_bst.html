@@ -126,9 +126,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a25f3a5d5f334fc42b679659c13be9f77"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bst.html#a25f3a5d5f334fc42b679659c13be9f77">view_by_uc</a> (<a class="el" href="class_bst.html">Bst</a> *base, const string &amp;uccode)</td></tr>
 <tr class="memdesc:a25f3a5d5f334fc42b679659c13be9f77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints all students that are in an UC.  <a href="class_bst.html#a25f3a5d5f334fc42b679659c13be9f77">More...</a><br /></td></tr>
 <tr class="separator:a25f3a5d5f334fc42b679659c13be9f77"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71f99d17fbc2ddd4788959f92e26111d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bst.html#a71f99d17fbc2ddd4788959f92e26111d">counter_turmas</a> (<a class="el" href="class_bst.html">Bst</a> *base, list&lt; <a class="el" href="class_turma.html">Turma</a> &gt; &amp;turmas)</td></tr>
-<tr class="memdesc:a71f99d17fbc2ddd4788959f92e26111d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Count the amount of students in class.  <a href="class_bst.html#a71f99d17fbc2ddd4788959f92e26111d">More...</a><br /></td></tr>
-<tr class="separator:a71f99d17fbc2ddd4788959f92e26111d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5eb10fb3ef71ab566d3f5dbf79ba458b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bst.html#a5eb10fb3ef71ab566d3f5dbf79ba458b">num_students_uc</a> (<a class="el" href="class_bst.html">Bst</a> *base, list&lt; <a class="el" href="class_turma.html">Turma</a> &gt; &amp;turmas)</td></tr>
+<tr class="memdesc:a5eb10fb3ef71ab566d3f5dbf79ba458b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Counts the number of students in an UC.  <a href="class_bst.html#a5eb10fb3ef71ab566d3f5dbf79ba458b">More...</a><br /></td></tr>
+<tr class="separator:a5eb10fb3ef71ab566d3f5dbf79ba458b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab956a9e8afe15e3ccecb4aee6ea7b2d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bst.html#ab956a9e8afe15e3ccecb4aee6ea7b2d1">removerAula</a> (<a class="el" href="class_bst.html">Bst</a> *base, int upcode, const string &amp;uccode, const string &amp;classcode)</td></tr>
 <tr class="separator:ab956a9e8afe15e3ccecb4aee6ea7b2d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -185,43 +185,6 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a71f99d17fbc2ddd4788959f92e26111d" name="a71f99d17fbc2ddd4788959f92e26111d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a71f99d17fbc2ddd4788959f92e26111d">&#9670;&#160;</a></span>counter_turmas()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Bst::counter_turmas </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_bst.html">Bst</a> *&#160;</td>
-          <td class="paramname"><em>base</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">list&lt; <a class="el" href="class_turma.html">Turma</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>turmas</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Count the amount of students in class. </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="_aluno_8h.html">Aluno.h</a> </dd>
-<dd>
-<a class="el" href="_horario_8h.html">Horario.h</a> </dd>
-<dd>
-<a class="el" href="_aula_8h.html">Aula.h</a> </dd>
-<dd>
-<a class="el" href="_turma_8h.html">Turma.h</a> </dd></dl>
-
-</div>
-</div>
 <a id="a5670db9eed71387b3f21ddbd6c5e0088" name="a5670db9eed71387b3f21ddbd6c5e0088"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5670db9eed71387b3f21ddbd6c5e0088">&#9670;&#160;</a></span>find_by_upcode()</h2>
 
@@ -247,7 +210,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>Student in bst which is found by UP code. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Student in BST who's UP code is the same as the upcode the function receives. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="_aluno_8h.html">Aluno.h</a> </dd></dl>
 
 </div>
@@ -286,6 +249,43 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="_aluno_8h.html">Aluno.h</a> </dd></dl>
+
+</div>
+</div>
+<a id="a5eb10fb3ef71ab566d3f5dbf79ba458b" name="a5eb10fb3ef71ab566d3f5dbf79ba458b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5eb10fb3ef71ab566d3f5dbf79ba458b">&#9670;&#160;</a></span>num_students_uc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Bst::num_students_uc </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_bst.html">Bst</a> *&#160;</td>
+          <td class="paramname"><em>base</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">list&lt; <a class="el" href="class_turma.html">Turma</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>turmas</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Counts the number of students in an UC. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_aluno_8h.html">Aluno.h</a> </dd>
+<dd>
+<a class="el" href="_horario_8h.html">Horario.h</a> </dd>
+<dd>
+<a class="el" href="_aula_8h.html">Aula.h</a> </dd>
+<dd>
+<a class="el" href="_turma_8h.html">Turma.h</a> </dd></dl>
 
 </div>
 </div>

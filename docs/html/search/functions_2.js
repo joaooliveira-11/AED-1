@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['counter_5fturmas_0',['counter_turmas',['../class_bst.html#a71f99d17fbc2ddd4788959f92e26111d',1,'Bst']]]
+  ['double_5fto_5fhour_0',['Double_to_hour',['../class_horario.html#a72c6e108fea43c13108248ac59f595aa',1,'Horario']]]
 ];

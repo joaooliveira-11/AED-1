@@ -74,8 +74,9 @@ void Horario::printHorario() {
                  << Double_to_hour(aula.get_StartHour() + aula.get_Duration());
         }
     }
-    cout << endl << endl;
+    cout <<endl << endl;
 }
+
 
 void Horario::removerAula(const string& Uccode, const string& Classcode) {
     vector<Aula> novo;

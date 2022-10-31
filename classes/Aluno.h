@@ -11,6 +11,7 @@ using namespace std;
 
 ///@brief Class for students.
 class Aluno {
+
     private:
         ///@brief The student's code and the number of UC's he has.
         int StudentCode, NUCS;
@@ -21,7 +22,7 @@ class Aluno {
         ///@brief The student's schedule.
         Horario horarioAluno;
     public:
-        ///@brief Empty stuconstructor.
+        ///@brief Empty student constructor.
         Aluno();
 
         ///@brief Constructor of new student given it's student code, name, schedule and number of UC's.
