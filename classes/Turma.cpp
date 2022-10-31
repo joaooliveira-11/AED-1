@@ -13,11 +13,10 @@ int Turma::get_numeroalunos() const {return numeroAlunos;}
 
 void Turma::adder() {this->numeroAlunos = this->get_numeroalunos() + 1;}
 
-bool Turma::can_add( map<string, int> Max_students_by_UC){
-    if (Max_students_by_UC[this->Uccode] - this->numeroAlunos+1 >= 4 ){
-        return true;
-    }
-    return false;
+bool Turma::can_add(map<string, int> Max_students_by_UC){
+    return (Max_students_by_UC[this->Uccode] - this->numeroAlunos+1 >= 4);
 }
 
-
+bool Turma::check_classes_overlap(){
+    return false;
+}

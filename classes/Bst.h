@@ -67,6 +67,11 @@ public:
     ///@see Turma.h
     void num_students_uc(Bst* base, list<Turma> &turmas);
 
+    ///@brief Removes a class from a schedule.
+    ///@param base All students.
+    ///@param upcode Student's UP code.
+    ///@param uccode The UC we want to remove the student from's code.
+    ///@param classcode The classe's code.
     void removerAula(Bst* base, int upcode, const string& uccode, const string& classcode);
 };
 

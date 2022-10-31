@@ -60,6 +60,7 @@ class Aluno {
         ///@returns True if our student's code is higher than the one from the student received as parameter.
         bool operator>(const Aluno&) const;
 
+        ///@brief Decrease the number of UC's a student is enrolled in if that student leaves an UC.
         void removeUcs();
 };
 

@@ -21,5 +21,5 @@ void Aluno::setStudentCode(int studentcode) {this->StudentCode = studentcode;}
 void Aluno::setStudentName(std::string studentname) {this->StudentName = studentname;}
 bool Aluno::operator<(const Aluno &other) const {return (this->getStudentCode()<other.getStudentCode());}
 bool Aluno::operator>(const Aluno &other) const {return (this->getStudentCode()>other.getStudentCode());}
-void Aluno::removeUcs(){this->NUCS -= 1;}
+void Aluno::removeUcs() {this->NUCS -= 1;}
 

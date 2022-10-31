@@ -56,7 +56,6 @@ string Horario::UcCodeToName(const string& uccode){
     return UcCode_Name[uccode];
 }
 
-
 void Horario::printHorario() {
     vector<Aula> Aulas = this->getAulas();
     sort(Aulas.begin(), Aulas.end());
@@ -77,10 +76,9 @@ void Horario::printHorario() {
     cout <<endl << endl;
 }
 
-
 void Horario::removerAula(const string& Uccode, const string& Classcode) {
     vector<Aula> novo;
-    for (Aula aula: horarioAluno) {
+    for (const Aula& aula: horarioAluno) {
         if ((aula.get_ClassCode() != Classcode) || (aula.get_UcCode() != Uccode)) {
             novo.push_back(aula);
         }

@@ -34,7 +34,11 @@ class Turma {
         ///@brief Increments the number of students in this class/UC.
         void adder();
 
-       bool can_add( map<string, int> Max_students_by_UC);
+        ///@brief Checks is a new student can be added to a class.
+        ///@see menu.cpp
+        bool can_add(map<string, int> Max_students_by_UC);
+
+        bool check_classes_overlap();
 };
 
 #endif
