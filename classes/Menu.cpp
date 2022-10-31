@@ -140,10 +140,7 @@ void Menu::readmenu() {
                 cout << "Insert the class' Classcode.";
                 cin >> Classcode;
                 novo_pedido = Pedido("remover", up, Uccode, Classcode, " ");
-                /*
                 pedidos.push(novo_pedido);
-                aux.find_by_upcode(Alunos, up).removeUcs();
-                 */
                 flag3 = true;
                 break;
             default:
