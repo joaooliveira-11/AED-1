@@ -7,7 +7,7 @@
 #include <vector>
 using namespace std;
 
-///@brief Class for classes.
+///@brief Class for classes/UC.
 class Aula {
     private:
         ///@brief The UC's code, the class code, the type of class and it's weekday.

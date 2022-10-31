@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # Install script for directory: C:/Users/diana/Desktop/AED-1
-=======
-# Install script for directory: D:/prog/AED_proj/AED/AED-1
->>>>>>> cb3d087681400f6218f8d35c16f923b2f02595bc
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -38,7 +34,7 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "D:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/objdump.exe")
+  set(CMAKE_OBJDUMP "C:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/objdump.exe")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -49,9 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-<<<<<<< HEAD
 file(WRITE "C:/Users/diana/Desktop/AED-1/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
-=======
-file(WRITE "D:/prog/AED_proj/AED/AED-1/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
->>>>>>> cb3d087681400f6218f8d35c16f923b2f02595bc
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

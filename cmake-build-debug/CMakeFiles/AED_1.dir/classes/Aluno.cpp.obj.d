@@ -117,4 +117,5 @@ CMakeFiles/AED_1.dir/classes/Aluno.cpp.obj: \
  C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_multiset.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/erase_if.h \
  C:\Users\diana\Desktop\AED-1\classes\Horario.h \
- C:\Users\diana\Desktop\AED-1\classes\Aula.h
+ C:\Users\diana\Desktop\AED-1\classes\Aula.h \
+ C:\Users\diana\Desktop\AED-1\classes\Turma.h

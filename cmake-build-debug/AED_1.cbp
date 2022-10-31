@@ -122,10 +122,10 @@
 		<Unit filename="C:/Users/diana/Desktop/AED-1/classes/Menu.h">
 			<Option target="AED_1"/>
 		</Unit>
-		<Unit filename="C:/Users/diana/Desktop/AED-1/classes/ReadingClasses.cpp">
+		<Unit filename="C:/Users/diana/Desktop/AED-1/classes/Reading.cpp">
 			<Option target="AED_1"/>
 		</Unit>
-		<Unit filename="C:/Users/diana/Desktop/AED-1/classes/ReadingClasses.h">
+		<Unit filename="C:/Users/diana/Desktop/AED-1/classes/Reading.h">
 			<Option target="AED_1"/>
 		</Unit>
 		<Unit filename="C:/Users/diana/Desktop/AED-1/classes/Turma.cpp">

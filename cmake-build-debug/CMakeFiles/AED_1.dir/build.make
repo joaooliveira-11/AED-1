@@ -82,19 +82,19 @@ CMakeFiles/AED_1.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AED_1.dir/main.cpp.s"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\diana\Desktop\AED-1\main.cpp -o CMakeFiles\AED_1.dir\main.cpp.s
 
-CMakeFiles/AED_1.dir/classes/ReadingClasses.cpp.obj: CMakeFiles/AED_1.dir/flags.make
-CMakeFiles/AED_1.dir/classes/ReadingClasses.cpp.obj: ../classes/ReadingClasses.cpp
-CMakeFiles/AED_1.dir/classes/ReadingClasses.cpp.obj: CMakeFiles/AED_1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\diana\Desktop\AED-1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/AED_1.dir/classes/ReadingClasses.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AED_1.dir/classes/ReadingClasses.cpp.obj -MF CMakeFiles\AED_1.dir\classes\ReadingClasses.cpp.obj.d -o CMakeFiles\AED_1.dir\classes\ReadingClasses.cpp.obj -c C:\Users\diana\Desktop\AED-1\classes\ReadingClasses.cpp
+CMakeFiles/AED_1.dir/classes/Reading.cpp.obj: CMakeFiles/AED_1.dir/flags.make
+CMakeFiles/AED_1.dir/classes/Reading.cpp.obj: ../classes/Reading.cpp
+CMakeFiles/AED_1.dir/classes/Reading.cpp.obj: CMakeFiles/AED_1.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\diana\Desktop\AED-1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/AED_1.dir/classes/Reading.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AED_1.dir/classes/Reading.cpp.obj -MF CMakeFiles\AED_1.dir\classes\Reading.cpp.obj.d -o CMakeFiles\AED_1.dir\classes\Reading.cpp.obj -c C:\Users\diana\Desktop\AED-1\classes\Reading.cpp
 
-CMakeFiles/AED_1.dir/classes/ReadingClasses.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AED_1.dir/classes/ReadingClasses.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\diana\Desktop\AED-1\classes\ReadingClasses.cpp > CMakeFiles\AED_1.dir\classes\ReadingClasses.cpp.i
+CMakeFiles/AED_1.dir/classes/Reading.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AED_1.dir/classes/Reading.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\diana\Desktop\AED-1\classes\Reading.cpp > CMakeFiles\AED_1.dir\classes\Reading.cpp.i
 
-CMakeFiles/AED_1.dir/classes/ReadingClasses.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AED_1.dir/classes/ReadingClasses.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\diana\Desktop\AED-1\classes\ReadingClasses.cpp -o CMakeFiles\AED_1.dir\classes\ReadingClasses.cpp.s
+CMakeFiles/AED_1.dir/classes/Reading.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AED_1.dir/classes/Reading.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\diana\Desktop\AED-1\classes\Reading.cpp -o CMakeFiles\AED_1.dir\classes\Reading.cpp.s
 
 CMakeFiles/AED_1.dir/classes/Aluno.cpp.obj: CMakeFiles/AED_1.dir/flags.make
 CMakeFiles/AED_1.dir/classes/Aluno.cpp.obj: ../classes/Aluno.cpp
@@ -183,7 +183,7 @@ CMakeFiles/AED_1.dir/classes/Bst.cpp.s: cmake_force
 # Object files for target AED_1
 AED_1_OBJECTS = \
 "CMakeFiles/AED_1.dir/main.cpp.obj" \
-"CMakeFiles/AED_1.dir/classes/ReadingClasses.cpp.obj" \
+"CMakeFiles/AED_1.dir/classes/Reading.cpp.obj" \
 "CMakeFiles/AED_1.dir/classes/Aluno.cpp.obj" \
 "CMakeFiles/AED_1.dir/classes/Aula.cpp.obj" \
 "CMakeFiles/AED_1.dir/classes/Horario.cpp.obj" \
@@ -195,7 +195,7 @@ AED_1_OBJECTS = \
 AED_1_EXTERNAL_OBJECTS =
 
 AED_1.exe: CMakeFiles/AED_1.dir/main.cpp.obj
-AED_1.exe: CMakeFiles/AED_1.dir/classes/ReadingClasses.cpp.obj
+AED_1.exe: CMakeFiles/AED_1.dir/classes/Reading.cpp.obj
 AED_1.exe: CMakeFiles/AED_1.dir/classes/Aluno.cpp.obj
 AED_1.exe: CMakeFiles/AED_1.dir/classes/Aula.cpp.obj
 AED_1.exe: CMakeFiles/AED_1.dir/classes/Horario.cpp.obj

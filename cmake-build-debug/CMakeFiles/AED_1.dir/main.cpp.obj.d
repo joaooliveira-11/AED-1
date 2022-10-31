@@ -1,5 +1,5 @@
 CMakeFiles/AED_1.dir/main.cpp.obj: C:\Users\diana\Desktop\AED-1\main.cpp \
- C:\Users\diana\Desktop\AED-1\classes/ReadingClasses.h \
+ C:\Users\diana\Desktop\AED-1\classes/Reading.h \
  C:\Users\diana\Desktop\AED-1\classes/Aula.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/string \
  C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \

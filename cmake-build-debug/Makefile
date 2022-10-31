@@ -261,29 +261,29 @@ classes/Menu.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\AED_1.dir\build.make CMakeFiles/AED_1.dir/classes/Menu.cpp.s
 .PHONY : classes/Menu.cpp.s
 
-classes/ReadingClasses.obj: classes/ReadingClasses.cpp.obj
-.PHONY : classes/ReadingClasses.obj
+classes/Reading.obj: classes/Reading.cpp.obj
+.PHONY : classes/Reading.obj
 
 # target to build an object file
-classes/ReadingClasses.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\AED_1.dir\build.make CMakeFiles/AED_1.dir/classes/ReadingClasses.cpp.obj
-.PHONY : classes/ReadingClasses.cpp.obj
+classes/Reading.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AED_1.dir\build.make CMakeFiles/AED_1.dir/classes/Reading.cpp.obj
+.PHONY : classes/Reading.cpp.obj
 
-classes/ReadingClasses.i: classes/ReadingClasses.cpp.i
-.PHONY : classes/ReadingClasses.i
+classes/Reading.i: classes/Reading.cpp.i
+.PHONY : classes/Reading.i
 
 # target to preprocess a source file
-classes/ReadingClasses.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\AED_1.dir\build.make CMakeFiles/AED_1.dir/classes/ReadingClasses.cpp.i
-.PHONY : classes/ReadingClasses.cpp.i
+classes/Reading.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AED_1.dir\build.make CMakeFiles/AED_1.dir/classes/Reading.cpp.i
+.PHONY : classes/Reading.cpp.i
 
-classes/ReadingClasses.s: classes/ReadingClasses.cpp.s
-.PHONY : classes/ReadingClasses.s
+classes/Reading.s: classes/Reading.cpp.s
+.PHONY : classes/Reading.s
 
 # target to generate assembly for a file
-classes/ReadingClasses.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\AED_1.dir\build.make CMakeFiles/AED_1.dir/classes/ReadingClasses.cpp.s
-.PHONY : classes/ReadingClasses.cpp.s
+classes/Reading.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AED_1.dir\build.make CMakeFiles/AED_1.dir/classes/Reading.cpp.s
+.PHONY : classes/Reading.cpp.s
 
 classes/Turma.obj: classes/Turma.cpp.obj
 .PHONY : classes/Turma.obj
@@ -358,9 +358,9 @@ help:
 	@echo ... classes/Menu.obj
 	@echo ... classes/Menu.i
 	@echo ... classes/Menu.s
-	@echo ... classes/ReadingClasses.obj
-	@echo ... classes/ReadingClasses.i
-	@echo ... classes/ReadingClasses.s
+	@echo ... classes/Reading.obj
+	@echo ... classes/Reading.i
+	@echo ... classes/Reading.s
 	@echo ... classes/Turma.obj
 	@echo ... classes/Turma.i
 	@echo ... classes/Turma.s
