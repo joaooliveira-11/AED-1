@@ -22,3 +22,4 @@ void Aluno::setStudentName(std::string studentname) {this->StudentName = student
 bool Aluno::operator<(const Aluno &other) const {return (this->getStudentCode()<other.getStudentCode());}
 bool Aluno::operator>(const Aluno &other) const {return (this->getStudentCode()>other.getStudentCode());}
 void Aluno::removeUcs(){this->NUCS -= 1;}
+

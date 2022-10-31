@@ -1,0 +1,10 @@
+# ninja log v5
+59	972	6887663757816409	CMakeFiles/AED_1.dir/classes/Turma.cpp.obj	d393096c90b03c15
+24	967	6887663757764445	CMakeFiles/AED_1.dir/classes/Aula.cpp.obj	5a25949f5f9008ed
+2	429	6888574976858330	CMakeFiles/AED_1.dir/main.cpp.obj	bb5eb0de8aadce12
+23	499	6888574977558332	CMakeFiles/AED_1.dir/classes/Menu.cpp.obj	253923974459b75b
+14	432	6888574976888565	CMakeFiles/AED_1.dir/classes/Aluno.cpp.obj	7d4a00edfdacebce
+19	561	6888574978178500	CMakeFiles/AED_1.dir/classes/Bst.cpp.obj	bc72bdd7c7b69670
+10	782	6888574980388669	CMakeFiles/AED_1.dir/classes/Horario.cpp.obj	647d590e3112846c
+782	932	6888574981848829	AED_1.exe	637721513132fd9
+6	684	6888574979408383	CMakeFiles/AED_1.dir/classes/Reading.cpp.obj	725cd7a91262c862

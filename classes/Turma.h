@@ -1,3 +1,5 @@
+///@file Turma.h
+
 #ifndef AED_1_TURMA_H
 #define AED_1_TURMA_H
 
@@ -7,17 +9,29 @@
 #include "Aula.h"
 using namespace std;
 
+///@brief Class for classes.
 class Turma {
-private:
-    string Classcode;
-    string Uccode;
-    int numeroAlunos;
-public:
-    Turma(string Classcode,string Uccode,int numeroAlunos);
-    string get_classcode();
-    string get_uccode();
-    int get_numeroalunos();
-    void adder();
+    private:
+        ///@brief The class code and the UC code.
+        string Classcode, Uccode;
+
+        ///@brief The number of students in a class.
+        int numeroAlunos;
+    public:
+        ///@brief Constructor of a new class given it's class code, the UC code and the number of students in the class/UC.
+        Turma(string Classcode,string Uccode,int numeroAlunos);
+
+        ///@returns Our class's code.
+        string get_classcode();
+
+        ///@returns Our UC's code.
+        string get_uccode();
+
+        ///@returns The amount of students in our class/UC.
+        int get_numeroalunos() const;
+
+        ///@brief Increments the number of students in this class/UC.
+        void adder();
 };
 
 #endif
