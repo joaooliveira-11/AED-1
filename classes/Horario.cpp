@@ -74,27 +74,16 @@ void Horario::printHorario() {
                  << Double_to_hour(aula.get_StartHour() + aula.get_Duration());
         }
     }
-<<<<<<< HEAD
     cout <<endl << endl;
 }
-/*
-void Horario::setHorario(vector<Aula> aulas ){
-    this->horarioAluno=aulas;
-}
-*/
-vector<Aula> Horario::removerAula(string Uccode,string Classcode){
-=======
-    cout << endl << endl;
-}
+
 
 void Horario::removerAula(const string& Uccode, const string& Classcode) {
->>>>>>> 79f4dd02780c37080c20d51e824b500e8983e1e6
     vector<Aula> novo;
     for (Aula aula: horarioAluno) {
         if ((aula.get_ClassCode() != Classcode) || (aula.get_UcCode() != Uccode)) {
             novo.push_back(aula);
         }
     }
-    return novo;
+    setHorario(novo);
 }
-

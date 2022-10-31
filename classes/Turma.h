@@ -3,10 +3,12 @@
 #ifndef AED_1_TURMA_H
 #define AED_1_TURMA_H
 
+
 #include <string>
 #include <vector>
 #include <set>
 #include "Aula.h"
+#include "map"
 using namespace std;
 
 ///@brief Class for classes.
@@ -32,6 +34,8 @@ class Turma {
 
         ///@brief Increments the number of students in this class/UC.
         void adder();
+
+       bool can_add( map<string, int> Max_students_by_UC);
 };
 
 #endif

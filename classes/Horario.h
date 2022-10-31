@@ -11,20 +11,6 @@ using namespace std;
 
 ///@brief Class for schedules.
 class Horario {
-<<<<<<< HEAD
-private:
-    vector<Aula> horarioAluno; // alterar depois;
-public:
-    Horario();
-    Horario(vector<Aula> horarioaluno);
-    void addAula(Aula nAula);
-    vector<Aula> getAulas();
-    void printHorario();
-    string UcCodeToName(string uccode);
-    string Double_to_hour(double hour);
-    vector<Aula> removerAula( string Uccode,string Classcode );
-    void setHorario(Horario hor );
-=======
     private:
         ///@brief The schedule, made of classes.
         vector<Aula> horarioAluno;
@@ -57,7 +43,6 @@ public:
 
         void removerAula(const string& Uccode, const string& Classcode);
 
->>>>>>> 79f4dd02780c37080c20d51e824b500e8983e1e6
 };
 
 #endif

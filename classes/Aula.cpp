@@ -15,7 +15,6 @@ void Aula::setClassType(std::string classType) {this->Type = classType;}
 void Aula::setDuration(double duration) {this->Duration = duration;}
 void Aula::setStartHour(double startHour) {this->StartHour = startHour;}
 void Aula::setWeekDay(std::string weekDay) {this->WeekDay = weekDay;}
-
 bool Aula::operator<(const Aula &other) const {
     if ((this->get_WeekDay() == "Monday") and (other.get_WeekDay() != "Monday")) return true;
     if ((this->get_WeekDay() != "Monday") and (other.get_WeekDay() == "Monday")) return false;
