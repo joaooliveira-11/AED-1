@@ -12,12 +12,14 @@ Aluno::Aluno(int studentcode, string studentname, Horario horario, int NUCS): St
 
 int Aluno::getStudentCode() const {return StudentCode;}
 string Aluno::getStudentName() {return StudentName;}
-Horario Aluno::getHorario() {return horarioAluno;}
+Horario& Aluno::getHorario() {return horarioAluno;}
 int Aluno::getNUCS() const {return NUCS;}
 
 void Aluno::setNUCS(int NUCS) {this->NUCS = NUCS;}
-void Aluno::setHorario(Horario horario) {this->horarioAluno = horario;}
+void Aluno::setHorario(Horario& horario) {this->horarioAluno = horario;}
 void Aluno::setStudentCode(int studentcode) {this->StudentCode = studentcode;}
 void Aluno::setStudentName(std::string studentname) {this->StudentName = studentname;}
 bool Aluno::operator<(const Aluno &other) const {return (this->getStudentCode()<other.getStudentCode());}
 bool Aluno::operator>(const Aluno &other) const {return (this->getStudentCode()>other.getStudentCode());}
+void Aluno::removeUcs(){this->NUCS -= 1;}
+

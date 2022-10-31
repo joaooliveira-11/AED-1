@@ -1,4 +1,5 @@
 #include "Horario.h"
+#include "Aluno.h"
 #include "iostream"
 #include "algorithm"
 #include <string>
@@ -11,7 +12,7 @@ Horario::Horario(vector<Aula> horarioaluno) : horarioAluno(horarioaluno) {}
 
 vector<Aula> Horario::getAulas() {return horarioAluno;}
 
-void Horario::setHorario(vector<Aula> aulas) {this->horarioAluno=aulas;}
+void Horario::setHorario(vector<Aula> aulas){this->horarioAluno=aulas;}
 
 void Horario::addAula(const Aula& nAula) {return horarioAluno.push_back(nAula);}
 
@@ -73,16 +74,14 @@ void Horario::printHorario() {
                  << Double_to_hour(aula.get_StartHour() + aula.get_Duration());
         }
     }
-    cout << endl << endl;
+    cout <<endl << endl;
 }
 
-void Horario::removerAula(const string& Uccode,const string& Classcode){
+
+void Horario::removerAula(const string& Uccode, const string& Classcode) {
     vector<Aula> novo;
-    for (const Aula& aula : horarioAluno){
-        if (aula.get_ClassCode()==Classcode and aula.get_UcCode() ==Uccode){
-            continue;
-        }
-        else{
+    for (Aula aula: horarioAluno) {
+        if ((aula.get_ClassCode() != Classcode) || (aula.get_UcCode() != Uccode)) {
             novo.push_back(aula);
         }
     }

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Install script for directory: C:/Users/diana/Desktop/AED-1
+=======
+# Install script for directory: D:/prog/AED_proj/AED/AED-1
+>>>>>>> 2859a2ed7b0b4caf3515a5b463206e4c396a5e3b
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +49,9 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
+<<<<<<< HEAD
 file(WRITE "C:/Users/diana/Desktop/AED-1/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+=======
+file(WRITE "D:/prog/AED_proj/AED/AED-1/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+>>>>>>> 2859a2ed7b0b4caf3515a5b463206e4c396a5e3b
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

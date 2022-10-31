@@ -40,8 +40,9 @@ void Bst::view_by_NUCS(Bst* base, int x){
     }
     view_by_NUCS(base->Right, x);
 }
-Aluno Bst::find_by_upcode(Bst *base, int upcode){
-    if (!base) return Aluno();
+Aluno& Bst::find_by_upcode(Bst *base, int upcode){
+    if (!base) return *(new Aluno());
+        //if (!base) return Aluno();
     else if (upcode == base->atual.getStudentCode()) return base->atual;
     else if(upcode > base->atual.getStudentCode()) return find_by_upcode(base->Right, upcode);
     return find_by_upcode(base->Left, upcode);
@@ -91,8 +92,6 @@ void Bst::num_students_uc(Bst* base, list<Turma> &turmas){
     num_students_uc(base->Right, turmas);
 }
 
-void Bst::removerAula(Bst* base, int upcode, const string& uccode, const string& classcode){
+void Bst::removerAula(Bst* base, int upcode,const string& uccode, const string& classcode){
     find_by_upcode(base, upcode).getHorario().removerAula(uccode, classcode);
 }
-
-
