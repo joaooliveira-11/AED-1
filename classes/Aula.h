@@ -60,7 +60,7 @@ class Aula {
         ///@note This function compares both classes' weekday.
         /// If this->get_WeekDay() is earlier in the week than other.get_WeekDay() it immediately returns true.
         /// Similarly, if it's later it'll return false.
-        /// If both classes are on the same day, the starting times will be compared and the function returns true if this->get_WeekDay() starts earlier than other.get_WeekDay()
+        /// If both classes are on the same day, the starting times will be compared and the function returns true if this->get_WeekDay() starts earlier than other.get_WeekDay().
         bool operator<(const Aula&) const;
 };
 

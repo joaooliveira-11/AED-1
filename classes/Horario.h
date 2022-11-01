@@ -41,8 +41,9 @@ class Horario {
         ///@param hour The classe's starting hour as a double that needs to be converted to time.
         static string Double_to_hour(double hour);
 
+        ///@brief Removes a class from a student's schedule if someone wants to stop having a certain UC.
         void removerAula(const string& Uccode, const string& Classcode);
-
+        
 };
 
 #endif
