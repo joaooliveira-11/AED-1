@@ -28,9 +28,7 @@ void Aluno::addUcs() {this->NUCS += 1;}
 
 bool Aluno::verificar(Aula aula_1, Horario horario){
     vector<Aula> aulas = horario.getAulas();
-    if (aula_1.get_Type()=="T"){
-        return true;
-    }
+    if (aula_1.get_Type()=="T") return true;
     for (Aula aula : aulas){
         if ((aula.get_Type() == "TP" or aula.get_Type() == "PL") and (aula_1.get_WeekDay()==aula.get_WeekDay())){
             if (aula_1.get_StartHour() + aula_1.get_Duration() > aula.get_StartHour() and aula_1.get_StartHour()< aula.get_StartHour() +aula.get_Duration())

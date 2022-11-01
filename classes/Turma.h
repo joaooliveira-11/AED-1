@@ -25,15 +25,15 @@ class Turma {
         ///@param numeroAlunos
         Turma(string Classcode,string Uccode,int numeroAlunos);
 
-        ///@brief Getter for the Class Code
+        ///@brief Getter for the ClassCode.
         ///@returns Our class's code.
         string get_classcode();
 
-        ///@brief Getter for the Class UcCode
+        ///@brief Getter for the class' UcCode.
         ///@returns Our UC's code.
         string get_uccode();
 
-        ///@brief Getter for the number of Students in a class/UC
+        ///@brief Getter for the number of students in a class/UC.
         ///@returns The amount of students in our class/UC.
         int get_numeroalunos() const;
 

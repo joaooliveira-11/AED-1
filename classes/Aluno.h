@@ -31,31 +31,31 @@ class Aluno {
         ///@param NUCS
         Aluno(int StudentCode, string StudentName, Horario horario, int NUCS);
 
-        ///@brief Getter for the Student Code
+        ///@brief Getter for the student's code.
         ///@returns A student's code.
         int getStudentCode() const;
 
-        ///@brief Getter for the Student Name
+        ///@brief Getter for the student's name.
         ///@returns A student's name.
         string getStudentName();
 
-        ///@brief Getter for the Student Schedule
+        ///@brief Getter for the student's schedule.
         ///@returns A student's schedule.
         Horario& getHorario();
 
-        ///@brief Getter for the number of UCs a student's enrolled in
+        ///@brief Getter for the number of UCs a student's enrolled in.
         ///@returns The number of UCs a student's enrolled in.
         int getNUCS() const;
 
-        ///@brief Setter for the Student Code (Set Our student's code as the parameter it receives.)
+        ///@brief Setter for the student's code.
         ///@param studentcode
         void setStudentCode(int studentcode);
 
-        ///@brief Setter for the Student Name (Set Our student's code as the parameter it receives.)
+        ///@brief Setter for the student's name.
         ///@param studentname
         void setStudentName(string studentname);
 
-        ///@brief Setter for the Student Schedule (Set Our student's schedule as the parameter it receives.)
+        ///@brief Setter for the student's schedule.
         ///@param horario
         void setHorario(Horario& horario);
 
@@ -65,16 +65,22 @@ class Aluno {
 
         ///@brief Operator< overload.
         ///@returns True if our student's code is lower than the one from the student received as parameter.
+        ///@param Aluno
+        ///@note Time complexity: O(1)
         bool operator<(const Aluno&) const;
 
         ///@brief Operator> overload.
         ///@returns True if our student's code is higher than the one from the student received as parameter.
+        ///@param Aluno
+        ///@note Time complexity: O(1)
         bool operator>(const Aluno&) const;
 
         ///@brief Decreases the number of UCs a student is enrolled in if that student leaves an UC.
+        ///@note Time complexity: O(1)
         void removeUcs();
 
         ///@brief Increases the number of UCs a student is enrolled in if that student enrolls in an UC.
+        ///@note Time complexity: O(1)
         void addUcs();
 
         bool verificar(Aula aula, Horario horario);

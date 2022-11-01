@@ -25,51 +25,51 @@ class Aula {
         ///@param type
         Aula(string classCode, string ucCode, string weekDay, double startHour, double duration, string type);
 
-        ///@brief Getter for the UcCode
-        ///@returns A UC's code.
+        ///@brief Getter for the UcCode.
+        ///@returns An UC's code.
         string get_UcCode() const;
 
-        ///@brief Getter for the ClassCode
-        ///@returns A class's code.
+        ///@brief Getter for the ClassCode.
+        ///@returns A class' code.
         string get_ClassCode() const;
 
-        ///@brief Getter for the Class WeekDay
+        ///@brief Getter for the class' WeekDay.
         ///@returns The weekday in which a class occurs.
         string get_WeekDay() const;
 
-        ///@brief Getter for the Class StartHour
+        ///@brief Getter for the class StartHour.
         ///@returns A class's starting hour.
         double get_StartHour() const;
 
-        ///@brief Getter for the Class Duration
+        ///@brief Getter for the class' Duration.
         ///@returns A class's duration.
         double get_Duration() const;
 
-        ///@brief Getter fpr the Class Type
+        ///@brief Getter for the class' Type.
         ///@returns A class's type (PL, T or TP).
         string get_Type() const;
 
-        ///@brief Setter for the Class Code.(Set Our class's code as the parameter it receives.)
+        ///@brief Setter for the ClassCode.
         ///@param classCode
         void setClassCode(string classCode);
 
-        ///@brief Setter for the Class UcCode.(Set Our UC's code as the parameter it receives.)
+        ///@brief Setter for the class' UcCode.
         ///@param ucCode
         void setUcCode(string ucCode);
 
-        ///@brief Setter for the Class Weekday.(Set Our class's weekday as the parameter it receives.)
+        ///@brief Setter for the class' Weekday.
         ///@param weekDay
         void setWeekDay(string weekDay);
 
-        ///@brief Setter for the Class StartHour.(Set Our class's starting hour as the parameter it receives.)
+        ///@brief Setter for the class' StartHour.
         ///@param startHour
         void setStartHour(double startHour);
 
-        ///@brief Setter for the Class Duration.(Set Our class's duration as the parameter it receives.)
+        ///@brief Setter for the class' Duration.
         ///@param duration
         void setDuration(double duration);
 
-        ///@brief Setter for the Class Type.(Set Our class's type as the parameter it receives.)
+        ///@brief Setter for the class' Type.
         ///@param classType
         void setClassType(string classType);
 
@@ -79,6 +79,7 @@ class Aula {
         /// If this->get_WeekDay() is earlier in the week than other.get_WeekDay() it immediately returns true.
         /// Similarly, if it's later it'll return false.
         /// If both classes are on the same day, the starting times will be compared and the function returns true if this->get_WeekDay() starts earlier than other.get_WeekDay().
+        ///@note Time complexity: O(1)
         bool operator<(const Aula&) const;
 };
 

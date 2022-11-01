@@ -35,7 +35,7 @@ bool Aula::operator<(const Aula &other) const {
     }
     if ((this->get_WeekDay() == "Wednesday") and (other.get_WeekDay() != "Wednesday")) return true;
     if ((this->get_WeekDay() != "Wednesday") and (other.get_WeekDay() == "Wednesday")) return false;
-    if ((this->get_WeekDay() == "Wednesday") and (other.get_WeekDay() == "Wednesday")) {
+    if ((this->get_WeekDay() == "Wednesday") and (other.get_WeekDay() == "Wednesday")){
         if (this->get_StartHour() == other.get_StartHour()){
             return (this->get_ClassCode()<other.get_ClassCode());
         }
@@ -43,7 +43,7 @@ bool Aula::operator<(const Aula &other) const {
     }
     if ((this->get_WeekDay() == "Thursday") and (other.get_WeekDay() != "Thursday")) return true;
     if ((this->get_WeekDay() != "Thursday") and (other.get_WeekDay() == "Thursday")) return false;
-    if ((this->get_WeekDay() == "Thursday") and (other.get_WeekDay() == "Thursday")) {
+    if ((this->get_WeekDay() == "Thursday") and (other.get_WeekDay() == "Thursday")){
         if (this->get_StartHour() == other.get_StartHour()){
             return (this->get_ClassCode()<other.get_ClassCode());
         }
@@ -51,11 +51,11 @@ bool Aula::operator<(const Aula &other) const {
     }
     if ((this->get_WeekDay() == "Friday") and (other.get_WeekDay() != "Friday")) return true;
     if ((this->get_WeekDay() != "Friday") and (other.get_WeekDay() == "Friday")) return false;
-    if ((this->get_WeekDay() == "Friday") and (other.get_WeekDay() == "Friday")) {
-                if (this->get_StartHour() == other.get_StartHour()){
-                    return (this->get_ClassCode()<other.get_ClassCode());
-                }
-                return (this->get_StartHour() < other.get_StartHour());
-        }
+    if ((this->get_WeekDay() == "Friday") and (other.get_WeekDay() == "Friday")){
+            if (this->get_StartHour() == other.get_StartHour()){
+                return (this->get_ClassCode()<other.get_ClassCode());
+            }
+            return (this->get_StartHour() < other.get_StartHour());
+    }
     return true;
 }
