@@ -88,8 +88,4 @@ void Horario::removerAula(const string& Uccode, const string& Classcode) {
     setHorario(novo);
 }
 
-void Horario::adicionarAula(const string& Uccode, const string& Classcode) {
-    vector<Aula> novo;
-
-}
 
