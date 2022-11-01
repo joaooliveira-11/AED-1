@@ -20,14 +20,20 @@ class Turma {
         int numeroAlunos;
     public:
         ///@brief Constructor of a new class given it's class code, the UC code and the number of students in the class/UC.
+        ///@param Uccode
+        ///@param Classcode
+        ///@param numeroAlunos
         Turma(string Classcode,string Uccode,int numeroAlunos);
 
+        ///@brief Getter for the Class Code
         ///@returns Our class's code.
         string get_classcode();
 
+        ///@brief Getter for the Class UcCode
         ///@returns Our UC's code.
         string get_uccode();
 
+        ///@brief Getter for the number of Students in a class/UC
         ///@returns The amount of students in our class/UC.
         int get_numeroalunos() const;
 
@@ -35,6 +41,7 @@ class Turma {
         void adder();
 
         ///@brief Checks is a new student can be added to a class.
+        ///@param Max_students_by_UC
         ///@see menu.cpp
         bool can_add(map<string, int> Max_students_by_UC);
 };

@@ -25,30 +25,42 @@ class Aluno {
         Aluno();
 
         ///@brief Constructor of new student given it's student code, name, schedule and number of UCs.
+        ///@param StudentName
+        ///@param StudentCode
+        ///@param horario
+        ///@param NUCS
         Aluno(int StudentCode, string StudentName, Horario horario, int NUCS);
 
+        ///@brief Getter for the Student Code
         ///@returns A student's code.
         int getStudentCode() const;
 
+        ///@brief Getter for the Student Name
         ///@returns A student's name.
         string getStudentName();
 
+        ///@brief Getter for the Student Schedule
         ///@returns A student's schedule.
         Horario& getHorario();
 
+        ///@brief Getter for the number of UCs a student's enrolled in
         ///@returns The number of UCs a student's enrolled in.
         int getNUCS() const;
 
-        ///@returns Our student's code as the parameter it receives.
+        ///@brief Setter for the Student Code (Set Our student's code as the parameter it receives.)
+        ///@param studentcode
         void setStudentCode(int studentcode);
 
-        ///@returns Our student's code as the parameter it receives.
+        ///@brief Setter for the Student Name (Set Our student's code as the parameter it receives.)
+        ///@param studentname
         void setStudentName(string studentname);
 
-        ///@returns Our student's schedule as the parameter it receives.
+        ///@brief Setter for the Student Schedule (Set Our student's schedule as the parameter it receives.)
+        ///@param horario
         void setHorario(Horario& horario);
 
-        ///@returns Our student's number of UCs as the parameter it receives.
+        ///@brief Setter for the number of Ucs of the Student(Set Our student's number of UCs as the parameter it receives.)
+        ///@param NUCS
         void setNUCS(int NUCS);
 
         ///@brief Operator< overload.

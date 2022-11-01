@@ -17,42 +17,60 @@ class Aula {
         double StartHour, Duration;
     public:
         ///@brief Constructor of new class given it's class code, the UC's code, weekday, starting hour, duration and type.
+        ///@param classCode
+        ///@param ucCode
+        ///@param weekDay
+        ///@param startHour
+        ///@param duration
+        ///@param type
         Aula(string classCode, string ucCode, string weekDay, double startHour, double duration, string type);
 
+        ///@brief Getter for the UcCode
         ///@returns A UC's code.
         string get_UcCode() const;
 
+        ///@brief Getter for the ClassCode
         ///@returns A class's code.
         string get_ClassCode() const;
 
+        ///@brief Getter for the Class WeekDay
         ///@returns The weekday in which a class occurs.
         string get_WeekDay() const;
 
+        ///@brief Getter for the Class StartHour
         ///@returns A class's starting hour.
         double get_StartHour() const;
 
+        ///@brief Getter for the Class Duration
         ///@returns A class's duration.
         double get_Duration() const;
 
+        ///@brief Getter fpr the Class Type
         ///@returns A class's type (PL, T or TP).
         string get_Type() const;
 
-        ///@returns Our class's code as the parameter it receives.
+        ///@brief Setter for the Class Code.(Set Our class's code as the parameter it receives.)
+        ///@param classCode
         void setClassCode(string classCode);
 
-        ///@returns Our UC's code as the parameter it receives.
+        ///@brief Setter for the Class UcCode.(Set Our UC's code as the parameter it receives.)
+        ///@param ucCode
         void setUcCode(string ucCode);
 
-        ///@returns Our class's weekday as the parameter it receives.
+        ///@brief Setter for the Class Weekday.(Set Our class's weekday as the parameter it receives.)
+        ///@param weekDay
         void setWeekDay(string weekDay);
 
-        ///@returns Our class's starting hour as the parameter it receives.
+        ///@brief Setter for the Class StartHour.(Set Our class's starting hour as the parameter it receives.)
+        ///@param startHour
         void setStartHour(double startHour);
 
-        ///@returns Our class's duration as the parameter it receives.
+        ///@brief Setter for the Class Duration.(Set Our class's duration as the parameter it receives.)
+        ///@param duration
         void setDuration(double duration);
 
-        ///@returns Our class's type as the parameter it receives.
+        ///@brief Setter for the Class Type.(Set Our class's type as the parameter it receives.)
+        ///@param classType
         void setClassType(string classType);
 
         ///@brief Operator< overload.

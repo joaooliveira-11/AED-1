@@ -26,9 +26,11 @@ public:
     Bst();
 
     ///@brief Constructor of a new binary search tree given a student.
+    ///@param imp
     ///@see Aluno.h
     explicit Bst(Aluno imp);
 
+    ///@brief Insert a Student in the BST
     ///@returns Updated BST after adding a new student.
     ///@param base The student's BST we want to add a new student to.
     ///@param atual The student we are going to add to the BST.
@@ -36,31 +38,43 @@ public:
     Bst* insert_by_upcode(Bst* base, const Aluno& atual);
 
     ///@brief Prints all students (sorted by UC code by default).
+    ///@param base
     ///@see Aluno.h
     void view(Bst* base);
 
     ///@brief Prints all students that are enrolled in more than n UC's.
     ///@param x The number (n) UC's we want to check.
+    ///@param base
     ///@see Aluno.h
     void view_by_NUCS(Bst* base, int x);
 
+    ///@brief Finds the Student in BST who's UP code is the same as the upcode the function receives
+    ///@param base
+    ///@param upcode
     ///@returns Student in BST who's UP code is the same as the upcode the function receives.
     ///@see Aluno.h
     Aluno& find_by_upcode(Bst* base, int upcode);
 
     ///@brief Prints all students that are in the same UC/class.
+    ///@param base
+    ///@param uccode
+    ///@param classcode
     ///@see Aluno.h
     ///@see Horario.h
     ///@see Aula.h
     void view_by_turma(Bst* base, const string& uccode, const string& classcode);
 
     ///@brief Prints all students that are in an UC.
+    ///@param base
+    ///@param uccode
     ///@see Aluno.h
     ///@see Horario.h
     ///@see Aula.h
     void view_by_uc(Bst* base, const string& uccode);
 
     ///@brief Counts the number of students in an UC.
+    ///@param base
+    ///@param turmas
     ///@see Aluno.h
     ///@see Horario.h
     ///@see Aula.h
