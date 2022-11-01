@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="AED_1"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="D:/prog/AED_proj/AED-1/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/prog/AED_proj/AED-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="D:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/prog/AED_proj/AED-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/prog/AED_proj/AED-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/prog/AED_proj/AED-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="AED_1">
+				<Option output="D:/prog/AED_proj/AED-1/cmake-build-debug/AED_1.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/prog/AED_proj/AED-1/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="D:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="D:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="D:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="D:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="D:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/prog/AED_proj/AED-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 AED_1"/>
+					<CompileFile command="D:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/prog/AED_proj/AED-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/prog/AED_proj/AED-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/prog/AED_proj/AED-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="AED_1/fast">
+				<Option output="D:/prog/AED_proj/AED-1/cmake-build-debug/AED_1.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/prog/AED_proj/AED-1/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="D:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="D:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="D:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="D:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="D:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/prog/AED_proj/AED-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 AED_1/fast"/>
+					<CompileFile command="D:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/prog/AED_proj/AED-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/prog/AED_proj/AED-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/prog/AED_proj/AED-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="D:/prog/AED_proj/AED-1/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/prog/AED_proj/AED-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="D:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/prog/AED_proj/AED-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/prog/AED_proj/AED-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/prog/AED_proj/AED-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="D:/prog/AED_proj/AED-1/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/prog/AED_proj/AED-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="D:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/prog/AED_proj/AED-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/prog/AED_proj/AED-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/JetBrains/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/prog/AED_proj/AED-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="D:/prog/AED_proj/AED-1/classes/Aluno.cpp">
+			<Option target="AED_1"/>
+		</Unit>
+		<Unit filename="D:/prog/AED_proj/AED-1/classes/Aluno.h">
+			<Option target="AED_1"/>
+		</Unit>
+		<Unit filename="D:/prog/AED_proj/AED-1/classes/Aula.cpp">
+			<Option target="AED_1"/>
+		</Unit>
+		<Unit filename="D:/prog/AED_proj/AED-1/classes/Aula.h">
+			<Option target="AED_1"/>
+		</Unit>
+		<Unit filename="D:/prog/AED_proj/AED-1/classes/Bst.cpp">
+			<Option target="AED_1"/>
+		</Unit>
+		<Unit filename="D:/prog/AED_proj/AED-1/classes/Bst.h">
+			<Option target="AED_1"/>
+		</Unit>
+		<Unit filename="D:/prog/AED_proj/AED-1/classes/Horario.cpp">
+			<Option target="AED_1"/>
+		</Unit>
+		<Unit filename="D:/prog/AED_proj/AED-1/classes/Horario.h">
+			<Option target="AED_1"/>
+		</Unit>
+		<Unit filename="D:/prog/AED_proj/AED-1/classes/Menu.cpp">
+			<Option target="AED_1"/>
+		</Unit>
+		<Unit filename="D:/prog/AED_proj/AED-1/classes/Menu.h">
+			<Option target="AED_1"/>
+		</Unit>
+		<Unit filename="D:/prog/AED_proj/AED-1/classes/Pedido.cpp">
+			<Option target="AED_1"/>
+		</Unit>
+		<Unit filename="D:/prog/AED_proj/AED-1/classes/Pedido.h">
+			<Option target="AED_1"/>
+		</Unit>
+		<Unit filename="D:/prog/AED_proj/AED-1/classes/Reading.cpp">
+			<Option target="AED_1"/>
+		</Unit>
+		<Unit filename="D:/prog/AED_proj/AED-1/classes/Reading.h">
+			<Option target="AED_1"/>
+		</Unit>
+		<Unit filename="D:/prog/AED_proj/AED-1/classes/Turma.cpp">
+			<Option target="AED_1"/>
+		</Unit>
+		<Unit filename="D:/prog/AED_proj/AED-1/classes/Turma.h">
+			<Option target="AED_1"/>
+		</Unit>
+		<Unit filename="D:/prog/AED_proj/AED-1/main.cpp">
+			<Option target="AED_1"/>
+		</Unit>
+		<Unit filename="D:/prog/AED_proj/AED-1/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
