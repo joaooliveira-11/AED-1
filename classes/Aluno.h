@@ -25,39 +25,53 @@ class Aluno {
         Aluno();
 
         ///@brief Constructor of new student given it's student code, name, schedule and number of UCs.
+        ///@param StudentName
+        ///@param StudentCode
+        ///@param horario
+        ///@param NUCS
         Aluno(int StudentCode, string StudentName, Horario horario, int NUCS);
 
+        ///@brief Getter for the student's code.
         ///@returns A student's code.
         int getStudentCode() const;
 
+        ///@brief Getter for the student's name.
         ///@returns A student's name.
         string getStudentName();
 
+        ///@brief Getter for the student's schedule.
         ///@returns A student's schedule.
         Horario& getHorario();
 
+        ///@brief Getter for the number of UCs a student's enrolled in.
         ///@returns The number of UCs a student's enrolled in.
         int getNUCS() const;
 
-        ///@returns Our student's code as the parameter it receives.
+        ///@brief Setter for the student's code.
+        ///@param studentcode
         void setStudentCode(int studentcode);
 
-        ///@returns Our student's code as the parameter it receives.
+        ///@brief Setter for the student's name.
+        ///@param studentname
         void setStudentName(string studentname);
 
-        ///@returns Our student's schedule as the parameter it receives.
+        ///@brief Setter for the student's schedule.
+        ///@param horario
         void setHorario(Horario& horario);
 
-        ///@returns Our student's number of UCs as the parameter it receives.
+        ///@brief Setter for the number of Ucs of the Student(Set Our student's number of UCs as the parameter it receives.)
+        ///@param NUCS
         void setNUCS(int NUCS);
 
         ///@brief Operator< overload.
         ///@returns True if our student's code is lower than the one from the student received as parameter.
+        ///@param Aluno
         ///@note Time complexity: O(1)
         bool operator<(const Aluno&) const;
 
         ///@brief Operator> overload.
         ///@returns True if our student's code is higher than the one from the student received as parameter.
+        ///@param Aluno
         ///@note Time complexity: O(1)
         bool operator>(const Aluno&) const;
 
