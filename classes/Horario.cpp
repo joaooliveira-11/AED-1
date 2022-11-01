@@ -85,4 +85,3 @@ void Horario::removerAula(const string& Uccode, const string& Classcode) {
     }
     setHorario(novo);
 }
-

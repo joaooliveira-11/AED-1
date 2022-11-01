@@ -261,6 +261,30 @@ classes/Menu.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\AED_1.dir\build.make CMakeFiles/AED_1.dir/classes/Menu.cpp.s
 .PHONY : classes/Menu.cpp.s
 
+classes/Pedido.obj: classes/Pedido.cpp.obj
+.PHONY : classes/Pedido.obj
+
+# target to build an object file
+classes/Pedido.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AED_1.dir\build.make CMakeFiles/AED_1.dir/classes/Pedido.cpp.obj
+.PHONY : classes/Pedido.cpp.obj
+
+classes/Pedido.i: classes/Pedido.cpp.i
+.PHONY : classes/Pedido.i
+
+# target to preprocess a source file
+classes/Pedido.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AED_1.dir\build.make CMakeFiles/AED_1.dir/classes/Pedido.cpp.i
+.PHONY : classes/Pedido.cpp.i
+
+classes/Pedido.s: classes/Pedido.cpp.s
+.PHONY : classes/Pedido.s
+
+# target to generate assembly for a file
+classes/Pedido.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AED_1.dir\build.make CMakeFiles/AED_1.dir/classes/Pedido.cpp.s
+.PHONY : classes/Pedido.cpp.s
+
 classes/Reading.obj: classes/Reading.cpp.obj
 .PHONY : classes/Reading.obj
 
@@ -358,6 +382,9 @@ help:
 	@echo ... classes/Menu.obj
 	@echo ... classes/Menu.i
 	@echo ... classes/Menu.s
+	@echo ... classes/Pedido.obj
+	@echo ... classes/Pedido.i
+	@echo ... classes/Pedido.s
 	@echo ... classes/Reading.obj
 	@echo ... classes/Reading.i
 	@echo ... classes/Reading.s

@@ -1,17 +1,15 @@
-//
-// Created by andre on 31/10/2022.
-//
-#include "string"
+///@file Pedido.h
 
-using namespace std;
 #ifndef AED_1_PEDIDO_H
 #define AED_1_PEDIDO_H
+
+#include "string"
+using namespace std;
+
 class Pedido{
-        string type;
+    private:
+        string type, uc, class_antiga, class_nova;
         int up;
-        string uc;
-        string class_antiga;
-        string class_nova;
     public:
         Pedido();
         Pedido(string, int, string, string, string);
@@ -21,4 +19,5 @@ class Pedido{
         string getClass_antiga(){return class_antiga;}
         string getClass_nova(){return class_nova;}
 };
-#endif //AED_1_PEDIDO_H
+
+#endif

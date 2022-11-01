@@ -10,7 +10,7 @@ using namespace std;
 
 void Menu::readmenu() {
     int up, NUCS;
-    string Classcode, Uccode, again = "No";
+    string Classcode, Uccode, again = "No", tipo;
     list<Turma> turmas;
     vector<Aula> aulas;
     char tecla;
@@ -63,124 +63,195 @@ void Menu::readmenu() {
         }
     }
 
-    while (flag) {
-        cout << "Press a key according to what you want to do: \n"
-                "1 : See schedule. \n"
-                "2 : Edit schedule. \n"
-                "3 : See all students. \n"
-                "4 : See the number of students with more than n UCs. \n"
-                "5 : See students in a certain UC/class. \n"
-                "6 : See all students in a certain UC. \n"
-                "7 : See the number of students in a certain UC/class. \n"
-                "8 : Remove an UC/class from a student. \n"
-                "9 : Add the student in a class in a certain UC. \n";
-        cin >> tecla;
-        switch (tecla) {
-            case '1':
-                cout << "Insert your UPCode. \n";
-                while (flag2) {
-                    cin >> up;
-                    if (aux.find_by_upcode(Alunos, up).getStudentName() == "") {
-                        cout << "This student doesn't exist in this database, insert a valid number." << endl;
-                    } else {
-                        cout << endl;
-                        cout << aux.find_by_upcode(Alunos, up).getStudentName()
-                             << "'s number of UCs: " << aux.find_by_upcode(Alunos, up).getNUCS() << endl;
-                        cout << endl;
-                        cout << "Schedule:" << endl;
-                        aux.find_by_upcode(Alunos, up).getHorario().printHorario();
-                        break;
-                    }
-                }
-                break;
-            case '2':
-                //mudar o horario
-                cout << "Teste \n";
-                break;
-            case '3' :
-                aux.view(Alunos);
-                break;
-            case '4' :
-                cout << "Type the number minimum of UCs.";
-                cin >> NUCS;
-                aux.view_by_NUCS(Alunos, NUCS);
-                break;
-            case '5' :
-                cout << "Insert the class' UCcode.";
-                cin >> Uccode;
-                cout << "Insert the class' Classcode.";
-                cin >> Classcode;
-                aux.view_by_turma(Alunos, Uccode, Classcode);
-                break;
-            case '6' :
-                cout << "Insert the UCode.";
-                cin >> Uccode;
-                aux.view_by_uc(Alunos, Uccode);
-                break;
-            case '7' :
-                cout << "Insert the class' UCcode.";
-                cin >> Uccode;
-                cout << "Insert the class' Classcode.";
-                cin >> Classcode;
-                for (Turma turma: turmas) {
-                    if (turma.get_classcode() == Classcode and turma.get_uccode() == Uccode) {
-                        cout << turma.get_numeroalunos() << endl;
-                    }
-                }
-                break;
-            case '8' :
-                cout << "Insert your UPCode. \n";
-                while (flag3) {
-                    cin >> up;
-                    if (aux.find_by_upcode(Alunos, up).getStudentName() == "") {
-                        cout << "This student doesn't exist in this database, insert a valid number." << endl;
-                    } else {
-                        flag3 = false;
-                    }
-                }
-                cout << "Insert the class' UCcode.";
-                cin >> Uccode;
-                cout << "Insert the class' Classcode.";
-                cin >> Classcode;
-                novo_pedido = Pedido("remover", up, Uccode, Classcode, " ");
-                pedidos.push(novo_pedido);
-                flag3 = true;
-                break;
-            case '9' :
-                cout << "Insert your UPCode. \n";
-                while (flag3) {
-                    cin >> up;
-                    if (aux.find_by_upcode(Alunos, up).getStudentName() == "") {
-                        cout << "This student doesn't exist in this database, insert a valid number." << endl;
-                    } else {
-                        flag3 = false;
-                    }
-                }
-                cout << "Insert the class' UCcode.";
-                cin >> Uccode;
-                cout << "Insert the class' Classcode.";
-                cin >> Classcode;
-                novo_pedido = Pedido("adicionar", up, Uccode, " ", Classcode);
-                pedidos.push(novo_pedido);
-                flag3 = true;
-                break;
-            default:
-                cout << "Press a valid key! \n";
-                break;
+    while(flag) {
+        cout << "What do you want do work on - schedules, students or UCs? \n";
+        cin >> tipo;
+        while (tipo != "schedules" and tipo != "students" and tipo != "UCs"){
+            cout << "Please type \"schedules\", \"students\" or \"UCs\". \n";
+            cin >> tipo;
         }
-        cout << endl;
-        cout << "Would you like to do something else? (Yes/No) \n";
-        cin >> again;
-        if (again == "No") flag = false;
-        while (again != "Yes") {
-            if (again == "No") {
-                flag = false;
-                break;
+        if (tipo == "schedules"){
+            cout << "Press a key according to what you want to do: \n"
+                    "1 : See schedule. \n"
+                    "2 : Edit schedule. \n"
+                    "q : Quit. \n";
+            cin >> tecla;
+            switch (tecla) {
+                case '1':
+                    cout << "Insert your UPCode. \n";
+                    while (flag2) {
+                        cin >> up;
+                        if (aux.find_by_upcode(Alunos, up).getStudentName() == "") {
+                            cout << "This student doesn't exist in this database, insert a valid number." << endl;
+                        } else {
+                            cout << endl;
+                            cout << aux.find_by_upcode(Alunos, up).getStudentName()
+                                 << "'s number of UCs: " << aux.find_by_upcode(Alunos, up).getNUCS() << endl;
+                            cout << endl;
+                            cout << "Schedule:" << endl;
+                            aux.find_by_upcode(Alunos, up).getHorario().printHorario();
+                            break;
+                        }
+                    }
+                    break;
+                case '2':
+                    //mudar o horario
+                    cout << "Teste \n";
+                    break;
+                case 'q':
+                    break;
+                default:
+                    cout << "Press a valid key! \n";
+                    break;
             }
-            cout << "Please type \"Yes\" or \"No\" ." << endl;
+            cout << "Would you like to do something else? (Yes/No) \n";
             cin >> again;
+            if (again == "No") flag = false;
+            while (again != "Yes") {
+                if (again == "No") {
+                    flag = false;
+                    break;
+                }
+                cout << "Please type \"Yes\" or \"No\" ." << endl;
+                cin >> again;
+            }
+        }
+        else if (tipo == "students"){
+            cout << "Press a key according to what you want to do: \n"
+                    "1 : See all students. \n"
+                    "2 : See the number of students with more than n UCs. \n"
+                    "3 : See students in a certain UC/class. \n"
+                    "4 : See all students in a certain UC. \n"
+                    "5 : See the number of students in a certain UC/class. \n"
+                    "q : Quit. \n";
+                cin >> tecla;
+                switch (tecla) {
+                    case '1' :
+                        aux.view(Alunos);
+                        break;
+                    case '2' :
+                        cout << "Type the number minimum of UCs.";
+                        cin >> NUCS;
+                        aux.view_by_NUCS(Alunos, NUCS);
+                        break;
+                    case '3' :
+                        cout << "Insert the class' UCcode.";
+                        cin >> Uccode;
+                        cout << "Insert the class' Classcode.";
+                        cin >> Classcode;
+                        aux.view_by_turma(Alunos, Uccode, Classcode);
+                        break;
+                    case '4' :
+                        cout << "Insert the UCode.";
+                        cin >> Uccode;
+                        aux.view_by_uc(Alunos, Uccode);
+                        break;
+                    case '5' :
+                        cout << "Insert the class' UCcode.";
+                        cin >> Uccode;
+                        cout << "Insert the class' Classcode.";
+                        cin >> Classcode;
+                        for (Turma turma: turmas) {
+                            if (turma.get_classcode() == Classcode and turma.get_uccode() == Uccode) {
+                                cout << turma.get_numeroalunos() << endl;
+                            }
+                        }
+                        break;
+                    case 'q':
+                        break;
+                    default:
+                        cout << "Press a valid key! \n";
+                        break;
+                }
+            cout << endl;
+            cout << "Would you like to do something else? (Yes/No) \n";
+            cin >> again;
+            if (again == "No") flag = false;
+            while (again != "Yes") {
+                if (again == "No") {
+                    flag = false;
+                    break;
+                }
+                cout << "Please type \"Yes\" or \"No\" ." << endl;
+                cin >> again;
+            }
+        }
+        else if (tipo == "UCs"){
+                cout << "Press a key according to what you want to do: \n"
+                        "1 : See the number of students in a certain UC/class. \n"
+                        "2 : Remove an UC/class from a student. \n"
+                        "3 : Add the student in a class in a certain UC. \n"
+                        "q : Quit. \n";
+                cin >> tecla;
+                switch (tecla) {
+                    case '1' :
+                        cout << "Insert the class' UCcode (i.e.: L.EIC001). \n";
+                        cin >> Uccode;
+                        cout << "Insert the class' Classcode (i.e.: 1LEIC01). \n";
+                        cin >> Classcode;
+                        for (Turma turma: turmas) {
+                            if (turma.get_classcode() == Classcode and turma.get_uccode() == Uccode) {
+                                cout << turma.get_numeroalunos() << endl;
+                            }
+                        }
+                        break;
+                    case '2' :
+                        cout << "Insert your UPCode. \n";
+                        while (flag3) {
+                            cin >> up;
+                            if (aux.find_by_upcode(Alunos, up).getStudentName() == "") {
+                                cout << "This student doesn't exist in this database, insert a valid number." << endl;
+                            } else {
+                                flag3 = false;
+                            }
+                        }
+                        cout << "Insert the class' UCcode (i.e.: L.EIC001). \n";
+                        cin >> Uccode;
+                        cout << "Insert the class' Classcode (i.e.: 1LEIC01). \n";
+                        cin >> Classcode;
+                        novo_pedido = Pedido("remover", up, Uccode, Classcode, " ");
+                        pedidos.push(novo_pedido);
+                        flag3 = true;
+                        break;
+                    case '3' :
+                        cout << "Insert your UPCode. \n";
+                        while (flag3) {
+                            cin >> up;
+                            if (aux.find_by_upcode(Alunos, up).getStudentName() == "") {
+                                cout << "This student doesn't exist in this database, insert a valid number." << endl;
+                            } else {
+                                flag3 = false;
+                            }
+                        }
+                        cout << "Insert the class' UCcode (i.e.: L.EIC001). \n";
+                        cin >> Uccode;
+                        cout << "Insert the class' Classcode (i.e.: 1LEIC01). \n";
+                        cin >> Classcode;
+                        novo_pedido = Pedido("adicionar", up, Uccode, " ", Classcode);
+                        pedidos.push(novo_pedido);
+                        flag3 = true;
+                        break;
+                    case 'q':
+                        break;
+                    default:
+                        cout << "Press a valid key! \n";
+                        break;
+                }
+            cout << endl;
+            cout << "Would you like to do something else? (Yes/No) \n";
+            cin >> again;
+            if (again == "No") flag = false;
+            while (again != "Yes") {
+                if (again == "No") {
+                    flag = false;
+                    break;
+                }
+                cout << "Please type \"Yes\" or \"No\" ." << endl;
+                cin >> again;
+            }
         }
     }
+
     while (!pedidos.empty()) {
         Pedido ped_at = pedidos.front(); //pedido atual da queueueue
         if (ped_at.getType() == "remover") {
@@ -192,7 +263,7 @@ void Menu::readmenu() {
             for (Turma turma: turmas) {
                 if (turma.get_uccode() == ped_at.getUc() and turma.get_classcode() == ped_at.getClass_nova()) {
                     if (turma.can_add(Max_students_by_UC)) { //adicionar condição para verficar se aulas se sobrepõem
-                        for (Aula aula : aulas){
+                        for (const Aula& aula : aulas){
                             if (aula.get_UcCode() == ped_at.getUc() and aula.get_ClassCode()==ped_at.getClass_nova()){
                                 aux.adicionarAula(Alunos, ped_at.getUp(), aula);
                                 aux.find_by_upcode(Alunos, up).getHorario().printHorario();// só para teste

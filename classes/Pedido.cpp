@@ -1,9 +1,5 @@
-//
-// Created by andre on 31/10/2022.
-//
 #include "string"
 #include "Pedido.h"
-
 using namespace std;
 
 Pedido::Pedido(){
