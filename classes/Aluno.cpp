@@ -19,7 +19,9 @@ void Aluno::setNUCS(int NUCS) {this->NUCS = NUCS;}
 void Aluno::setHorario(Horario& horario) {this->horarioAluno = horario;}
 void Aluno::setStudentCode(int studentcode) {this->StudentCode = studentcode;}
 void Aluno::setStudentName(std::string studentname) {this->StudentName = studentname;}
+
 bool Aluno::operator<(const Aluno &other) const {return (this->getStudentCode()<other.getStudentCode());}
 bool Aluno::operator>(const Aluno &other) const {return (this->getStudentCode()>other.getStudentCode());}
+
 void Aluno::removeUcs() {this->NUCS -= 1;}
 void Aluno::addUcs() {this->NUCS += 1;}

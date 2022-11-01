@@ -74,6 +74,10 @@ public:
     ///@param classcode The classe's code.
     void removerAula(Bst* base, int upcode, const string& uccode, const string& classcode);
 
+    ///@brief Adds a class to a schedule.
+    ///@param base All students.
+    ///@param upcode Student's UP code.
+    ///@param aula The class we want to add to the student's schedule.
     void adicionarAula(Bst* base, int upcode, const Aula aula);
 };
 

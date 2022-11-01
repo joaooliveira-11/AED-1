@@ -7,7 +7,6 @@
 #include "Pedido.h"
 using namespace std;
 
-
 void Menu::readmenu() {
     int up, NUCS;
     string Classcode, Uccode, again = "No", tipo;
