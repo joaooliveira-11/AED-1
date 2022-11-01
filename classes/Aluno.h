@@ -62,6 +62,8 @@ class Aluno {
 
         ///@brief Decrease the number of UC's a student is enrolled in if that student leaves an UC.
         void removeUcs();
+
+        void addUcs();
 };
 
 #endif

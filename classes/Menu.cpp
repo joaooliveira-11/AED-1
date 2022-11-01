@@ -12,6 +12,7 @@ void Menu::readmenu() {
     int up, NUCS;
     string Classcode, Uccode, again = "No";
     list<Turma> turmas;
+    vector<Aula> aulas;
     char tecla;
     bool flag = true, flag2 = true, flag3 = true;
     Bst aux = Bst();
@@ -19,9 +20,11 @@ void Menu::readmenu() {
     Reading reading = Reading();
     Alunos = Reading::readAlunos();
     turmas = Reading::readTurmas();
+    aulas = Reading::readAulas();
     aux.num_students_uc(Alunos, turmas);
 
     queue<Pedido> pedidos;
+    queue<Pedido> non_accepted;
     Pedido novo_pedido;
 
     map<string, int> Max_students_by_UC = {{"L.EIC001", 0},
@@ -54,8 +57,8 @@ void Menu::readmenu() {
                                            {"L.EIC028", 0},
                                            {"L.EIC029", 0},
                                            {"L.EIC030", 0}};
-    for (Turma turma : turmas){
-        if (Max_students_by_UC[turma.get_uccode()] < turma.get_numeroalunos()){
+    for (Turma turma: turmas) {
+        if (Max_students_by_UC[turma.get_uccode()] < turma.get_numeroalunos()) {
             Max_students_by_UC.at(turma.get_uccode()) = turma.get_numeroalunos();
         }
     }
@@ -70,7 +73,7 @@ void Menu::readmenu() {
                 "6 : See all students in a certain UC. \n"
                 "7 : See the number of students in a certain UC/class. \n"
                 "8 : Remove an UC/class from a student. \n"
-                "9 : Change class in a certain UC. \n";
+                "9 : Add the student in a class in a certain UC. \n";
         cin >> tecla;
         switch (tecla) {
             case '1':
@@ -143,6 +146,24 @@ void Menu::readmenu() {
                 pedidos.push(novo_pedido);
                 flag3 = true;
                 break;
+            case '9' :
+                cout << "Insert your UPCode. \n";
+                while (flag3) {
+                    cin >> up;
+                    if (aux.find_by_upcode(Alunos, up).getStudentName() == "") {
+                        cout << "This student doesn't exist in this database, insert a valid number." << endl;
+                    } else {
+                        flag3 = false;
+                    }
+                }
+                cout << "Insert the class' UCcode.";
+                cin >> Uccode;
+                cout << "Insert the class' Classcode.";
+                cin >> Classcode;
+                novo_pedido = Pedido("adicionar", up, Uccode, " ", Classcode);
+                pedidos.push(novo_pedido);
+                flag3 = true;
+                break;
             default:
                 cout << "Press a valid key! \n";
                 break;
@@ -151,21 +172,46 @@ void Menu::readmenu() {
         cout << "Would you like to do something else? (Yes/No) \n";
         cin >> again;
         if (again == "No") flag = false;
-        while (again != "Yes"){
-            if (again == "No"){
+        while (again != "Yes") {
+            if (again == "No") {
                 flag = false;
                 break;
             }
-            cout << "Please type \"Yes\" or \"No\" ." <<  endl ;
+            cout << "Please type \"Yes\" or \"No\" ." << endl;
             cin >> again;
         }
     }
-    while (!pedidos.empty()){
+    while (!pedidos.empty()) {
         Pedido ped_at = pedidos.front(); //pedido atual da queueueue
-        if ( ped_at.getType() == "remover"){
-            aux.removerAula(Alunos, ped_at.getUp(), ped_at.getUc(), ped_at.getClass_antiga() );
+        if (ped_at.getType() == "remover") {
+            aux.removerAula(Alunos, ped_at.getUp(), ped_at.getUc(), ped_at.getClass_antiga());
             aux.find_by_upcode(Alunos, ped_at.getUp()).removeUcs();
+            aux.find_by_upcode(Alunos, up).getHorario().printHorario();// só para teste
             pedidos.pop();
+        } else if (ped_at.getType() == "adicionar") {
+            for (Turma turma: turmas) {
+                if (turma.get_uccode() == ped_at.getUc() and turma.get_classcode() == ped_at.getClass_nova()) {
+                    if (turma.can_add(Max_students_by_UC)) { //adicionar condição para verficar se aulas se sobrepõem
+                        for (Aula aula : aulas){
+                            if (aula.get_UcCode() == ped_at.getUc() and aula.get_ClassCode()==ped_at.getClass_nova()){
+                                aux.adicionarAula(Alunos, ped_at.getUp(), aula);
+                                aux.find_by_upcode(Alunos, up).getHorario().printHorario();// só para teste
+                                aux.find_by_upcode(Alunos, ped_at.getUp()).addUcs();
+                            }
+                        }
+                    }
+                    else {
+                        non_accepted.push(ped_at);
+                    }
+                    pedidos.pop();
+                    break;
+                }
+            }
+        }
+        for (Turma turma: turmas) {
+            if (Max_students_by_UC[turma.get_uccode()] < turma.get_numeroalunos()) {
+                Max_students_by_UC.at(turma.get_uccode()) = turma.get_numeroalunos();
+            }
         }
     }
 }

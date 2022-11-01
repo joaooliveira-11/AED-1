@@ -13,11 +13,12 @@ class Pedido{
         string class_antiga;
         string class_nova;
     public:
+        Pedido();
         Pedido(string, int, string, string, string);
         string getType(){ return type;}
         int getUp(){return up;}
         string getUc(){return uc;}
-        string getClass_antiga(){return class_antiga};
+        string getClass_antiga(){return class_antiga;}
         string getClass_nova(){return class_nova;}
 };
 #endif //AED_1_PEDIDO_H

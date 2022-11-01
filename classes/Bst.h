@@ -73,6 +73,8 @@ public:
     ///@param uccode The UC we want to remove the student from's code.
     ///@param classcode The classe's code.
     void removerAula(Bst* base, int upcode, const string& uccode, const string& classcode);
+
+    void adicionarAula(Bst* base, int upcode, const Aula aula);
 };
 
 #endif
