@@ -6,7 +6,7 @@
 #include "string"
 using namespace std;
 
-///@brief A class for our queue.
+///@brief A class for our queue's object.
 class Pedido{
     private:
         string type, uc, class_antiga, class_nova;

@@ -6,7 +6,6 @@
 #include <string>
 #include <vector>
 #include "Aula.h"
-
 using namespace std;
 
 ///@brief Class for schedules.
@@ -43,7 +42,6 @@ class Horario {
 
         ///@brief Removes a class from a student's schedule if someone wants to stop having a certain UC.
         void removerAula(const string& Uccode, const string& Classcode);
-        
 };
 
 #endif

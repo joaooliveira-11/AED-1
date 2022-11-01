@@ -56,6 +56,7 @@ void Menu::readmenu() {
                                            {"L.EIC028", 0},
                                            {"L.EIC029", 0},
                                            {"L.EIC030", 0}};
+
     for (Turma turma: turmas) {
         if (Max_students_by_UC[turma.get_uccode()] < turma.get_numeroalunos()) {
             Max_students_by_UC.at(turma.get_uccode()) = turma.get_numeroalunos();
@@ -179,7 +180,7 @@ void Menu::readmenu() {
                 cout << "Press a key according to what you want to do: \n"
                         "1 : See the number of students in a certain UC/class. \n"
                         "2 : Remove an UC/class from a student. \n"
-                        "3 : Add the student in a class in a certain UC. \n"
+                        "3 : Add a student to a certain class/UC. \n"
                         "q : Quit. \n";
                 cin >> tecla;
                 switch (tecla) {

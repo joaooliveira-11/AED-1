@@ -53,16 +53,20 @@ class Aluno {
 
         ///@brief Operator< overload.
         ///@returns True if our student's code is lower than the one from the student received as parameter.
+        ///@note Time complexity: O(1)
         bool operator<(const Aluno&) const;
 
         ///@brief Operator> overload.
         ///@returns True if our student's code is higher than the one from the student received as parameter.
+        ///@note Time complexity: O(1)
         bool operator>(const Aluno&) const;
 
         ///@brief Decreases the number of UCs a student is enrolled in if that student leaves an UC.
+        ///@note Time complexity: O(1)
         void removeUcs();
 
         ///@brief Increases the number of UCs a student is enrolled in if that student enrolls in an UC.
+        ///@note Time complexity: O(1)
         void addUcs();
 };
 

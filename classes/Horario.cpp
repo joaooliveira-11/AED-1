@@ -62,18 +62,18 @@ void Horario::printHorario() {
     string temp = " ";
     for (Aula &aula: Aulas) {
         if (aula.get_WeekDay() == temp) {
-            cout << ", " << UcCodeToName(aula.get_UcCode()) << "(" << aula.get_Type() << ")" << " " << "from "
+            cout << ", " << UcCodeToName(aula.get_UcCode()) << "(" << aula.get_Type() << ") from "
                  << Double_to_hour(aula.get_StartHour()) << " to "
                  << Double_to_hour(aula.get_StartHour() + aula.get_Duration());
         } else {
             temp = aula.get_WeekDay();
-            cout << "\n" << temp << " : ";
-            cout << UcCodeToName(aula.get_UcCode()) << "(" << aula.get_Type() << ")" << " " << "from "
+            cout << "\n" << temp << ": ";
+            cout << UcCodeToName(aula.get_UcCode()) << "(" << aula.get_Type() << ") from "
                  << Double_to_hour(aula.get_StartHour()) << " to "
                  << Double_to_hour(aula.get_StartHour() + aula.get_Duration());
         }
     }
-    cout <<endl << endl;
+    cout << endl << endl;
 }
 
 void Horario::removerAula(const string& Uccode, const string& Classcode) {
