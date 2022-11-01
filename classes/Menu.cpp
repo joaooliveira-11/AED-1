@@ -13,7 +13,7 @@ void Menu::readmenu() {
     list<Turma> turmas;
     vector<Aula> aulas;
     char tecla;
-    bool flag = true, flag2 = true, flag3 = true;
+    bool flag = true, flag2 = true, flag3 = true, flag4 = false;
     Bst aux = Bst();
     Bst *Alunos = nullptr;
     Reading reading = Reading();
@@ -157,6 +157,54 @@ void Menu::readmenu() {
                             }
                         }
                         break;
+                    case '6' :
+                        while (!pedidos.empty()) {
+                            flag4 = false;
+                            Pedido ped_at = pedidos.front(); //pedido atual da queueueue
+                            if (ped_at.getType() == "remover") {
+                                aux.removerAula(Alunos, ped_at.getUp(), ped_at.getUc(), ped_at.getClass_antiga());
+                                aux.find_by_upcode(Alunos, ped_at.getUp()).removeUcs();
+                                aux.find_by_upcode(Alunos, up).getHorario().printHorario();// só para teste
+                                pedidos.pop();
+                            } else if (ped_at.getType() == "adicionar") {
+                                for (Turma turma: turmas) {
+                                    if (turma.get_uccode() == ped_at.getUc() and turma.get_classcode() == ped_at.getClass_nova() ) {
+                                        if (turma.can_add(Max_students_by_UC)) {
+                                            for (const Aula& aula : aulas) {
+                                                if(aula.get_Type() == "TP" or aula.get_Type() == "PL") {
+                                                    if (aula.get_UcCode() == ped_at.getUc() and aula.get_ClassCode() == ped_at.getClass_nova() and aux.find_by_upcode(Alunos, up).verificar(aula,aux.find_by_upcode(Alunos,up).getHorario())) {
+                                                        aux.adicionarAula(Alunos, ped_at.getUp(), aula);
+                                                        aux.find_by_upcode(Alunos,
+                                                                           up).getHorario().printHorario();// só para teste
+                                                        aux.find_by_upcode(Alunos, ped_at.getUp()).addUcs();
+                                                        flag4 = true;
+                                                    }
+                                                }
+                                            }
+                                            for (const Aula& aula : aulas) {
+                                                if (flag4){
+                                                    if (aula.get_Type() =="T" and aula.get_UcCode() == ped_at.getUc() and aula.get_ClassCode()==ped_at.getClass_nova()){
+                                                        aux.adicionarAula(Alunos, ped_at.getUp(), aula);
+                                                        aux.find_by_upcode(Alunos, up).getHorario().printHorario();
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        else {
+                                            non_accepted.push(ped_at);
+                                        }
+                                        pedidos.pop();
+                                        break;
+                                    }
+                                }
+                            }
+                            for (Turma turma: turmas) {
+                                if (Max_students_by_UC[turma.get_uccode()] < turma.get_numeroalunos()) {
+                                    Max_students_by_UC.at(turma.get_uccode()) = turma.get_numeroalunos();
+                                }
+                            }
+                        }
+                        break;
                     case 'q':
                         break;
                     default:
@@ -248,40 +296,6 @@ void Menu::readmenu() {
                 }
                 cout << "Please type \"Yes\" or \"No\" ." << endl;
                 cin >> again;
-            }
-        }
-    }
-
-    while (!pedidos.empty()) {
-        Pedido ped_at = pedidos.front(); //pedido atual da queueueue
-        if (ped_at.getType() == "remover") {
-            aux.removerAula(Alunos, ped_at.getUp(), ped_at.getUc(), ped_at.getClass_antiga());
-            aux.find_by_upcode(Alunos, ped_at.getUp()).removeUcs();
-            aux.find_by_upcode(Alunos, up).getHorario().printHorario();// só para teste
-            pedidos.pop();
-        } else if (ped_at.getType() == "adicionar") {
-            for (Turma turma: turmas) {
-                if (turma.get_uccode() == ped_at.getUc() and turma.get_classcode() == ped_at.getClass_nova()) {
-                    if (turma.can_add(Max_students_by_UC)) { //adicionar condição para verficar se aulas se sobrepõem
-                        for (const Aula& aula : aulas){
-                            if (aula.get_UcCode() == ped_at.getUc() and aula.get_ClassCode()==ped_at.getClass_nova()){
-                                aux.adicionarAula(Alunos, ped_at.getUp(), aula);
-                                aux.find_by_upcode(Alunos, up).getHorario().printHorario();// só para teste
-                                aux.find_by_upcode(Alunos, ped_at.getUp()).addUcs();
-                            }
-                        }
-                    }
-                    else {
-                        non_accepted.push(ped_at);
-                    }
-                    pedidos.pop();
-                    break;
-                }
-            }
-        }
-        for (Turma turma: turmas) {
-            if (Max_students_by_UC[turma.get_uccode()] < turma.get_numeroalunos()) {
-                Max_students_by_UC.at(turma.get_uccode()) = turma.get_numeroalunos();
             }
         }
     }

@@ -68,6 +68,8 @@ class Aluno {
         ///@brief Increases the number of UCs a student is enrolled in if that student enrolls in an UC.
         ///@note Time complexity: O(1)
         void addUcs();
+
+        bool verificar(Aula aula, Horario horario);
 };
 
 #endif
