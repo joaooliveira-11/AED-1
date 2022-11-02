@@ -11,7 +11,7 @@ Aluno::Aluno(){
 Aluno::Aluno(int studentcode, string studentname, Horario horario, int NUCS): StudentCode(studentcode), StudentName(studentname), horarioAluno(horario), NUCS(NUCS){}
 
 int Aluno::getStudentCode() const {return StudentCode;}
-string Aluno::getStudentName() {return StudentName;}
+string Aluno::getStudentName() const {return StudentName;}
 Horario& Aluno::getHorario() {return horarioAluno;}
 int Aluno::getNUCS() const {return NUCS;}
 
