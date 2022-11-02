@@ -52,7 +52,8 @@ string Horario::UcCodeToName(const string& uccode){
                                         {"L.EIC027", "CG"},
                                         {"L.EIC028", "CPD"},
                                         {"L.EIC029", "IA"},
-                                        {"L.EIC030", "PI"}};
+                                        {"L.EIC030", "PI"},
+                                        {"UP001", "PUP"}};
     return UcCode_Name[uccode];
 }
 

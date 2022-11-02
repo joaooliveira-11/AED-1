@@ -16,9 +16,52 @@ bool ucs_order(Aluno aluno1, Aluno aluno2){
     return aluno1.getNUCS() < aluno2.getNUCS();
 }
 
+string Menu::UcCodeToName1(const string &uccode) {
+    map<string, string> UcCode_Name1 = {{"L.EIC001", "ALGA"},
+                                        {"L.EIC002", "AMI"},
+                                        {"L.EIC003", "FP"},
+                                        {"L.EIC004", "FSC"},
+                                        {"L.EIC005", "MD"},
+                                        {"L.EIC006", "AC"},
+                                        {"L.EIC007", "AMII"},
+                                        {"L.EIC008", "FI"},
+                                        {"L.EIC009", "P"},
+                                        {"L.EIC010", "TC"},
+                                        {"L.EIC011", "AED"},
+                                        {"L.EIC012", "BD"},
+                                        {"L.EIC013", "FII"},
+                                        {"L.EIC014", "LDTS"},
+                                        {"L.EIC015", "SO"},
+                                        {"L.EIC016", "DA"},
+                                        {"L.EIC017", "ES"},
+                                        {"L.EIC018", "LC"},
+                                        {"L.EIC019", "LTW"},
+                                        {"L.EIC020", "ME"},
+                                        {"L.EIC021", "FSI"},
+                                        {"L.EIC022", "IPC"},
+                                        {"L.EIC023", "LBAW"},
+                                        {"L.EIC024", "PFL"},
+                                        {"L.EIC025", "RC"},
+                                        {"L.EIC026", "C"},
+                                        {"L.EIC027", "CG"},
+                                        {"L.EIC028", "CPD"},
+                                        {"L.EIC029", "IA"},
+                                        {"L.EIC030", "PI"},
+                                        {"UP001", "PUP"}};
+    return UcCode_Name1[uccode];
+}
+
+string Menu::Double_to_hour1(double time) {
+    string hour = to_string(int(time));
+    int minutes = int(((time - int(time)) * 100) * 0.6);
+    return int(minutes) == 0 ? hour + ":" + to_string(minutes) + "0" : hour + ":" + to_string(minutes);
+}
+
 void Menu::readmenu() {
+
     int up, NUCS, n, x;
-    string Classcode,Classcode2, Uccode, again = "No", tipo, ord;
+    string Classcode, Classcode2, Classcode3, Uccode, again = "No", tipo, ord;
+    vector<Aula> aulas_aux1;
     list<Turma> turmas;
     vector<Aula> aulas;
     vector<Aula> aulas_aux;
@@ -90,7 +133,8 @@ void Menu::readmenu() {
                     "4 : See students in a certain UC/class. \n"
                     "5 : See all students in a certain UC. \n"
                     "6 : See the number of students in a certain UC/class. \n"
-                    "7 : See the number of students in a certain UC per class. \n"
+                    "7 : See the number of students in each class from an UC. \n"
+                    "8 : See a class' schedule. \n"
                     "q : Quit. \n";
             cin >> tecla;
             switch (tecla) {
@@ -169,13 +213,37 @@ void Menu::readmenu() {
                     cin >> Uccode;
                     for (Turma turma: turmas) {
                         if (turma.get_uccode() == Uccode) {
-                            cout << turma.get_classcode() << " | " << turma.get_numeroalunos() << "/"<< Max_students_by_UC[Uccode] << endl;
+                            cout << turma.get_classcode() << " | " << turma.get_numeroalunos() << "/"
+                                 << Max_students_by_UC[Uccode] << endl;
                         }
                     }
+                case '8': {
+                    cout << "Insert the Class Code. (i.e.: 1LEIC01) \n";
+                    cin >> Classcode3;
+                    for (Aula aula: aulas) if (aula.get_ClassCode() == Classcode3) aulas_aux1.push_back(aula);
+                    vector<Aula> Aulas1 = aulas_aux1;
+                    sort(Aulas1.begin(), Aulas1.end());
+                    string temp = " ";
+                    for (Aula aula: Aulas1) {
+                        if (aula.get_WeekDay() == temp) {
+                            cout << ", " << UcCodeToName1(aula.get_UcCode()) << "(" << aula.get_Type() << ") from "
+                                 << Double_to_hour1(aula.get_StartHour()) << " to "
+                                 << Double_to_hour1(aula.get_StartHour() + aula.get_Duration());
+                        } else {
+                            temp = aula.get_WeekDay();
+                            cout << "\n" << temp << ": ";
+                            cout << UcCodeToName1(aula.get_UcCode()) << "(" << aula.get_Type() << ") from "
+                                 << Double_to_hour1(aula.get_StartHour()) << " to "
+                                 << Double_to_hour1(aula.get_StartHour() + aula.get_Duration());
+                        }
+                    }
+                    aulas_aux1.clear();
+                    cout << endl;
+                    break;}
                 case 'q':
                     break;
                 default:
-                    cout << "Press a valid key! \n";
+                    cout << "Not a valid key! \n";
                     break;
             }
             cout << endl;
@@ -298,7 +366,7 @@ void Menu::readmenu() {
                 case 'q':
                     break;
                 default:
-                    cout << "Press a valid key! \n";
+                    cout << "Not a valid key! \n";
                     break;
             }
             cout << endl;
