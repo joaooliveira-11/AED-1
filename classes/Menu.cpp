@@ -76,7 +76,7 @@ void Menu::readmenu() {
             cout << "Press a key according to what you want to do: \n"
                     "1 : See schedule. \n"
                     "2 : See all students. \n"
-                    "3 : See the number of students with more than n UCs. \n"
+                    "3 : See students with more than n UCs. \n"
                     "4 : See students in a certain UC/class. \n"
                     "5 : See all students in a certain UC. \n"
                     "6 : See the number of students in a certain UC/class. \n"
