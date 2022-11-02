@@ -84,6 +84,8 @@ class Aluno {
         void addUcs();
 
         bool verificar(Aula aula, Horario horario);
+
+
 };
 
 #endif

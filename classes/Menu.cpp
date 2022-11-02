@@ -2,10 +2,19 @@
 #include "Horario.h"
 #include "Reading.h"
 #include <iostream>
+#include <algorithm>
 #include "map"
 #include "queue"
 #include "Pedido.h"
+#include "Aluno.h"
 using namespace std;
+
+bool name_order(Aluno aluno1 ,Aluno aluno2){
+    return aluno1.getStudentName() < aluno2.getStudentName();
+}
+bool ucs_order(Aluno aluno1, Aluno aluno2){
+    return aluno1.getNUCS() < aluno2.getNUCS();
+}
 
 void Menu::readmenu() {
     int up, NUCS, n, x;
@@ -13,6 +22,9 @@ void Menu::readmenu() {
     list<Turma> turmas;
     vector<Aula> aulas;
     vector<Aula> aulas_aux;
+    vector<Aluno> alunos;
+
+
     char tecla;
     bool flag = true, flag2 = true, flag3 = true, flag4 , flag5, flag6;
     Bst aux = Bst();
@@ -140,6 +152,22 @@ void Menu::readmenu() {
                             cout << turma.get_classcode() << " | " << turma.get_numeroalunos() << "/"<< Max_students_by_UC[Uccode] << endl;
                         }
                     }
+                case '8' :
+                    aux.ordenar_alph(Alunos, alunos);
+                    sort(alunos.begin(), alunos.end(), name_order);
+                    for (Aluno aluno : alunos){
+                        if ( aluno.getNUCS() > NUCS)
+                            cout << aluno.getStudentName() << " | " << aluno.getStudentCode()<<  " | " << aluno.getNUCS() << endl;
+                    }
+                    break;
+                case '9':
+                    aux.ordenar_alph(Alunos, alunos);
+                    sort(alunos.begin(), alunos.end(), ucs_order);
+                    for (Aluno aluno : alunos){
+                        if ( aluno.getNUCS() > NUCS)
+                            cout <<  aluno.getNUCS() << " | " << aluno.getStudentName() << " | " << aluno.getStudentCode()<<  endl;
+                    }
+                    break;
                 case 'q':
                     break;
                 default:
