@@ -137,7 +137,7 @@ void Menu::readmenu() {
                     cin >> Uccode;
                     for (Turma turma: turmas) {
                         if (turma.get_uccode() == Uccode) {
-                            cout << turma.get_classcode() << "|" << turma.get_numeroalunos() << "/"<< Max_students_by_UC[Uccode] << endl;
+                            cout << turma.get_classcode() << " | " << turma.get_numeroalunos() << "/"<< Max_students_by_UC[Uccode] << endl;
                         }
                     }
                 case 'q':
