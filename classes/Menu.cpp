@@ -8,14 +8,16 @@
 using namespace std;
 
 void Menu::readmenu() {
-    int up, NUCS;
-    string Classcode, Uccode, again = "No", tipo;
+    int up, NUCS, n, x;
+    string Classcode,Classcode2, Uccode, again = "No", tipo;
     list<Turma> turmas;
     vector<Aula> aulas;
+    vector<Aula> aulas_aux;
     char tecla;
-    bool flag = true, flag2 = true, flag3 = true, flag4 = false;
+    bool flag = true, flag2 = true, flag3 = true, flag4 , flag5, flag6;
     Bst aux = Bst();
     Bst *Alunos = nullptr;
+    Bst* Alunos_by_name = nullptr;
     Reading reading = Reading();
     Alunos = Reading::readAlunos();
     turmas = Reading::readTurmas();
@@ -164,7 +166,8 @@ void Menu::readmenu() {
                     "1 : Edit schedule. \n"
                     "2 : Remove an UC/class from a student. \n"
                     "3 : Add a student to a certain class/UC. \n"
-                    "4 : Add/remove class. \n"
+                    "4 : Change between classes, in a certain number of UCs. \n"
+                    "5 : Execute queue of requests. \n"
                     "q : Quit. \n";
             cin >> tecla;
             switch (tecla) {
@@ -186,8 +189,18 @@ void Menu::readmenu() {
                     cin >> Uccode;
                     cout << "Insert the class' Classcode (i.e.: 1LEIC01). \n";
                     cin >> Classcode;
-                    novo_pedido = Pedido("remover", up, Uccode, Classcode, " ");
-                    pedidos.push(novo_pedido);
+                    aulas_aux = aux.find_by_upcode(Alunos, up).getHorario().getAulas();
+                    flag6 = false;
+                    for (Aula aula: aulas_aux) {
+                        if (aula.get_ClassCode() == Classcode and aula.get_UcCode() == Uccode) flag6 = true;
+                        //break;
+                    }
+                    if (flag6) {
+                        novo_pedido = Pedido("remover", up, Uccode, Classcode, " ");
+                        pedidos.push(novo_pedido);
+                    } else {
+                        cout << "You don't belong to that class. \n";
+                    }
                     flag3 = true;
                     break;
                 case '3' :
@@ -204,59 +217,148 @@ void Menu::readmenu() {
                     cin >> Uccode;
                     cout << "Insert the class' Classcode (i.e.: 1LEIC01). \n";
                     cin >> Classcode;
-                    novo_pedido = Pedido("adicionar", up, Uccode, " ", Classcode);
-                    pedidos.push(novo_pedido);
+                    aulas_aux = aux.find_by_upcode(Alunos, up).getHorario().getAulas();
+                    flag6 = true;
+                    for (Aula aula: aulas_aux) {
+                        if (aula.get_UcCode() == Uccode) flag6 = false;
+                        //break;
+                    }
+                    if (flag6) {
+                        novo_pedido = Pedido("adicionar", up, Uccode, " ", Classcode);
+                        pedidos.push(novo_pedido);
+                    } else {
+                        cout << "You already belong to a class in this UC, try changing class.";
+                    }
                     flag3 = true;
                     break;
                 case '4':
+                    cout << "Insert how many UCs are you going to change: \n";
+                    cin >> n;
+                    x = 0;
+                    cout << "Insert your UPCode. \n";
+                    while (flag3) {
+                        cin >> up;
+                        if (aux.find_by_upcode(Alunos, up).getStudentName() == "") {
+                            cout << "This student doesn't exist in this database, insert a valid number." << endl;
+                        } else {
+                            flag3 = false;
+                        }
+                    }
+                    flag3 = true;
+                    aulas_aux = aux.find_by_upcode(Alunos, up).getHorario().getAulas();
+                    while (x < n) {
+                        cout << "Insert the class' UCcode (i.e.: L.EIC001). \n";
+                        cin >> Uccode;
+                        cout << "Insert the class' you want to leave Classcode (i.e.: 1LEIC01). \n";
+                        cin >> Classcode;
+                        flag6 = false;
+                        for (Aula aula: aulas_aux) {
+                            if (aula.get_ClassCode() == Classcode and aula.get_UcCode() == Uccode) flag6 = true;
+                            break;
+                        }
+                        if (!flag6) {
+                            cout << "You don't belong to that class/UC. \n";
+                            x++;
+                            continue;
+                        }
+                        cout << "Insert the class' you want to go Classcode (i.e.: 1LEIC01). \n";
+                        cin >> Classcode2;
+                        if (Classcode == Classcode2) {
+                            cout << "You're already in that Class for that UC. \n";
+                            x++;
+                            continue;
+                        }
+                        novo_pedido = Pedido("alterar", up, Uccode, Classcode, Classcode2);
+                        pedidos.push(novo_pedido);
+                        x++;
+                        }
+                    break;
+                case '5':
                     while (!pedidos.empty()) {
                         flag4 = false;
                         Pedido ped_at = pedidos.front(); //pedido atual da queueueue
+                        aux.find_by_upcode(Alunos, up).getHorario().printHorario();// só para teste RETIRAR!!!!
                         if (ped_at.getType() == "remover") {
                             aux.removerAula(Alunos, ped_at.getUp(), ped_at.getUc(), ped_at.getClass_antiga());
                             aux.find_by_upcode(Alunos, ped_at.getUp()).removeUcs();
-                            aux.find_by_upcode(Alunos, up).getHorario().printHorario();// só para teste
                             pedidos.pop();
                         } else if (ped_at.getType() == "adicionar") {
                             for (Turma turma: turmas) {
-                                if (turma.get_uccode() == ped_at.getUc() and
-                                    turma.get_classcode() == ped_at.getClass_nova()) {
-                                    if (turma.can_add(Max_students_by_UC)) {
+                                if (turma.get_uccode() == ped_at.getUc() and turma.get_classcode() == ped_at.getClass_nova()) {
+                                    //if (turma.can_add(Max_students_by_UC)) {
                                         for (const Aula &aula: aulas) {
                                             if (aula.get_Type() == "TP" or aula.get_Type() == "PL") {
-                                                if (aula.get_UcCode() == ped_at.getUc() and
-                                                    aula.get_ClassCode() == ped_at.getClass_nova() and
-                                                    aux.find_by_upcode(Alunos, up).verificar(aula,
-                                                                                             aux.find_by_upcode(Alunos,
-                                                                                                                up).getHorario())) {
+                                                if (aula.get_UcCode() == ped_at.getUc() and aula.get_ClassCode() == ped_at.getClass_nova() and aux.find_by_upcode(Alunos, up).verificar( aula,aux.find_by_upcode(Alunos,up).getHorario())) {
                                                     aux.adicionarAula(Alunos, ped_at.getUp(), aula);
-                                                    aux.find_by_upcode(Alunos,
-                                                                       up).getHorario().printHorario();// só para teste
                                                     aux.find_by_upcode(Alunos, ped_at.getUp()).addUcs();
                                                     flag4 = true;
                                                 }
                                             }
                                         }
-                                        for (const Aula &aula: aulas) {
-                                            if (flag4) {
-                                                if (aula.get_Type() == "T" and aula.get_UcCode() == ped_at.getUc() and
-                                                    aula.get_ClassCode() == ped_at.getClass_nova()) {
+                                        if (flag4) {
+                                            for (const Aula &aula: aulas) {
+                                                if (aula.get_Type() == "T" and aula.get_UcCode() == ped_at.getUc() and aula.get_ClassCode() == ped_at.getClass_nova()) {
                                                     aux.adicionarAula(Alunos, ped_at.getUp(), aula);
                                                     aux.find_by_upcode(Alunos, up).getHorario().printHorario();
                                                 }
                                             }
+                                        } else{
+                                            non_accepted.push(ped_at);
+                                            cout << "2 ";
                                         }
-                                    } else non_accepted.push(ped_at);
-                                    pedidos.pop();
-                                    break;
-                                }
+                                    } /*else {
+                                        non_accepted.push(ped_at);
+                                        cout << "aiai ";
+                                    }
+                                    */
+                                //}
                             }
-                        }
-                        for (Turma turma: turmas) {
-                            if (Max_students_by_UC[turma.get_uccode()] < turma.get_numeroalunos()) {
-                                Max_students_by_UC.at(turma.get_uccode()) = turma.get_numeroalunos();
+                            pedidos.pop();
+                        } else if (ped_at.getType() == "alterar") {
+                            flag4 = false;
+                            flag5 = false;
+                            for (Turma turma: turmas) {
+                                if (turma.get_uccode() == ped_at.getUc() and turma.get_classcode() == ped_at.getClass_nova()) {
+                                    //if (turma.can_add(Max_students_by_UC)) {
+                                    for (const Aula &aula: aulas) {
+                                        if (aula.get_Type() == "TP" or aula.get_Type() == "PL") {
+                                            if (aula.get_UcCode() == ped_at.getUc() and aula.get_ClassCode() == ped_at.getClass_nova() and aux.find_by_upcode(Alunos, up).verificar( aula,aux.find_by_upcode(Alunos,up).getHorario())) {
+                                                aux.adicionarAula(Alunos, ped_at.getUp(), aula);
+                                                aux.find_by_upcode(Alunos, ped_at.getUp()).addUcs();
+                                                flag4 = true;
+                                                flag5 = true;
+                                            }
+                                        }
+                                    }
+                                    if (flag4) {
+                                        for (const Aula &aula: aulas) {
+                                            if (aula.get_Type() == "T" and aula.get_UcCode() == ped_at.getUc() and aula.get_ClassCode() == ped_at.getClass_nova()) {
+                                                aux.adicionarAula(Alunos, ped_at.getUp(), aula);
+                                                aux.find_by_upcode(Alunos, up).getHorario().printHorario();
+                                            }
+                                        }
+                                    } else{
+                                        non_accepted.push(ped_at);
+                                        cout << "2 ";
+                                    }
+                                } /*else {
+                                        non_accepted.push(ped_at);
+                                        cout << "aiai ";
+                                    }
+                                    */
+                                //}
                             }
+                            if(flag5) {
+                                aux.removerAula(Alunos, ped_at.getUp(), ped_at.getUc(), ped_at.getClass_antiga());
+                                aux.find_by_upcode(Alunos, ped_at.getUp()).removeUcs();
+                            }
+                            aux.find_by_upcode(Alunos, up).getHorario().printHorario();// só para teste RETIRAR!!!!
+                            pedidos.pop();
                         }
+                    }
+                    while (!non_accepted.empty()){
+                        pedidos.push(non_accepted.front());
+                        non_accepted.pop();
                     }
                     break;
                 case 'q':

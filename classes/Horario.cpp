@@ -58,6 +58,10 @@ string Horario::UcCodeToName(const string& uccode){
 
 void Horario::printHorario() {
     vector<Aula> Aulas = this->getAulas();
+    if (Aulas.empty()){
+        cout << "This student doesn't have any class";
+        return;
+    }
     sort(Aulas.begin(), Aulas.end());
     string temp = " ";
     for (Aula &aula: Aulas) {

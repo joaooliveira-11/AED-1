@@ -99,3 +99,4 @@ void Bst::removerAula(Bst* base, int upcode,const string& uccode, const string& 
 void Bst::adicionarAula(Bst* base, int upcode,const Aula aula){
     find_by_upcode(base, upcode).getHorario().addAula(aula);
 }
+

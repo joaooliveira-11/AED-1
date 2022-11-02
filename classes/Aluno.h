@@ -37,7 +37,7 @@ class Aluno {
 
         ///@brief Getter for the student's name.
         ///@returns A student's name.
-        string getStudentName();
+        string getStudentName() const;
 
         ///@brief Getter for the student's schedule.
         ///@returns A student's schedule.

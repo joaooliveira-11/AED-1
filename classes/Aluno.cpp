@@ -11,7 +11,7 @@ Aluno::Aluno(){
 Aluno::Aluno(int studentcode, string studentname, Horario horario, int NUCS): StudentCode(studentcode), StudentName(studentname), horarioAluno(horario), NUCS(NUCS){}
 
 int Aluno::getStudentCode() const {return StudentCode;}
-string Aluno::getStudentName() {return StudentName;}
+string Aluno::getStudentName() const {return StudentName;}
 Horario& Aluno::getHorario() {return horarioAluno;}
 int Aluno::getNUCS() const {return NUCS;}
 
@@ -30,7 +30,7 @@ bool Aluno::verificar(Aula aula_1, Horario horario){
     vector<Aula> aulas = horario.getAulas();
     if (aula_1.get_Type()=="T") return true;
     for (Aula aula : aulas){
-        if ((aula.get_Type() == "TP" or aula.get_Type() == "PL") and (aula_1.get_WeekDay()==aula.get_WeekDay())){
+        if ((aula.get_Type() == "TP" or aula.get_Type() == "PL") and (aula_1.get_WeekDay()==aula.get_WeekDay()) and aula_1.get_Type()!=aula.get_Type()){
             if (aula_1.get_StartHour() + aula_1.get_Duration() > aula.get_StartHour() and aula_1.get_StartHour()< aula.get_StartHour() +aula.get_Duration())
                 return false;
             if (aula.get_StartHour() + aula.get_Duration() > aula_1.get_StartHour() and aula.get_StartHour()< aula_1.get_StartHour() + aula_1.get_Duration())
