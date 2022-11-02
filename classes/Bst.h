@@ -97,6 +97,7 @@ class Bst {
         ///@param aula The class we want to add to the student's schedule.
         void adicionarAula(Bst* base, int upcode, const Aula aula);
 
+        void ordenar_alph(Bst* base, vector<Aluno> &alunos);
     };
 
 #endif

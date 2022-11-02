@@ -36,7 +36,8 @@ void Bst::view_by_NUCS(Bst* base, int x){
     view_by_NUCS(base->Left, x);
     if (base->atual.getNUCS() > x){
         cout << base->atual.getStudentCode() << " | ";
-        cout << base->atual.getStudentName()  << endl;
+        cout << base->atual.getStudentName() << " | ";
+        cout << base->atual.getNUCS() << endl;
     }
     view_by_NUCS(base->Right, x);
 }
@@ -69,6 +70,7 @@ void Bst::view_by_uc(Bst* base, const string& uccode){
     for (const Aula& aula : aulas){
         if (aula.get_UcCode() == uccode ){
             cout << base->atual.getStudentCode() << " | ";
+            cout << base->atual.getNUCS() << " | ";
             cout << base->atual.getStudentName()  << endl;
             break;
         }
@@ -100,3 +102,9 @@ void Bst::adicionarAula(Bst* base, int upcode,const Aula aula){
     find_by_upcode(base, upcode).getHorario().addAula(aula);
 }
 
+void Bst::ordenar_alph(Bst* base, vector<Aluno> &alunos){
+    if(!base) return;
+    ordenar_alph(base->Left, alunos);
+    alunos.push_back(base->atual);
+    ordenar_alph(base->Right, alunos);
+}
