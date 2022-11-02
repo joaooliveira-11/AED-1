@@ -44,6 +44,10 @@ class Turma {
         ///@param Max_students_by_UC
         ///@see menu.cpp
         bool can_add(map<string, int> Max_students_by_UC);
+
+        void sub();
+
+        void set_numeroalunos_0();
 };
 
 #endif
