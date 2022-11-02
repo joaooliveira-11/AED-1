@@ -277,20 +277,19 @@ void Menu::readmenu() {
                     while (!pedidos.empty()) {
                         flag4 = false;
                         Pedido ped_at = pedidos.front(); //pedido atual da queueueue
+                        aux.find_by_upcode(Alunos, up).getHorario().printHorario();// só para teste RETIRAR!!!!
                         if (ped_at.getType() == "remover") {
                             aux.removerAula(Alunos, ped_at.getUp(), ped_at.getUc(), ped_at.getClass_antiga());
                             aux.find_by_upcode(Alunos, ped_at.getUp()).removeUcs();
-                            aux.find_by_upcode(Alunos, up).getHorario().printHorario();// só para teste RETIRAR!!!!
                             pedidos.pop();
                         } else if (ped_at.getType() == "adicionar") {
                             for (Turma turma: turmas) {
                                 if (turma.get_uccode() == ped_at.getUc() and turma.get_classcode() == ped_at.getClass_nova()) {
-                                    if (turma.can_add(Max_students_by_UC)) {
+                                    //if (turma.can_add(Max_students_by_UC)) {
                                         for (const Aula &aula: aulas) {
                                             if (aula.get_Type() == "TP" or aula.get_Type() == "PL") {
                                                 if (aula.get_UcCode() == ped_at.getUc() and aula.get_ClassCode() == ped_at.getClass_nova() and aux.find_by_upcode(Alunos, up).verificar( aula,aux.find_by_upcode(Alunos,up).getHorario())) {
                                                     aux.adicionarAula(Alunos, ped_at.getUp(), aula);
-                                                    aux.find_by_upcode(Alunos,up).getHorario().printHorario();// só para teste RETIRAR!!!!
                                                     aux.find_by_upcode(Alunos, ped_at.getUp()).addUcs();
                                                     flag4 = true;
                                                 }
@@ -307,11 +306,12 @@ void Menu::readmenu() {
                                             non_accepted.push(ped_at);
                                             cout << "2 ";
                                         }
-                                    } else {
+                                    } /*else {
                                         non_accepted.push(ped_at);
                                         cout << "aiai ";
                                     }
-                                }
+                                    */
+                                //}
                             }
                             pedidos.pop();
                         } else if (ped_at.getType() == "alterar") {
@@ -319,48 +319,41 @@ void Menu::readmenu() {
                             flag5 = false;
                             for (Turma turma: turmas) {
                                 if (turma.get_uccode() == ped_at.getUc() and turma.get_classcode() == ped_at.getClass_nova()) {
-                                    if (turma.can_add(Max_students_by_UC)) {
+                                    //if (turma.can_add(Max_students_by_UC)) {
+                                    for (const Aula &aula: aulas) {
+                                        if (aula.get_Type() == "TP" or aula.get_Type() == "PL") {
+                                            if (aula.get_UcCode() == ped_at.getUc() and aula.get_ClassCode() == ped_at.getClass_nova() and aux.find_by_upcode(Alunos, up).verificar( aula,aux.find_by_upcode(Alunos,up).getHorario())) {
+                                                aux.adicionarAula(Alunos, ped_at.getUp(), aula);
+                                                aux.find_by_upcode(Alunos, ped_at.getUp()).addUcs();
+                                                flag4 = true;
+                                                flag5 = true;
+                                            }
+                                        }
+                                    }
+                                    if (flag4) {
                                         for (const Aula &aula: aulas) {
-                                            if (aula.get_Type() == "TP" or aula.get_Type() == "PL") {
-                                                if (aula.get_UcCode() == ped_at.getUc() and aula.get_ClassCode() == ped_at.getClass_nova() and aux.find_by_upcode(Alunos, up).verificar(aula,aux.find_by_upcode(Alunos,up).getHorario())) {aux.adicionarAula(Alunos, ped_at.getUp(), aula);
-                                                    aux.find_by_upcode(Alunos,up).getHorario().printHorario();// só para teste RETIRAR!!!!
-                                                    aux.find_by_upcode(Alunos, ped_at.getUp()).addUcs();
-                                                    flag4 = true;
-                                                    flag5 = true;
-                                                }
+                                            if (aula.get_Type() == "T" and aula.get_UcCode() == ped_at.getUc() and aula.get_ClassCode() == ped_at.getClass_nova()) {
+                                                aux.adicionarAula(Alunos, ped_at.getUp(), aula);
+                                                aux.find_by_upcode(Alunos, up).getHorario().printHorario();
                                             }
                                         }
-                                        if (flag4) {
-                                            for (const Aula &aula: aulas) {
-                                                if (aula.get_Type() == "T" and aula.get_UcCode() == ped_at.getUc() and
-                                                    aula.get_ClassCode() == ped_at.getClass_nova()) {
-                                                    aux.adicionarAula(Alunos, ped_at.getUp(), aula);
-                                                    aux.find_by_upcode(Alunos, up).getHorario().printHorario(); //SÓ PARA TESTE REIRAR
-
-                                                }
-                                            }
-                                        }
-                                    } else {
+                                    } else{
                                         non_accepted.push(ped_at);
-                                        cout << "iai";
+                                        cout << "2 ";
                                     }
-                                    pedidos.pop();
-                                    break;
-                                }
-                                /*
-                                for (Turma turma: turmas) {
-                                    if (Max_students_by_UC[turma.get_uccode()] < turma.get_numeroalunos()) {
-                                        Max_students_by_UC.at(turma.get_uccode()) = turma.get_numeroalunos();
+                                } /*else {
+                                        non_accepted.push(ped_at);
+                                        cout << "aiai ";
                                     }
-                                }
-                                 */
+                                    */
+                                //}
                             }
                             if(flag5) {
                                 aux.removerAula(Alunos, ped_at.getUp(), ped_at.getUc(), ped_at.getClass_antiga());
                                 aux.find_by_upcode(Alunos, ped_at.getUp()).removeUcs();
-                                aux.find_by_upcode(Alunos, up).getHorario().printHorario();// só para teste
-                                pedidos.pop();
                             }
+                            aux.find_by_upcode(Alunos, up).getHorario().printHorario();// só para teste RETIRAR!!!!
+                            pedidos.pop();
                         }
                     }
                     while (!non_accepted.empty()){
