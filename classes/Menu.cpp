@@ -9,11 +9,18 @@
 #include "Aluno.h"
 using namespace std;
 
-bool name_order(Aluno aluno1 ,Aluno aluno2){
+bool name_order(const Aluno& aluno1 ,const Aluno& aluno2){
     return aluno1.getStudentName() < aluno2.getStudentName();
 }
-bool ucs_order(Aluno aluno1, Aluno aluno2){
+bool ucs_order(const Aluno& aluno1, const Aluno& aluno2){
     return aluno1.getNUCS() < aluno2.getNUCS();
+}
+
+bool ucs_stu_order( Turma& turma1, const Turma& turma2) {
+    return turma1.get_numeroalunos() < turma2.get_numeroalunos();
+}
+bool ucs_stu_order_r(const Turma& turma1, const Turma& turma2) {
+    return turma1.get_numeroalunos() > turma2.get_numeroalunos();
 }
 
 string Menu::UcCodeToName1(const string &uccode) {
@@ -61,8 +68,10 @@ void Menu::readmenu() {
 
     int up, NUCS, n, x;
     string Classcode, Classcode2, Classcode3, Uccode, again = "No", tipo, ord;
+    Turma turma_aux ;
     vector<Aula> aulas_aux1;
     list<Turma> turmas;
+    vector<Turma> turmas_aux;
     vector<Aula> aulas;
     vector<Aula> aulas_aux;
     vector<Aluno> alunos;
@@ -140,10 +149,11 @@ void Menu::readmenu() {
             switch (tecla) {
                 case '1':
                     cout << "Insert your UPCode. \n";
+                    cin >> up;
                     while (flag2) {
-                        cin >> up;
                         if (aux.find_by_upcode(Alunos, up).getStudentName() == "") {
                             cout << "This student doesn't exist in this database, insert a valid number." << endl;
+                            cin >> up;
                         } else {
                             cout << endl;
                             cout << aux.find_by_upcode(Alunos, up).getStudentName()
@@ -154,6 +164,7 @@ void Menu::readmenu() {
                             break;
                         }
                     }
+                    flag2 = true;
                     break;
                 case '2' :
                     aux.view(Alunos);
@@ -171,7 +182,7 @@ void Menu::readmenu() {
                     else if (ord == "name") {
                         aux.ordenar_alph(Alunos, alunos);
                         sort(alunos.begin(), alunos.end(), name_order);
-                        for (Aluno aluno : alunos){
+                        for (const Aluno& aluno : alunos){
                             if (aluno.getNUCS() > NUCS)
                                 cout << aluno.getStudentName() << " | " << aluno.getStudentCode() <<  " | " << aluno.getNUCS() << endl;
                         }
@@ -179,7 +190,7 @@ void Menu::readmenu() {
                     else {
                         aux.ordenar_alph(Alunos, alunos);
                         sort(alunos.begin(), alunos.end(), ucs_order);
-                        for (Aluno aluno : alunos){
+                        for (const Aluno& aluno : alunos){
                             if (aluno.getNUCS() > NUCS)
                                 cout <<  aluno.getNUCS() << " | " << aluno.getStudentName() << " | " << aluno.getStudentCode()<<  endl;
                         }
@@ -188,43 +199,163 @@ void Menu::readmenu() {
                 case '4' :
                     cout << "Insert the class' UCcode (i.e.: L.EIC001). \n";
                     cin >> Uccode;
+                    while (flag2) {
+                        for (Turma turma: turmas) {
+                            if (turma.get_uccode() == Uccode) {
+                                flag2 = false;
+                                break;
+                            }
+                        }
+                        if (flag2) {
+                            cout << "This UCcode doesn't exist in this database, insert a code." << endl;
+                            cin >> Uccode;
+                        }
+                    }
+                    flag2 = true;
                     cout << "Insert the class' Classcode (i.e.: 1LEIC01). \n";
                     cin >> Classcode;
+                    while (flag2) {
+                        for (Turma turma: turmas) {
+                            if (turma.get_classcode() == Classcode) {
+                                flag2 = false;
+                                break;
+                            }
+                        }
+                        if (flag2) {
+                            cout << "This UCcode doesn't exist in this database, insert a code." << endl;
+                            cin >> Classcode;
+                        }
+                    }
+                    flag2 = true;
                     aux.view_by_turma(Alunos, Uccode, Classcode);
                     break;
                 case '5' :
                     cout << "Insert the class' UCcode (i.e.: L.EIC001). \n";
                     cin >> Uccode;
+                    while (flag2) {
+                        for (Turma turma: turmas) {
+                            if (turma.get_uccode() == Uccode) {
+                                flag2 = false;
+                                break;
+                            }
+                        }
+                        if (flag2) {
+                            cout << "This UCcode doesn't exist in this database, insert a code." << endl;
+                            cin >> Uccode;
+                        }
+                    }
+                    flag2 = true;
                     aux.view_by_uc(Alunos, Uccode);
                     break;
                 case '6' :
                     cout << "Insert the class' UCcode (i.e.: L.EIC001). \n";
                     cin >> Uccode;
+                    while (flag2) {
+                        for (Turma turma: turmas) {
+                            if (turma.get_uccode() == Uccode) {
+                                flag2 = false;
+                                break;
+                            }
+                        }
+                        if (flag2) {
+                            cout << "This UCcode doesn't exist in this database, insert a code." << endl;
+                            cin >> Uccode;
+                        }
+                    }
+                    flag2 = true;
                     cout << "Insert the class' Classcode (i.e.: 1LEIC01). \n";
                     cin >> Classcode;
+                    while (flag2) {
+                        for (Turma turma: turmas) {
+                            if (turma.get_classcode() == Classcode) {
+                                flag2 = false;
+                                break;
+                            }
+                        }
+                        if (flag2) {
+                            cout << "This UCcode doesn't exist in this database, insert a code." << endl;
+                            cin >> Classcode;
+                        }
+                    }
+                    flag2 = true;
                     for (Turma turma: turmas) {
                         if (turma.get_classcode() == Classcode and turma.get_uccode() == Uccode) {
-                            cout << turma.get_numeroalunos() << "/"<< Max_students_by_UC[Uccode] << endl;
+                            cout << turma.get_numeroalunos() << " | "<< Max_students_by_UC[Uccode] << endl;
                         }
                     }
                     break;
                 case '7' :
                     cout << "Insert the class' UCcode (i.e.: L.EIC001). \n";
                     cin >> Uccode;
-                    for (Turma turma: turmas) {
-                        if (turma.get_uccode() == Uccode) {
-                            cout << turma.get_classcode() << " | " << turma.get_numeroalunos() << "/"
-                                 << Max_students_by_UC[Uccode] << endl;
+                    while (flag2) {
+                        for (Turma turma: turmas) {
+                            if (turma.get_uccode() == Uccode) {
+                                flag2 = false;
+                                break;
+                            }
+                        }
+                        if (flag2) {
+                            cout << "This UCcode doesn't exist in this database, insert a code." << endl;
+                            cin >> Uccode;
                         }
                     }
+                    flag2 = true;
+                    cout << "Chose the ordenation type: \n"
+                            "1 : By Class number. \n"
+                            "2 : By number os students (descending order). \n"
+                            "3 : By number os students (ascending order). \n";
+                    cin >> tecla;
+                    switch (tecla) {
+                        case '1':
+                            for (Turma turma: turmas) {
+                                if (turma.get_uccode() == Uccode) {
+                                    cout << turma.get_classcode() << " | " << turma.get_numeroalunos() << "/"
+                                         << Max_students_by_UC[Uccode] << endl;
+                                }
+                            }
+                            break;
+                        case '2' :
+                            for (Turma turma: turmas) {
+                                if (turma.get_uccode() == Uccode) {
+                                    turmas_aux.push_back(turma);
+                                }
+                            }
+                            sort(turmas_aux.begin(),turmas_aux.end(), ucs_stu_order_r);
+                            for (Turma turma : turmas_aux) {
+                                if (turma.get_uccode() == Uccode) {
+                                    cout << turma.get_classcode() << " | " << turma.get_numeroalunos() << "/"
+                                         << Max_students_by_UC[Uccode] << endl;
+                                }
+                            }
+                            turmas_aux.clear();
+                            break;
+                        case '3' :
+                            for (Turma turma: turmas) {
+                                if (turma.get_uccode() == Uccode) {
+                                    turmas_aux.push_back(turma);
+                                }
+                            }
+                            sort(turmas_aux.begin(),turmas_aux.end(), ucs_stu_order);
+                            for (Turma turma : turmas_aux) {
+                                if (turma.get_uccode() == Uccode) {
+                                    cout << turma.get_classcode() << " | " << turma.get_numeroalunos() << "/"
+                                         << Max_students_by_UC[Uccode] << endl;
+                                }
+                            }
+                            turmas_aux.clear();
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
                 case '8': {
                     cout << "Insert the Class Code. (i.e.: 1LEIC01) \n";
                     cin >> Classcode3;
-                    for (Aula aula: aulas) if (aula.get_ClassCode() == Classcode3) aulas_aux1.push_back(aula);
+                    for (const Aula& aula: aulas) if (aula.get_ClassCode() == Classcode3) aulas_aux1.push_back(aula);
                     vector<Aula> Aulas1 = aulas_aux1;
                     sort(Aulas1.begin(), Aulas1.end());
                     string temp = " ";
-                    for (Aula aula: Aulas1) {
+                    for (const Aula& aula: Aulas1) {
                         if (aula.get_WeekDay() == temp) {
                             cout << ", " << UcCodeToName1(aula.get_UcCode()) << "(" << aula.get_Type() << ") from "
                                  << Double_to_hour1(aula.get_StartHour()) << " to "
@@ -268,21 +399,48 @@ void Menu::readmenu() {
             switch (tecla) {
                 case '1' :
                     cout << "Insert your UPCode. \n";
+                    cin >> up;
                     while (flag3) {
-                        cin >> up;
                         if (aux.find_by_upcode(Alunos, up).getStudentName() == "") {
-                            cout << "This student doesn't exist in this database, insert a valid number." << endl;
+                            cout << "This student doesn't exist in this database, insert a valid number. \n";
+                            cin >> up;
                         } else {
                             flag3 = false;
                         }
                     }
                     cout << "Insert the class' UCcode (i.e.: L.EIC001). \n";
                     cin >> Uccode;
+                    while (flag2) {
+                        for (Turma turma: turmas) {
+                            if (turma.get_uccode() == Uccode) {
+                                flag2 = false;
+                                break;
+                            }
+                        }
+                        if (flag2) {
+                            cout << "This UCcode doesn't exist in this database, insert a code." << endl;
+                            cin >> Uccode;
+                        }
+                    }
+                    flag2 = true;
                     cout << "Insert the class' Classcode (i.e.: 1LEIC01). \n";
                     cin >> Classcode;
+                    while (flag2) {
+                        for (Turma turma: turmas) {
+                            if (turma.get_classcode() == Classcode) {
+                                flag2 = false;
+                                break;
+                            }
+                        }
+                        if (flag2) {
+                            cout << "This UCcode doesn't exist in this database, insert a code." << endl;
+                            cin >> Classcode;
+                        }
+                    }
+                    flag2 = true;
                     aulas_aux = aux.find_by_upcode(Alunos, up).getHorario().getAulas();
                     flag6 = false;
-                    for (Aula aula: aulas_aux) {
+                    for (const Aula& aula: aulas_aux) {
                         if (aula.get_ClassCode() == Classcode and aula.get_UcCode() == Uccode) flag6 = true;
                     }
                     if (flag6) {
@@ -295,23 +453,49 @@ void Menu::readmenu() {
                     break;
                 case '2' :
                     cout << "Insert your UPCode. \n";
-                    while (flag3) {
-                        cin >> up;
+                    cin >> up;
+                    while(flag3){
                         if (aux.find_by_upcode(Alunos, up).getStudentName() == "") {
                             cout << "This student doesn't exist in this database, insert a valid number." << endl;
+                            cin >> up;
                         } else {
                             flag3 = false;
                         }
                     }
                     cout << "Insert the class' UCcode (i.e.: L.EIC001). \n";
                     cin >> Uccode;
+                    while (flag2) {
+                        for (Turma turma: turmas) {
+                            if (turma.get_uccode() == Uccode) {
+                                flag2 = false;
+                                break;
+                            }
+                        }
+                        if (flag2) {
+                            cout << "This UCcode doesn't exist in this database, insert a code." << endl;
+                            cin >> Uccode;
+                        }
+                    }
+                    flag2 = true;
                     cout << "Insert the class' Classcode (i.e.: 1LEIC01). \n";
                     cin >> Classcode;
+                    while (flag2) {
+                        for (Turma turma: turmas) {
+                            if (turma.get_classcode() == Classcode) {
+                                flag2 = false;
+                                break;
+                            }
+                        }
+                        if (flag2) {
+                            cout << "This UCcode doesn't exist in this database, insert a code." << endl;
+                            cin >> Classcode;
+                        }
+                    }
+                    flag2 = true;
                     aulas_aux = aux.find_by_upcode(Alunos, up).getHorario().getAulas();
                     flag6 = true;
-                    for (Aula aula: aulas_aux) {
+                    for (const Aula& aula: aulas_aux) {
                         if (aula.get_UcCode() == Uccode) flag6 = false;
-                        //break;
                     }
                     if (flag6) {
                         novo_pedido = Pedido("adicionar", up, Uccode, " ", Classcode);
@@ -320,16 +504,18 @@ void Menu::readmenu() {
                         cout << "You already belong to a class in this UC, try changing class.";
                     }
                     flag3 = true;
+                    aulas_aux.clear();
                     break;
                 case '3':
                     cout << "Insert how many UCs are you going to change: \n";
                     cin >> n;
                     x = 0;
                     cout << "Insert your UPCode. \n";
+                    cin >> up;
                     while (flag3) {
-                        cin >> up;
                         if (aux.find_by_upcode(Alunos, up).getStudentName() == "") {
                             cout << "This student doesn't exist in this database, insert a valid number." << endl;
+                            cin >> up;
                         } else {
                             flag3 = false;
                         }
@@ -339,10 +525,36 @@ void Menu::readmenu() {
                     while (x < n) {
                         cout << "Insert the class' UCcode (i.e.: L.EIC001). \n";
                         cin >> Uccode;
-                        cout << "Insert the class' you want to leave Classcode (i.e.: 1LEIC01). \n";
+                        while (flag2) {
+                            for (Turma turma: turmas) {
+                                if (turma.get_uccode() == Uccode) {
+                                    flag2 = false;
+                                    break;
+                                }
+                            }
+                            if (flag2) {
+                                cout << "This UCcode doesn't exist in this database, insert a code." << endl;
+                                cin >> Uccode;
+                            }
+                        }
+                        flag2 = true;
+                        cout << "Insert the class' Classcode (i.e.: 1LEIC01). \n";
                         cin >> Classcode;
+                        while (flag2) {
+                            for (Turma turma: turmas) {
+                                if (turma.get_classcode() == Classcode) {
+                                    flag2 = false;
+                                    break;
+                                }
+                            }
+                            if (flag2) {
+                                cout << "This UCcode doesn't exist in this database, insert a code." << endl;
+                                cin >> Classcode;
+                            }
+                        }
+                        flag2 = true;
                         flag6 = false;
-                        for (Aula aula: aulas_aux) {
+                        for (const Aula& aula: aulas_aux) {
                             if (aula.get_ClassCode() == Classcode and aula.get_UcCode() == Uccode) flag6 = true;
                             break;
                         }
@@ -362,6 +574,7 @@ void Menu::readmenu() {
                         pedidos.push(novo_pedido);
                         x++;
                         }
+                    aulas_aux.clear();
                     break;
                 case 'q':
                     break;
@@ -385,8 +598,7 @@ void Menu::readmenu() {
         else{
             while (!pedidos.empty()) {
                 flag4 = false;
-                Pedido ped_at = pedidos.front(); //pedido atual da queueueue
-                aux.find_by_upcode(Alunos, up).getHorario().printHorario();// só para teste RETIRAR!!!!
+                Pedido ped_at = pedidos.front();
                 if (ped_at.getType() == "remover") {
                     aux.removerAula(Alunos, ped_at.getUp(), ped_at.getUc(), ped_at.getClass_antiga());
                     aux.find_by_upcode(Alunos, ped_at.getUp()).removeUcs();
@@ -394,7 +606,8 @@ void Menu::readmenu() {
                 } else if (ped_at.getType() == "adicionar") {
                     for (Turma turma: turmas) {
                         if (turma.get_uccode() == ped_at.getUc() and turma.get_classcode() == ped_at.getClass_nova()) {
-                            if (turma.can_add(Max_students_by_UC)) {
+                            turma_aux = Turma();
+                            if (turma.can_add(Max_students_by_UC,turma_aux)) {
                                 for (const Aula &aula: aulas) {
                                     if (aula.get_Type() == "TP" or aula.get_Type() == "PL") {
                                         if (aula.get_UcCode() == ped_at.getUc() and aula.get_ClassCode() == ped_at.getClass_nova() and aux.find_by_upcode(Alunos, up).verificar( aula,aux.find_by_upcode(Alunos,up).getHorario())) {
@@ -408,27 +621,28 @@ void Menu::readmenu() {
                                     for (const Aula &aula: aulas) {
                                         if (aula.get_Type() == "T" and aula.get_UcCode() == ped_at.getUc() and aula.get_ClassCode() == ped_at.getClass_nova()) {
                                             aux.adicionarAula(Alunos, ped_at.getUp(), aula);
-                                            aux.find_by_upcode(Alunos, up).getHorario().printHorario();
                                         }
                                     }
                                 } else{
                                     non_accepted.push(ped_at);
-                                    cout << "2 ";
                                 }
                             } else {
                                 non_accepted.push(ped_at);
-                                cout << "aiai ";
                             }
-
                         }
                     }
                     pedidos.pop();
                 } else if (ped_at.getType() == "alterar") {
                     flag4 = false;
                     flag5 = false;
+                    for (Turma turma: turmas){
+                        if (turma.get_uccode() == ped_at.getUc() and turma.get_classcode() == ped_at.getClass_antiga()){
+                            turma_aux = turma;
+                        }
+                    }
                     for (Turma turma: turmas) {
                         if (turma.get_uccode() == ped_at.getUc() and turma.get_classcode() == ped_at.getClass_nova()) {
-                            if (turma.can_add(Max_students_by_UC)) {
+                            if (turma.can_add(Max_students_by_UC, turma_aux)) {
                                 for (const Aula &aula: aulas) {
                                     if (aula.get_Type() == "TP" or aula.get_Type() == "PL") {
                                         if (aula.get_UcCode() == ped_at.getUc() and aula.get_ClassCode() == ped_at.getClass_nova() and aux.find_by_upcode(Alunos, up).verificar( aula,aux.find_by_upcode(Alunos,up).getHorario())) {
@@ -446,22 +660,16 @@ void Menu::readmenu() {
                                             aux.find_by_upcode(Alunos, up).getHorario().printHorario();
                                         }
                                     }
-                                } else{
-                                    non_accepted.push(ped_at);
-                                    cout << "2 ";
-                                }
-                            } else {
-                                non_accepted.push(ped_at);
-                                cout << "aiai ";
-                            }
+                                } else non_accepted.push(ped_at);
+                            } else non_accepted.push(ped_at);
                         }
                     }
                     if(flag5) {
                         aux.removerAula(Alunos, ped_at.getUp(), ped_at.getUc(), ped_at.getClass_antiga());
                         aux.find_by_upcode(Alunos, ped_at.getUp()).removeUcs();
                     }
-                    aux.find_by_upcode(Alunos, up).getHorario().printHorario();// só para teste RETIRAR!!!!
                     pedidos.pop();
+                    turma_aux = Turma();
                 }
             }
             for (Turma &turma : turmas){
@@ -486,4 +694,5 @@ void Menu::readmenu() {
             }
         }
     }
+    Reading::writeDown(Alunos);
 }
