@@ -143,7 +143,7 @@ void Reading::writeDown(Bst* alunos)  {
     string temp;
     test.ordenar_alph(alunos, Alunos);
     fstream NewFile;
-    NewFile.open("../new_students_classes.txt", ios::out);
+    NewFile.open("../new_students_classes.csv", ios::out);
     NewFile << "StudentCode,StudentName,UcCode,ClassCode \n";
     for (Aluno &aluno: Alunos) {
         aulas = aluno.getHorario().getAulas();
