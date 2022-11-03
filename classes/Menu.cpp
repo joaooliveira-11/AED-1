@@ -16,6 +16,13 @@ bool ucs_order(const Aluno& aluno1, const Aluno& aluno2){
     return aluno1.getNUCS() < aluno2.getNUCS();
 }
 
+bool ucs_stu_order( Turma& turma1, const Turma& turma2) {
+    return turma1.get_numeroalunos() < turma2.get_numeroalunos();
+}
+bool ucs_stu_order_r(const Turma& turma1, const Turma& turma2) {
+    return turma1.get_numeroalunos() > turma2.get_numeroalunos();
+}
+
 string Menu::UcCodeToName1(const string &uccode) {
     map<string, string> UcCode_Name1 = {{"L.EIC001", "ALGA"},
                                         {"L.EIC002", "AMI"},
@@ -63,6 +70,7 @@ void Menu::readmenu() {
     string Classcode, Classcode2, Classcode3, Uccode, again = "No", tipo, ord;
     vector<Aula> aulas_aux1;
     list<Turma> turmas;
+    vector<Turma> turmas_aux;
     vector<Aula> aulas;
     vector<Aula> aulas_aux;
     vector<Aluno> alunos;
@@ -205,19 +213,61 @@ void Menu::readmenu() {
                     cin >> Classcode;
                     for (Turma turma: turmas) {
                         if (turma.get_classcode() == Classcode and turma.get_uccode() == Uccode) {
-                            cout << turma.get_numeroalunos() << "/"<< Max_students_by_UC[Uccode] << endl;
+                            cout << turma.get_numeroalunos() << " | "<< Max_students_by_UC[Uccode] << endl;
                         }
                     }
                     break;
                 case '7' :
                     cout << "Insert the class' UCcode (i.e.: L.EIC001). \n";
                     cin >> Uccode;
-                    for (Turma turma: turmas) {
-                        if (turma.get_uccode() == Uccode) {
-                            cout << turma.get_classcode() << " | " << turma.get_numeroalunos() << "/"
-                                 << Max_students_by_UC[Uccode] << endl;
-                        }
+                    cout << "Chose the ordenation type: \n"
+                            "1 : By Class number. \n"
+                            "2 : By number os students (descending order). \n"
+                            "3 : By number os students (ascending order). \n";
+                    cin >> tecla;
+                    switch (tecla) {
+                        case '1':
+                            for (Turma turma: turmas) {
+                                if (turma.get_uccode() == Uccode) {
+                                    cout << turma.get_classcode() << " | " << turma.get_numeroalunos() << "/"
+                                         << Max_students_by_UC[Uccode] << endl;
+                                }
+                            }
+                            break;
+                        case '2' :
+                            for (Turma turma: turmas) {
+                                if (turma.get_uccode() == Uccode) {
+                                    turmas_aux.push_back(turma);
+                                }
+                            }
+                            sort(turmas_aux.begin(),turmas_aux.end(), ucs_stu_order_r);
+                            for (Turma turma : turmas_aux) {
+                                if (turma.get_uccode() == Uccode) {
+                                    cout << turma.get_classcode() << " | " << turma.get_numeroalunos() << "/"
+                                         << Max_students_by_UC[Uccode] << endl;
+                                }
+                            }
+                            turmas_aux.clear();
+                            break;
+                        case '3' :
+                            for (Turma turma: turmas) {
+                                if (turma.get_uccode() == Uccode) {
+                                    turmas_aux.push_back(turma);
+                                }
+                            }
+                            sort(turmas_aux.begin(),turmas_aux.end(), ucs_stu_order);
+                            for (Turma turma : turmas_aux) {
+                                if (turma.get_uccode() == Uccode) {
+                                    cout << turma.get_classcode() << " | " << turma.get_numeroalunos() << "/"
+                                         << Max_students_by_UC[Uccode] << endl;
+                                }
+                            }
+                            turmas_aux.clear();
+                            break;
+                        default:
+                            break;
                     }
+                    break;
                 case '8': {
                     cout << "Insert the Class Code. (i.e.: 1LEIC01) \n";
                     cin >> Classcode3;
@@ -322,6 +372,7 @@ void Menu::readmenu() {
                         cout << "You already belong to a class in this UC, try changing class.";
                     }
                     flag3 = true;
+                    aulas_aux.clear();
                     break;
                 case '3':
                     cout << "Insert how many UCs are you going to change: \n";
@@ -365,6 +416,7 @@ void Menu::readmenu() {
                         pedidos.push(novo_pedido);
                         x++;
                         }
+                    aulas_aux.clear();
                     break;
                 case 'q':
                     break;
