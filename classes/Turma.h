@@ -19,6 +19,8 @@ class Turma {
         ///@brief The number of students in a class.
         int numeroAlunos;
     public:
+
+        Turma();
         ///@brief Constructor of a new class given it's class code, the UC code and the number of students in the class/UC.
         ///@param Uccode
         ///@param Classcode
@@ -43,7 +45,7 @@ class Turma {
         ///@brief Checks is a new student can be added to a class.
         ///@param Max_students_by_UC
         ///@see menu.cpp
-        bool can_add(map<string, int> Max_students_by_UC);
+        bool can_add(map<string, int> Max_students_by_UC, Turma);
 
         void sub();
 
