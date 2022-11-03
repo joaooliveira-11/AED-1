@@ -143,17 +143,15 @@ void Reading::writeDown(Bst* alunos)  {
     string temp;
     test.ordenar_alph(alunos, Alunos);
     fstream NewFile;
-    NewFile.open("../new_students_classes.txt");
+    NewFile.open("../new_students_classes.txt", ios::out);
     NewFile << "StudentCode,StudentName,UcCode,ClassCode \n";
-
     for (Aluno &aluno: Alunos) {
         aulas = aluno.getHorario().getAulas();
         for (Aula &aula: aulas) {
-            temp =  aluno.getStudentName()+ "," + aluno.getStudentName() + "," + aula.get_UcCode() + "," +aula.get_ClassCode() + "\n";
+            temp =  to_string(aluno.getStudentCode()) + "," + aluno.getStudentName() + "," + aula.get_UcCode() + "," +aula.get_ClassCode() + "\n";
             NewFile << temp;
         }
     }
-
     NewFile.close();
 
 }
