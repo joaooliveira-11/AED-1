@@ -135,3 +135,25 @@ list<Turma> Reading::readTurmas() {
     }
     return turmas;
 }
+
+void Reading::writeDown(Bst* alunos)  {
+    Bst test = Bst();
+    vector<Aluno> Alunos;
+    vector<Aula> aulas;
+    string temp;
+    test.ordenar_alph(alunos, Alunos);
+    fstream NewFile;
+    NewFile.open("../new_students_classes.txt");
+    NewFile << "StudentCode,StudentName,UcCode,ClassCode \n";
+
+    for (Aluno &aluno: Alunos) {
+        aulas = aluno.getHorario().getAulas();
+        for (Aula &aula: aulas) {
+            temp =  aluno.getStudentName()+ "," + aluno.getStudentName() + "," + aula.get_UcCode() + "," +aula.get_ClassCode() + "\n";
+            NewFile << temp;
+        }
+    }
+
+    NewFile.close();
+
+}

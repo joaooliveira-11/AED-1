@@ -694,4 +694,5 @@ void Menu::readmenu() {
             }
         }
     }
+    Reading::writeDown(Alunos);
 }

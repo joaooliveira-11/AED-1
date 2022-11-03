@@ -98,6 +98,8 @@ class Bst {
         void adicionarAula(Bst* base, int upcode, const Aula aula);
 
         void ordenar_alph(Bst* base, vector<Aluno> &alunos);
+
+
     };
 
 #endif

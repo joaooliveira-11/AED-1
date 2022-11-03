@@ -37,6 +37,8 @@ class Reading {
         ///@see Aula.h
         ///@see Aluno.h
         static Bst* readAlunos();
+
+        static void writeDown(Bst*);
 };
 
 #endif
