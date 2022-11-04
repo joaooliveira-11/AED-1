@@ -68,6 +68,8 @@ void Menu::readmenu() {
 
     int up, NUCS, n, x;
     string Classcode, Classcode2, Classcode3, Uccode, again = "No", tipo, ord;
+    int year;
+    int count1 = 0, count2 = 0, count3 = 0;
     Turma turma_aux ;
     vector<Aula> aulas_aux1;
     list<Turma> turmas;
