@@ -83,9 +83,11 @@ class Aluno {
         ///@note Time complexity: O(1)
         void addUcs();
 
+        ///@brief check if a class can be added to a schedule without overlapping.
+        ///@param aula The class we want to add.
+        ///@param horario A student's schedule.
+        ///@note Time complexity: O(n)
         bool verificar(Aula aula, Horario horario);
-
-
 };
 
 #endif

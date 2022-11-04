@@ -20,6 +20,7 @@ class Reading {
         /// stores them all in variables and creates a new class with them,
         /// which is then added to vector with all the classes that'll be returned.
         ///@see Aula.h
+        ///@note Time complexity: O(
         static vector<Aula> readAulas();
 
         ///@brief Reads classes_per_uc.csv.
@@ -28,6 +29,7 @@ class Reading {
         /// stores them in variables and creates a new class/UC with them,
         /// which is then added to vector with all the classes per UC that'll be returned.
         ///@see Turma.h
+        ///@note Time complexity: O(
         static list<Turma> readTurmas();
 
         ///@brief Reads students_classes.csv.
@@ -38,7 +40,10 @@ class Reading {
         ///@see Aluno.h
         static Bst* readAlunos();
 
-        static void writeDown(Bst*);
+        ///@brief Creates a new file with the updated student's schedules after the queue of requests is done.
+        ///@param alunos BST of all students.
+        ///@note Time complexity: O(
+        static void writeDown(Bst* alunos);
 };
 
 #endif

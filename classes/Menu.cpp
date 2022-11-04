@@ -140,11 +140,11 @@ void Menu::readmenu() {
             cout << "Press a key according to what you want to do: \n"
                     "1 : See schedule. \n"
                     "2 : See all students. \n"
-                    "3 : See students with more than n UCs. \n"
-                    "4 : See students in a certain UC/class. \n"
-                    "5 : See all students in a certain UC. \n"
-                    "6 : See the number of students in a certain UC/class. \n"
-                    "7 : See the number of students in each class from an UC. \n"
+                    "3 : See students enrolled in more than n UCs. \n"
+                    "4 : See students enrolled in a certain class/UC/year. \n"
+                    "5 : See all students enrolled in a certain UC. \n"
+                    "6 : See the number of students enrolled in a certain class/UC/year. \n"
+                    "7 : See the occupation of each class from an UC. \n"
                     "8 : See a class' schedule. \n"
                     "q : Quit. \n";
             cin >> tecla;
@@ -209,12 +209,12 @@ void Menu::readmenu() {
                             }
                         }
                         if (flag2) {
-                            cout << "This UCcode doesn't exist in this database, insert a code." << endl;
+                            cout << "This UCcode doesn't exist in this database, please type a valid one." << endl;
                             cin >> Uccode;
                         }
                     }
                     flag2 = true;
-                    cout << "Insert the class' Classcode (i.e.: 1LEIC01). \n";
+                    cout << "Insert the class' ClassCode (i.e.: 1LEIC01). \n";
                     cin >> Classcode;
                     while (flag2) {
                         for (Turma turma: turmas) {
@@ -224,7 +224,7 @@ void Menu::readmenu() {
                             }
                         }
                         if (flag2) {
-                            cout << "This UCcode doesn't exist in this database, insert a code." << endl;
+                            cout << "This ClassCode doesn't exist in this database, please type a valid one." << endl;
                             cin >> Classcode;
                         }
                     }
@@ -242,7 +242,7 @@ void Menu::readmenu() {
                             }
                         }
                         if (flag2) {
-                            cout << "This UCcode doesn't exist in this database, insert a code." << endl;
+                            cout << "This UCcode doesn't exist in this database, please type a valid one." << endl;
                             cin >> Uccode;
                         }
                     }
@@ -260,12 +260,12 @@ void Menu::readmenu() {
                             }
                         }
                         if (flag2) {
-                            cout << "This UCcode doesn't exist in this database, insert a code." << endl;
+                            cout << "This UCcode doesn't exist in this database, please type a valid one." << endl;
                             cin >> Uccode;
                         }
                     }
                     flag2 = true;
-                    cout << "Insert the class' Classcode (i.e.: 1LEIC01). \n";
+                    cout << "Insert the class' ClassCode (i.e.: 1LEIC01). \n";
                     cin >> Classcode;
                     while (flag2) {
                         for (Turma turma: turmas) {
@@ -275,7 +275,7 @@ void Menu::readmenu() {
                             }
                         }
                         if (flag2) {
-                            cout << "This UCcode doesn't exist in this database, insert a code." << endl;
+                            cout << "This ClassCode doesn't exist in this database, please type a valid one." << endl;
                             cin >> Classcode;
                         }
                     }
@@ -297,15 +297,15 @@ void Menu::readmenu() {
                             }
                         }
                         if (flag2) {
-                            cout << "This UCcode doesn't exist in this database, insert a code." << endl;
+                            cout << "This UCcode doesn't exist in this database, please type a valid one." << endl;
                             cin >> Uccode;
                         }
                     }
                     flag2 = true;
-                    cout << "Chose the ordenation type: \n"
-                            "1 : By Class number. \n"
-                            "2 : By number os students (descending order). \n"
-                            "3 : By number os students (ascending order). \n";
+                    cout << "How would you like your classes to be sorted? \n"
+                            "1 : lassCode. \n"
+                            "2 : Number os students (descending order). \n"
+                            "3 : Number os students (ascending order). \n";
                     cin >> tecla;
                     switch (tecla) {
                         case '1':
@@ -351,12 +351,13 @@ void Menu::readmenu() {
                     }
                     break;
                 case '8': {
-                    cout << "Insert the Class Code. (i.e.: 1LEIC01) \n";
+                    cout << "Insert the class' ClassCode (i.e.: 1LEIC01). \n";
                     cin >> Classcode3;
                     for (const Aula& aula: aulas) if (aula.get_ClassCode() == Classcode3) aulas_aux1.push_back(aula);
                     vector<Aula> Aulas1 = aulas_aux1;
                     sort(Aulas1.begin(), Aulas1.end());
                     string temp = " ";
+                    cout << "\nSchedule: \n";
                     for (const Aula& aula: Aulas1) {
                         if (aula.get_WeekDay() == temp) {
                             cout << ", " << UcCodeToName1(aula.get_UcCode()) << "(" << aula.get_Type() << ") from "
@@ -393,9 +394,9 @@ void Menu::readmenu() {
             }
         } else if (tipo == "edit"){
             cout << "Press a key according to what you want to do: \n"
-                    "1 : Remove an UC/class from a student. \n"
-                    "2 : Add a student to a certain class/UC. \n"
-                    "3 : Change between classes, in a certain number of UCs. \n"
+                    "1 : Remove a student from a class/Uc from. \n"
+                    "2 : Add a student to a class/UC. \n"
+                    "3 : Change between classes in 1/+ UCs. \n"
                     "q : Quit. \n";
             cin >> tecla;
             switch (tecla) {
@@ -420,12 +421,12 @@ void Menu::readmenu() {
                             }
                         }
                         if (flag2) {
-                            cout << "This UCcode doesn't exist in this database, insert a code." << endl;
+                            cout << "This UCcode doesn't exist in this database, please type a valid one." << endl;
                             cin >> Uccode;
                         }
                     }
                     flag2 = true;
-                    cout << "Insert the class' Classcode (i.e.: 1LEIC01). \n";
+                    cout << "Insert the class' ClassCode (i.e.: 1LEIC01). \n";
                     cin >> Classcode;
                     while (flag2) {
                         for (Turma turma: turmas) {
@@ -435,7 +436,7 @@ void Menu::readmenu() {
                             }
                         }
                         if (flag2) {
-                            cout << "This UCcode doesn't exist in this database, insert a code." << endl;
+                            cout << "This ClassCode doesn't exist in this database, please type a valid one." << endl;
                             cin >> Classcode;
                         }
                     }
@@ -474,12 +475,12 @@ void Menu::readmenu() {
                             }
                         }
                         if (flag2) {
-                            cout << "This UCcode doesn't exist in this database, insert a code." << endl;
+                            cout << "This UCcode doesn't exist in this database, please type a valid one." << endl;
                             cin >> Uccode;
                         }
                     }
                     flag2 = true;
-                    cout << "Insert the class' Classcode (i.e.: 1LEIC01). \n";
+                    cout << "Insert the class' ClassCode (i.e.: 1LEIC01). \n";
                     cin >> Classcode;
                     while (flag2) {
                         for (Turma turma: turmas) {
@@ -489,7 +490,7 @@ void Menu::readmenu() {
                             }
                         }
                         if (flag2) {
-                            cout << "This UCcode doesn't exist in this database, insert a code." << endl;
+                            cout << "This ClassCode doesn't exist in this database, please type a valid one." << endl;
                             cin >> Classcode;
                         }
                     }
@@ -503,13 +504,13 @@ void Menu::readmenu() {
                         novo_pedido = Pedido("adicionar", up, Uccode, " ", Classcode);
                         pedidos.push(novo_pedido);
                     } else {
-                        cout << "You already belong to a class in this UC, try changing class.";
+                        cout << "You already belong to a class in this UC, try changing to another class. \n";
                     }
                     flag3 = true;
                     aulas_aux.clear();
                     break;
                 case '3':
-                    cout << "Insert how many UCs are you going to change: \n";
+                    cout << "How many UCs do you want to change? \n";
                     cin >> n;
                     x = 0;
                     cout << "Insert your UPCode. \n";
@@ -535,12 +536,12 @@ void Menu::readmenu() {
                                 }
                             }
                             if (flag2) {
-                                cout << "This UCcode doesn't exist in this database, insert a code." << endl;
+                                cout << "This UCcode doesn't exist in this database, please type a valid one." << endl;
                                 cin >> Uccode;
                             }
                         }
                         flag2 = true;
-                        cout << "Insert the class' Classcode (i.e.: 1LEIC01). \n";
+                        cout << "Insert the class' ClassCode (i.e.: 1LEIC01). \n";
                         cin >> Classcode;
                         while (flag2) {
                             for (Turma turma: turmas) {
@@ -550,7 +551,7 @@ void Menu::readmenu() {
                                 }
                             }
                             if (flag2) {
-                                cout << "This UCcode doesn't exist in this database, insert a code." << endl;
+                                cout << "This ClassCode doesn't exist in this database, please type a valid one." << endl;
                                 cin >> Classcode;
                             }
                         }
@@ -565,7 +566,7 @@ void Menu::readmenu() {
                             x++;
                             continue;
                         }
-                        cout << "Insert the class' you want to go Classcode (i.e.: 1LEIC01). \n";
+                        cout << "Insert the class you want to go Classcode (i.e.: 1LEIC01). \n";
                         cin >> Classcode2;
                         if (Classcode == Classcode2) {
                             cout << "You're already in that Class for that UC. \n";
