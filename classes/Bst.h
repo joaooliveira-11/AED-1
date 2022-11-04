@@ -65,6 +65,7 @@ class Bst {
         ///@see Aluno.h
         ///@see Horario.h
         ///@see Aula.h
+        ///@note Time complexity: O(
         void view_by_turma(Bst* base, const string& uccode, const string& classcode);
 
         ///@brief Prints all students that are in an UC.
@@ -73,6 +74,7 @@ class Bst {
         ///@see Aluno.h
         ///@see Horario.h
         ///@see Aula.h
+        ///@note Time complexity: O(
         void view_by_uc(Bst* base, const string& uccode);
 
         ///@brief Counts the number of students in an UC.
@@ -82,6 +84,7 @@ class Bst {
         ///@see Horario.h
         ///@see Aula.h
         ///@see Turma.h
+        ///@note Time complexity: O(
         void num_students_uc(Bst* base, list<Turma> &turmas);
 
         ///@brief Removes a class from a schedule.
@@ -89,14 +92,20 @@ class Bst {
         ///@param upcode Student's UP code.
         ///@param uccode The UC we want to remove the student from's code.
         ///@param classcode The classe's code.
+        ///@note Time complexity: O(
         void removerAula(Bst* base, int upcode, const string& uccode, const string& classcode);
 
         ///@brief Adds a class to a schedule.
         ///@param base All students.
         ///@param upcode Student's UP code.
         ///@param aula The class we want to add to the student's schedule.
+        ///@note Time complexity: O(
         void adicionarAula(Bst* base, int upcode, const Aula aula);
 
+        ///@brief Stores students sorted by name in a vector.
+        ///@param base BST with all students.
+        ///@param alunos Vector where students will be stored when sorted.
+        ///@note Time complexity: O(
         void ordenar_alph(Bst* base, vector<Aluno> &alunos);
     };
 

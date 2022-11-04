@@ -31,25 +31,30 @@ class Horario {
 
         ///@brief Adds a new class to schedule.
         ///@param nAula
+        ///@note Time complexity: O(1)
         void addAula(const Aula& nAula);
 
         ///@brief Prints a student's schedule.
         ///@see Aula.h
+        ///@note Time complexity: O(n)
         void printHorario();
 
         ///@brief Use of map to change a class' UcCode to its corresponding name.
         ///@param uccode
         ///@returns A class' name given it's UC code.
+        ///@note Time complexity: O(1)
         static string UcCodeToName(const string& uccode);
 
         ///@brief Converts hour from float to time.
         ///@param hour The class' starting hour as a double that needs to be converted to time.
         ///@returns A class' starting time.
+        ///@note Time complexity: O(1)
         static string Double_to_hour(double hour);
 
         ///@brief Removes a class from a student's schedule if someone wants to stop having a certain UC.
         ///@param Classcode
         ///@param Uccode
+        ///@note Time complexity: O(n)
         void removerAula(const string& Uccode, const string& Classcode);
 };
 
