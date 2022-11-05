@@ -352,7 +352,7 @@ void Menu::readmenu() {
                     }
                     break;
                 case '8': {
-                    cout << "Insert the class' Code (i.e.: 1EIC01). \n";
+                    cout << "Insert the class' Classcode (i.e.: 1LEIC01). \n";
                     cin >> Classcode3;
                     while (flag9) {
                         for (Turma turma: turmas) {
