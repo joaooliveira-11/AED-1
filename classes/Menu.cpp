@@ -79,6 +79,7 @@ void Menu::readmenu() {
     vector<Aluno> alunos;
     char tecla;
     bool flag = true, flag2 = true, flag3 = true, flag4 , flag5, flag6;
+    bool flag9 = true;
     Bst aux = Bst();
     Bst *Alunos = nullptr;
     Bst* Alunos_by_name = nullptr;
@@ -303,7 +304,7 @@ void Menu::readmenu() {
                     }
                     flag2 = true;
                     cout << "How would you like your classes to be sorted? \n"
-                            "1 : lassCode. \n"
+                            "1 : ClassCode. \n"
                             "2 : Number os students (descending order). \n"
                             "3 : Number os students (ascending order). \n";
                     cin >> tecla;
@@ -351,8 +352,21 @@ void Menu::readmenu() {
                     }
                     break;
                 case '8': {
-                    cout << "Insert the class' ClassCode (i.e.: 1LEIC01). \n";
+                    cout << "Insert the class' Code (i.e.: 1EIC01). \n";
                     cin >> Classcode3;
+                    while (flag9) {
+                        for (Turma turma: turmas) {
+                            if (turma.get_classcode() == Classcode3) {
+                                flag9 = false;
+                                break;
+                            }
+                        }
+                        if (flag9) {
+                            cout << "This Class Code doesn't exist in this database, please type a valid one." << endl;
+                            cin >> Classcode3;
+                        }
+                    }
+                    flag9 = true;
                     for (const Aula& aula: aulas) if (aula.get_ClassCode() == Classcode3) aulas_aux1.push_back(aula);
                     vector<Aula> Aulas1 = aulas_aux1;
                     sort(Aulas1.begin(), Aulas1.end());
