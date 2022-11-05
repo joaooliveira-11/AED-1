@@ -23,8 +23,8 @@ void Turma::sub() {this->numeroAlunos = this->get_numeroalunos() - 1;}
 
 bool Turma::can_add(map<string, int> Max_students_by_UC, Turma turma){
     if ( turma.get_classcode() != ""){
-        return( (Max_students_by_UC[this->Uccode] >= this->numeroAlunos+1) and (Max_students_by_UC[this->Uccode] - this->numeroAlunos+ 1  < 4)
-            and (Max_students_by_UC[this->Uccode] - turma.get_numeroalunos() - 1 < 4));
+        return( (Max_students_by_UC[this->Uccode] >= this->numeroAlunos+1) and (Max_students_by_UC[this->Uccode] - this->numeroAlunos+ 1  <= 4)
+            and (Max_students_by_UC[this->Uccode] - turma.get_numeroalunos() - 1 <= 4));
     }
-    return  ((Max_students_by_UC[this->Uccode] >= this->numeroAlunos+1) and (Max_students_by_UC[this->Uccode] - this->numeroAlunos+ 1  < 4));
+    return  ((Max_students_by_UC[this->Uccode] >= this->numeroAlunos+1) and (Max_students_by_UC[this->Uccode] - this->numeroAlunos+ 1  <= 4));
 }
