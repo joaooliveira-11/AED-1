@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['operator_3c_0',['operator&lt;',['../class_aluno.html#a26478bcf6b6dc24f408dac4ec6bb1cf8',1,'Aluno::operator&lt;()'],['../class_aula.html#a8c0fa1879047156ff458c126921cb946',1,'Aula::operator&lt;()']]],
-  ['operator_3e_1',['operator&gt;',['../class_aluno.html#a629961bcab8db131634c60dfce801c82',1,'Aluno']]]
+  ['name_5forder_0',['name_order',['../_menu_8cpp.html#a9ccb09b6f7ef8f3ad1222e41ba4418cd',1,'Menu.cpp']]],
+  ['num_5fstudents_5fuc_1',['num_students_uc',['../class_bst.html#a5eb10fb3ef71ab566d3f5dbf79ba458b',1,'Bst']]]
 ];

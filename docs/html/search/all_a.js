@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['printhorario_0',['printHorario',['../class_horario.html#a26619944afddca13bb2301c6776fb60f',1,'Horario']]]
+  ['operator_3c_0',['operator&lt;',['../class_aluno.html#a26478bcf6b6dc24f408dac4ec6bb1cf8',1,'Aluno::operator&lt;()'],['../class_aula.html#a8c0fa1879047156ff458c126921cb946',1,'Aula::operator&lt;()']]],
+  ['operator_3e_1',['operator&gt;',['../class_aluno.html#a629961bcab8db131634c60dfce801c82',1,'Aluno']]],
+  ['ordenar_5falph_2',['ordenar_alph',['../class_bst.html#ad7d98f3cf02ef31ff3df1c655817fe50',1,'Bst']]]
 ];

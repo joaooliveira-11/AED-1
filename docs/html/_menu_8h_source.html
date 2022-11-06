@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>AED: classes/Menu.h Source File</title>
+<title>AED: C:/Users/diana/Desktop/AED-1/classes/Menu.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -95,17 +95,26 @@ $(document).ready(function(){initNavTree('_menu_8h_source.html',''); initResizab
 <div class="contents">
 <a href="_menu_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#ifndef AED_1_MENU_H</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#define AED_1_MENU_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">using namespace </span>std;</div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="class_menu.html">    7</a></span><span class="keyword">class </span><a class="code hl_class" href="class_menu.html">Menu</a> {</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_menu.html#ad8572ff8d66ae357cbfa15112375dc07">readmenu</a>();</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>};</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclass_menu_html"><div class="ttname"><a href="class_menu.html">Menu</a></div><div class="ttdoc">A class for the staring menu.</div><div class="ttdef"><b>Definition:</b> Menu.h:7</div></div>
-<div class="ttc" id="aclass_menu_html_ad8572ff8d66ae357cbfa15112375dc07"><div class="ttname"><a href="class_menu.html#ad8572ff8d66ae357cbfa15112375dc07">Menu::readmenu</a></div><div class="ttdeci">static void readmenu()</div><div class="ttdoc">Runs the interactive user menu.</div><div class="ttdef"><b>Definition:</b> Menu.cpp:7</div></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#ifndef AED_1_MENU_H</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#define AED_1_MENU_H</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="class_menu.html">   10</a></span><span class="keyword">class </span><a class="code hl_class" href="class_menu.html">Menu</a> {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_menu.html#ad8572ff8d66ae357cbfa15112375dc07">readmenu</a>();</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keyword">static</span> <span class="keywordtype">string</span> <a class="code hl_function" href="class_menu.html#ae00e7808fb877d9b4412cf28b76e51c6">UcCodeToName1</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;uccode);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keyword">static</span> <span class="keywordtype">string</span> <a class="code hl_function" href="class_menu.html#a31aba07aab2913a26d961c609c2dc419">Double_to_hour1</a>(<span class="keywordtype">double</span> time);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>};</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_menu_html"><div class="ttname"><a href="class_menu.html">Menu</a></div><div class="ttdoc">A class for the staring menu.</div><div class="ttdef"><b>Definition:</b> Menu.h:10</div></div>
+<div class="ttc" id="aclass_menu_html_a31aba07aab2913a26d961c609c2dc419"><div class="ttname"><a href="class_menu.html#a31aba07aab2913a26d961c609c2dc419">Menu::Double_to_hour1</a></div><div class="ttdeci">static string Double_to_hour1(double time)</div><div class="ttdoc">Converts hour from float to time.</div><div class="ttdef"><b>Definition:</b> Menu.cpp:61</div></div>
+<div class="ttc" id="aclass_menu_html_ad8572ff8d66ae357cbfa15112375dc07"><div class="ttname"><a href="class_menu.html#ad8572ff8d66ae357cbfa15112375dc07">Menu::readmenu</a></div><div class="ttdeci">static void readmenu()</div><div class="ttdoc">Runs the interactive user menu.</div><div class="ttdef"><b>Definition:</b> Menu.cpp:67</div></div>
+<div class="ttc" id="aclass_menu_html_ae00e7808fb877d9b4412cf28b76e51c6"><div class="ttname"><a href="class_menu.html#ae00e7808fb877d9b4412cf28b76e51c6">Menu::UcCodeToName1</a></div><div class="ttdeci">static string UcCodeToName1(const string &amp;uccode)</div><div class="ttdoc">Use of map to change a class' UcCode to its corresponding name.</div><div class="ttdef"><b>Definition:</b> Menu.cpp:26</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

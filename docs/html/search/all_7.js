@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['menu_0',['Menu',['../class_menu.html',1,'']]],
-  ['menu_2ecpp_1',['Menu.cpp',['../_menu_8cpp.html',1,'']]],
-  ['menu_2eh_2',['Menu.h',['../_menu_8h.html',1,'']]]
+  ['insert_5fby_5fupcode_0',['insert_by_upcode',['../class_bst.html#abefd5b922412b2819306b64ae3d739d6',1,'Bst']]]
 ];

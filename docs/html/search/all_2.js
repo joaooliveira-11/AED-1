@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['double_5fto_5fhour_0',['Double_to_hour',['../class_horario.html#a72c6e108fea43c13108248ac59f595aa',1,'Horario']]]
+  ['can_5fadd_0',['can_add',['../class_turma.html#a32bc9220033d2e000daf0ab286b80f4e',1,'Turma']]]
 ];

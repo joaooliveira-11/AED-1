@@ -156,5 +156,4 @@ void Reading::writeDown(Bst* alunos)  {
         }
     }
     NewFile.close();
-
 }

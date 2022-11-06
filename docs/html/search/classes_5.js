@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['turma_0',['Turma',['../class_turma.html',1,'']]]
+  ['reading_0',['Reading',['../class_reading.html',1,'']]]
 ];

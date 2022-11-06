@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['view_0',['view',['../class_bst.html#afbb8010ba4bd8d2976e7b7692988786d',1,'Bst']]],
-  ['view_5fby_5fnucs_1',['view_by_NUCS',['../class_bst.html#a5167bba895f62ce55d0f9efe6e7ec97b',1,'Bst']]],
-  ['view_5fby_5fturma_2',['view_by_turma',['../class_bst.html#a8ce39be8292b134329d721df75eaf295',1,'Bst']]],
-  ['view_5fby_5fuc_3',['view_by_uc',['../class_bst.html#a25f3a5d5f334fc42b679659c13be9f77',1,'Bst']]]
+  ['uccodetoname_0',['UcCodeToName',['../class_horario.html#af9b19a49bc4068d158117ced29134f05',1,'Horario']]],
+  ['uccodetoname1_1',['UcCodeToName1',['../class_menu.html#ae00e7808fb877d9b4412cf28b76e51c6',1,'Menu']]],
+  ['ucs_5forder_2',['ucs_order',['../_menu_8cpp.html#ace4276d3d2b65e8f6a5363679f5838ca',1,'Menu.cpp']]],
+  ['ucs_5fstu_5forder_3',['ucs_stu_order',['../_menu_8cpp.html#a2ab8019a320f544f60f2f21916650001',1,'Menu.cpp']]],
+  ['ucs_5fstu_5forder_5fr_4',['ucs_stu_order_r',['../_menu_8cpp.html#a05c5a008049139767f3f1b9add22d1c1',1,'Menu.cpp']]]
 ];

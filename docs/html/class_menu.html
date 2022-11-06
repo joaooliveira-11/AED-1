@@ -107,10 +107,52 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ad8572ff8d66ae357cbfa15112375dc07"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu.html#ad8572ff8d66ae357cbfa15112375dc07">readmenu</a> ()</td></tr>
 <tr class="memdesc:ad8572ff8d66ae357cbfa15112375dc07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs the interactive user menu.  <a href="class_menu.html#ad8572ff8d66ae357cbfa15112375dc07">More...</a><br /></td></tr>
 <tr class="separator:ad8572ff8d66ae357cbfa15112375dc07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae00e7808fb877d9b4412cf28b76e51c6"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu.html#ae00e7808fb877d9b4412cf28b76e51c6">UcCodeToName1</a> (const string &amp;uccode)</td></tr>
+<tr class="memdesc:ae00e7808fb877d9b4412cf28b76e51c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use of map to change a class' UcCode to its corresponding name.  <a href="class_menu.html#ae00e7808fb877d9b4412cf28b76e51c6">More...</a><br /></td></tr>
+<tr class="separator:ae00e7808fb877d9b4412cf28b76e51c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31aba07aab2913a26d961c609c2dc419"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu.html#a31aba07aab2913a26d961c609c2dc419">Double_to_hour1</a> (double time)</td></tr>
+<tr class="memdesc:a31aba07aab2913a26d961c609c2dc419"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts hour from float to time.  <a href="class_menu.html#a31aba07aab2913a26d961c609c2dc419">More...</a><br /></td></tr>
+<tr class="separator:a31aba07aab2913a26d961c609c2dc419"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >A class for the staring menu. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a31aba07aab2913a26d961c609c2dc419" name="a31aba07aab2913a26d961c609c2dc419"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31aba07aab2913a26d961c609c2dc419">&#9670;&#160;</a></span>Double_to_hour1()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Menu::Double_to_hour1 </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>time</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts hour from float to time. </p>
+<dl class="section return"><dt>Returns</dt><dd>An hour converted from float to time. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">time</td><td>The hour we want to convert. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>Time complexity: O(1) </dd></dl>
+
+</div>
+</div>
 <a id="ad8572ff8d66ae357cbfa15112375dc07" name="ad8572ff8d66ae357cbfa15112375dc07"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad8572ff8d66ae357cbfa15112375dc07">&#9670;&#160;</a></span>readmenu()</h2>
 
@@ -138,9 +180,45 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ae00e7808fb877d9b4412cf28b76e51c6" name="ae00e7808fb877d9b4412cf28b76e51c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae00e7808fb877d9b4412cf28b76e51c6">&#9670;&#160;</a></span>UcCodeToName1()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Menu::UcCodeToName1 </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>uccode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Use of map to change a class' UcCode to its corresponding name. </p>
+<dl class="section return"><dt>Returns</dt><dd>The corresponding UC's name given an UCcode </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uccode</td><td>The UC's code. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>Time complexity: O(1) </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>classes/<a class="el" href="_menu_8h_source.html">Menu.h</a></li>
-<li>classes/<a class="el" href="_menu_8cpp.html">Menu.cpp</a></li>
+<li>C:/Users/diana/Desktop/AED-1/classes/<a class="el" href="_menu_8h_source.html">Menu.h</a></li>
+<li>C:/Users/diana/Desktop/AED-1/classes/<a class="el" href="_menu_8cpp.html">Menu.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

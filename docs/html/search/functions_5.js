@@ -1,4 +1,22 @@
 var searchData=
 [
-  ['horario_0',['Horario',['../class_horario.html#a46801f79049e424c1a520838c33397b2',1,'Horario::Horario()'],['../class_horario.html#af6b586cceb7ea8d72fc37f16507c7ca8',1,'Horario::Horario(vector&lt; Aula &gt; horarioaluno)']]]
+  ['get_5fclasscode_0',['get_classcode',['../class_turma.html#a65d9bee26f102646a227858b0f22c244',1,'Turma']]],
+  ['get_5fclasscode_1',['get_ClassCode',['../class_aula.html#a4d287ae9a3f34d33dbb7e12bdd9aff19',1,'Aula']]],
+  ['get_5fduration_2',['get_Duration',['../class_aula.html#a2bc12d8f26b4c7e2edbf616f09b31049',1,'Aula']]],
+  ['get_5fnumeroalunos_3',['get_numeroalunos',['../class_turma.html#a9c933d6319561d698bbc7f928bee64fc',1,'Turma']]],
+  ['get_5fstarthour_4',['get_StartHour',['../class_aula.html#ab41e3893ced45da9594cde670d635670',1,'Aula']]],
+  ['get_5ftype_5',['get_Type',['../class_aula.html#a23dcf35463ab7f762a791a71a826caac',1,'Aula']]],
+  ['get_5fuccode_6',['get_uccode',['../class_turma.html#a41956203cec17345359b245b74481086',1,'Turma']]],
+  ['get_5fuccode_7',['get_UcCode',['../class_aula.html#a20aed5ddb6bc7ff4a921cb3675655de5',1,'Aula']]],
+  ['get_5fweekday_8',['get_WeekDay',['../class_aula.html#ad15c550c6abd030dd6d067b46f3aa8c5',1,'Aula']]],
+  ['getaulas_9',['getAulas',['../class_horario.html#a4eeb96fa5d34b2ce3e01bc548f9b73aa',1,'Horario']]],
+  ['getclass_5fantiga_10',['getClass_antiga',['../class_pedido.html#a3aafe17a6094f6cf35b28718a380f700',1,'Pedido']]],
+  ['getclass_5fnova_11',['getClass_nova',['../class_pedido.html#a01ffb7b9d639292076b51bf97ddcc184',1,'Pedido']]],
+  ['gethorario_12',['getHorario',['../class_aluno.html#afa679cfca130ccb50c45612772f45e58',1,'Aluno']]],
+  ['getnucs_13',['getNUCS',['../class_aluno.html#aeb723d3df2c3f93c1113448d16a14221',1,'Aluno']]],
+  ['getstudentcode_14',['getStudentCode',['../class_aluno.html#ab19881e40a062b6392b1771c8acca965',1,'Aluno']]],
+  ['getstudentname_15',['getStudentName',['../class_aluno.html#a413b787874406bac218dcb889cc5bb65',1,'Aluno']]],
+  ['gettype_16',['getType',['../class_pedido.html#a526176c2eea1041d034dce5cdb16a418',1,'Pedido']]],
+  ['getuc_17',['getUc',['../class_pedido.html#a2b3db4450f75f3e07874155876601005',1,'Pedido']]],
+  ['getup_18',['getUp',['../class_pedido.html#a9025e3068b801989a596b6ef508aae5d',1,'Pedido']]]
 ];

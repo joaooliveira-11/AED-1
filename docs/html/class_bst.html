@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('class_bst.html',''); initResizable(); 
 </div><!--header-->
 <div class="contents">
 
-<p>Class for all the bst we need (i.e.: all students, the students enrolled in more than n UC's).  
+<p>Class for all the bst we need (i.e.: all students, the students enrolled in more than n UCs).  
  <a href="class_bst.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_bst_8h_source.html">Bst.h</a>&gt;</code></p>
@@ -111,15 +111,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ae5f0b4b968b645faecb41a07b5d108b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of a new binary search tree given a student.  <a href="class_bst.html#ae5f0b4b968b645faecb41a07b5d108b3">More...</a><br /></td></tr>
 <tr class="separator:ae5f0b4b968b645faecb41a07b5d108b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abefd5b922412b2819306b64ae3d739d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_bst.html">Bst</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bst.html#abefd5b922412b2819306b64ae3d739d6">insert_by_upcode</a> (<a class="el" href="class_bst.html">Bst</a> *base, const <a class="el" href="class_aluno.html">Aluno</a> &amp;atual)</td></tr>
+<tr class="memdesc:abefd5b922412b2819306b64ae3d739d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a student in the BST.  <a href="class_bst.html#abefd5b922412b2819306b64ae3d739d6">More...</a><br /></td></tr>
 <tr class="separator:abefd5b922412b2819306b64ae3d739d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afbb8010ba4bd8d2976e7b7692988786d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bst.html#afbb8010ba4bd8d2976e7b7692988786d">view</a> (<a class="el" href="class_bst.html">Bst</a> *base)</td></tr>
 <tr class="memdesc:afbb8010ba4bd8d2976e7b7692988786d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints all students (sorted by UC code by default).  <a href="class_bst.html#afbb8010ba4bd8d2976e7b7692988786d">More...</a><br /></td></tr>
 <tr class="separator:afbb8010ba4bd8d2976e7b7692988786d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5167bba895f62ce55d0f9efe6e7ec97b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bst.html#a5167bba895f62ce55d0f9efe6e7ec97b">view_by_NUCS</a> (<a class="el" href="class_bst.html">Bst</a> *base, int x)</td></tr>
-<tr class="memdesc:a5167bba895f62ce55d0f9efe6e7ec97b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints all students that are enrolled in more than n UC's.  <a href="class_bst.html#a5167bba895f62ce55d0f9efe6e7ec97b">More...</a><br /></td></tr>
+<tr class="memdesc:a5167bba895f62ce55d0f9efe6e7ec97b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints all students that are enrolled in more than n UCs.  <a href="class_bst.html#a5167bba895f62ce55d0f9efe6e7ec97b">More...</a><br /></td></tr>
 <tr class="separator:a5167bba895f62ce55d0f9efe6e7ec97b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5670db9eed71387b3f21ddbd6c5e0088"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_aluno.html">Aluno</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bst.html#a5670db9eed71387b3f21ddbd6c5e0088">find_by_upcode</a> (<a class="el" href="class_bst.html">Bst</a> *base, int upcode)</td></tr>
-<tr class="separator:a5670db9eed71387b3f21ddbd6c5e0088"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88c14fbdd826a15513760da68ebc92b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_aluno.html">Aluno</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bst.html#a88c14fbdd826a15513760da68ebc92b3">find_by_upcode</a> (<a class="el" href="class_bst.html">Bst</a> *base, int upcode)</td></tr>
+<tr class="separator:a88c14fbdd826a15513760da68ebc92b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ce39be8292b134329d721df75eaf295"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bst.html#a8ce39be8292b134329d721df75eaf295">view_by_turma</a> (<a class="el" href="class_bst.html">Bst</a> *base, const string &amp;uccode, const string &amp;classcode)</td></tr>
 <tr class="memdesc:a8ce39be8292b134329d721df75eaf295"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints all students that are in the same UC/class.  <a href="class_bst.html#a8ce39be8292b134329d721df75eaf295">More...</a><br /></td></tr>
 <tr class="separator:a8ce39be8292b134329d721df75eaf295"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -130,10 +131,17 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a5eb10fb3ef71ab566d3f5dbf79ba458b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Counts the number of students in an UC.  <a href="class_bst.html#a5eb10fb3ef71ab566d3f5dbf79ba458b">More...</a><br /></td></tr>
 <tr class="separator:a5eb10fb3ef71ab566d3f5dbf79ba458b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab956a9e8afe15e3ccecb4aee6ea7b2d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bst.html#ab956a9e8afe15e3ccecb4aee6ea7b2d1">removerAula</a> (<a class="el" href="class_bst.html">Bst</a> *base, int upcode, const string &amp;uccode, const string &amp;classcode)</td></tr>
+<tr class="memdesc:ab956a9e8afe15e3ccecb4aee6ea7b2d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a class from a schedule.  <a href="class_bst.html#ab956a9e8afe15e3ccecb4aee6ea7b2d1">More...</a><br /></td></tr>
 <tr class="separator:ab956a9e8afe15e3ccecb4aee6ea7b2d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cc72c8b5e897c419a5fd8f87e00f9f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bst.html#a3cc72c8b5e897c419a5fd8f87e00f9f4">adicionarAula</a> (<a class="el" href="class_bst.html">Bst</a> *base, int upcode, const <a class="el" href="class_aula.html">Aula</a> aula)</td></tr>
+<tr class="memdesc:a3cc72c8b5e897c419a5fd8f87e00f9f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a class to a schedule.  <a href="class_bst.html#a3cc72c8b5e897c419a5fd8f87e00f9f4">More...</a><br /></td></tr>
+<tr class="separator:a3cc72c8b5e897c419a5fd8f87e00f9f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7d98f3cf02ef31ff3df1c655817fe50"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bst.html#ad7d98f3cf02ef31ff3df1c655817fe50">ordenar_alph</a> (<a class="el" href="class_bst.html">Bst</a> *base, vector&lt; <a class="el" href="class_aluno.html">Aluno</a> &gt; &amp;alunos)</td></tr>
+<tr class="memdesc:ad7d98f3cf02ef31ff3df1c655817fe50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores students sorted by name in a vector.  <a href="class_bst.html#ad7d98f3cf02ef31ff3df1c655817fe50">More...</a><br /></td></tr>
+<tr class="separator:ad7d98f3cf02ef31ff3df1c655817fe50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Class for all the bst we need (i.e.: all students, the students enrolled in more than n UC's). </p>
+<div class="textblock"><p >Class for all the bst we need (i.e.: all students, the students enrolled in more than n UCs). </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a96c0d408b76533bd61ecf9322315e1f2" name="a96c0d408b76533bd61ecf9322315e1f2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a96c0d408b76533bd61ecf9322315e1f2">&#9670;&#160;</a></span>Bst() <span class="overload">[1/2]</span></h2>
@@ -180,19 +188,70 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructor of a new binary search tree given a student. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">imp</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="_aluno_8h.html">Aluno.h</a> </dd></dl>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a5670db9eed71387b3f21ddbd6c5e0088" name="a5670db9eed71387b3f21ddbd6c5e0088"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5670db9eed71387b3f21ddbd6c5e0088">&#9670;&#160;</a></span>find_by_upcode()</h2>
+<a id="a3cc72c8b5e897c419a5fd8f87e00f9f4" name="a3cc72c8b5e897c419a5fd8f87e00f9f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cc72c8b5e897c419a5fd8f87e00f9f4">&#9670;&#160;</a></span>adicionarAula()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_aluno.html">Aluno</a> Bst::find_by_upcode </td>
+          <td class="memname">void Bst::adicionarAula </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_bst.html">Bst</a> *&#160;</td>
+          <td class="paramname"><em>base</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>upcode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_aula.html">Aula</a>&#160;</td>
+          <td class="paramname"><em>aula</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds a class to a schedule. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">base</td><td>All students. </td></tr>
+    <tr><td class="paramname">upcode</td><td>Student's UP code. </td></tr>
+    <tr><td class="paramname">aula</td><td>The class we want to add to the student's schedule. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>Time complexity: O(n) </dd></dl>
+
+</div>
+</div>
+<a id="a88c14fbdd826a15513760da68ebc92b3" name="a88c14fbdd826a15513760da68ebc92b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88c14fbdd826a15513760da68ebc92b3">&#9670;&#160;</a></span>find_by_upcode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_aluno.html">Aluno</a> &amp; Bst::find_by_upcode </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_bst.html">Bst</a> *&#160;</td>
           <td class="paramname"><em>base</em>, </td>
@@ -211,6 +270,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>Student in BST who's UP code is the same as the upcode the function receives. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">base</td><td></td></tr>
+    <tr><td class="paramname">upcode</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>Time complexity: O(1) </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="_aluno_8h.html">Aluno.h</a> </dd></dl>
 
 </div>
@@ -240,6 +307,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Inserts a student in the BST. </p>
 <dl class="section return"><dt>Returns</dt><dd>Updated BST after adding a new student. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -248,6 +317,7 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section note"><dt>Note</dt><dd>Time complexity: O(1) </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="_aluno_8h.html">Aluno.h</a> </dd></dl>
 
 </div>
@@ -279,6 +349,13 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Counts the number of students in an UC. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">base</td><td></td></tr>
+    <tr><td class="paramname">turmas</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="_aluno_8h.html">Aluno.h</a> </dd>
 <dd>
 <a class="el" href="_horario_8h.html">Horario.h</a> </dd>
@@ -286,6 +363,45 @@ Public Member Functions</h2></td></tr>
 <a class="el" href="_aula_8h.html">Aula.h</a> </dd>
 <dd>
 <a class="el" href="_turma_8h.html">Turma.h</a> </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Time complexity: O(n) </dd></dl>
+
+</div>
+</div>
+<a id="ad7d98f3cf02ef31ff3df1c655817fe50" name="ad7d98f3cf02ef31ff3df1c655817fe50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7d98f3cf02ef31ff3df1c655817fe50">&#9670;&#160;</a></span>ordenar_alph()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Bst::ordenar_alph </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_bst.html">Bst</a> *&#160;</td>
+          <td class="paramname"><em>base</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">vector&lt; <a class="el" href="class_aluno.html">Aluno</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>alunos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Stores students sorted by name in a vector. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">base</td><td>BST with all students. </td></tr>
+    <tr><td class="paramname">alunos</td><td>Vector where students will be stored when sorted. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>Time complexity: O(n) </dd></dl>
 
 </div>
 </div>
@@ -327,6 +443,18 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Removes a class from a schedule. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">base</td><td>All students. </td></tr>
+    <tr><td class="paramname">upcode</td><td>Student's UP code. </td></tr>
+    <tr><td class="paramname">uccode</td><td>The UC we want to remove the student from's code. </td></tr>
+    <tr><td class="paramname">classcode</td><td>The classe's code. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>Time complexity: O(n) </dd></dl>
+
 </div>
 </div>
 <a id="afbb8010ba4bd8d2976e7b7692988786d" name="afbb8010ba4bd8d2976e7b7692988786d"></a>
@@ -346,6 +474,13 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Prints all students (sorted by UC code by default). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">base</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>Time complexity: O(1) </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="_aluno_8h.html">Aluno.h</a> </dd></dl>
 
 </div>
@@ -376,13 +511,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Prints all students that are enrolled in more than n UC's. </p>
+<p>Prints all students that are enrolled in more than n UCs. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">x</td><td>The number (n) UC's we want to check. </td></tr>
+    <tr><td class="paramname">base</td><td></td></tr>
+    <tr><td class="paramname">x</td><td>The number (n) UCs we want to check. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section note"><dt>Note</dt><dd>Time complexity: O(1) </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="_aluno_8h.html">Aluno.h</a> </dd></dl>
 
 </div>
@@ -420,11 +557,20 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Prints all students that are in the same UC/class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">base</td><td></td></tr>
+    <tr><td class="paramname">uccode</td><td></td></tr>
+    <tr><td class="paramname">classcode</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="_aluno_8h.html">Aluno.h</a> </dd>
 <dd>
 <a class="el" href="_horario_8h.html">Horario.h</a> </dd>
 <dd>
 <a class="el" href="_aula_8h.html">Aula.h</a> </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Time complexity: O(n) </dd></dl>
 
 </div>
 </div>
@@ -455,17 +601,25 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Prints all students that are in an UC. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">base</td><td></td></tr>
+    <tr><td class="paramname">uccode</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="_aluno_8h.html">Aluno.h</a> </dd>
 <dd>
 <a class="el" href="_horario_8h.html">Horario.h</a> </dd>
 <dd>
 <a class="el" href="_aula_8h.html">Aula.h</a> </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Time complexity: O(n) </dd></dl>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>classes/<a class="el" href="_bst_8h_source.html">Bst.h</a></li>
-<li>classes/<a class="el" href="_bst_8cpp.html">Bst.cpp</a></li>
+<li>C:/Users/diana/Desktop/AED-1/classes/<a class="el" href="_bst_8h_source.html">Bst.h</a></li>
+<li>C:/Users/diana/Desktop/AED-1/classes/<a class="el" href="_bst_8cpp.html">Bst.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

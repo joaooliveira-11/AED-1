@@ -16,7 +16,7 @@ bool ucs_order(const Aluno& aluno1, const Aluno& aluno2){
     return aluno1.getNUCS() < aluno2.getNUCS();
 }
 
-bool ucs_stu_order( Turma& turma1, const Turma& turma2) {
+bool ucs_stu_order(Turma& turma1, const Turma& turma2) {
     return turma1.get_numeroalunos() < turma2.get_numeroalunos();
 }
 bool ucs_stu_order_r(const Turma& turma1, const Turma& turma2) {
@@ -65,7 +65,6 @@ string Menu::Double_to_hour1(double time) {
 }
 
 void Menu::readmenu() {
-
     int up, NUCS, n, x, year, count1 = 0, count2 = 0, count3 = 0;
     string Classcode, Classcode2, Classcode3, Uccode, again = "No", tipo, ord;
     Turma turma_aux ;

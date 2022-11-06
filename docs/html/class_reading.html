@@ -113,6 +113,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ab1af0e0ea769cbe8691eaeef8dddc239"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_bst.html">Bst</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_reading.html#ab1af0e0ea769cbe8691eaeef8dddc239">readAlunos</a> ()</td></tr>
 <tr class="memdesc:ab1af0e0ea769cbe8691eaeef8dddc239"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads students_classes.csv.  <a href="class_reading.html#ab1af0e0ea769cbe8691eaeef8dddc239">More...</a><br /></td></tr>
 <tr class="separator:ab1af0e0ea769cbe8691eaeef8dddc239"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c7ca83db684d79db52882956722a18c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_reading.html#a0c7ca83db684d79db52882956722a18c">writeDown</a> (<a class="el" href="class_bst.html">Bst</a> *alunos)</td></tr>
+<tr class="memdesc:a0c7ca83db684d79db52882956722a18c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new file with the updated student's schedules after the queue of requests is done.  <a href="class_reading.html#a0c7ca83db684d79db52882956722a18c">More...</a><br /></td></tr>
+<tr class="separator:a0c7ca83db684d79db52882956722a18c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >A class to read and manage the csv files. </p>
@@ -146,6 +149,7 @@ Static Public Member Functions</h2></td></tr>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="_aula_8h.html">Aula.h</a> </dd>
 <dd>
 <a class="el" href="_aluno_8h.html">Aluno.h</a> </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Time complexity: O(n) </dd></dl>
 
 </div>
 </div>
@@ -176,6 +180,7 @@ Static Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>All the classes. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>The function gets the ClassCode, UcCode, Weekday, StartHour, Duration and Type of each class from the file, stores them all in variables and creates a new class with them, which is then added to vector with all the classes that'll be returned. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="_aula_8h.html">Aula.h</a> </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Time complexity: O(n) </dd></dl>
 
 </div>
 </div>
@@ -206,12 +211,48 @@ Static Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>All the classes per UC. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>The function gets the UcCode and ClassCode of each class/UC from the file, stores them in variables and creates a new class/UC with them, which is then added to vector with all the classes per UC that'll be returned. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="_turma_8h.html">Turma.h</a> </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Time complexity: O(n) </dd></dl>
+
+</div>
+</div>
+<a id="a0c7ca83db684d79db52882956722a18c" name="a0c7ca83db684d79db52882956722a18c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c7ca83db684d79db52882956722a18c">&#9670;&#160;</a></span>writeDown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Reading::writeDown </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_bst.html">Bst</a> *&#160;</td>
+          <td class="paramname"><em>alunos</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new file with the updated student's schedules after the queue of requests is done. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alunos</td><td>BST of all students. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>Time complexity: O(n) </dd></dl>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>classes/<a class="el" href="_reading_8h_source.html">Reading.h</a></li>
-<li>classes/<a class="el" href="_reading_8cpp.html">Reading.cpp</a></li>
+<li>C:/Users/diana/Desktop/AED-1/classes/<a class="el" href="_reading_8h_source.html">Reading.h</a></li>
+<li>C:/Users/diana/Desktop/AED-1/classes/<a class="el" href="_reading_8cpp.html">Reading.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

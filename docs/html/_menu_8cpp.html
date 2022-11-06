@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>AED: classes/Menu.cpp File Reference</title>
+<title>AED: C:/Users/diana/Desktop/AED-1/classes/Menu.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -90,6 +90,8 @@ $(document).ready(function(){initNavTree('_menu_8cpp.html',''); initResizable();
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">Menu.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -97,7 +99,137 @@ $(document).ready(function(){initNavTree('_menu_8cpp.html',''); initResizable();
 <code>#include &quot;<a class="el" href="_horario_8h_source.html">Horario.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_reading_8h_source.html">Reading.h</a>&quot;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
-</div></div><!-- contents -->
+<code>#include &lt;algorithm&gt;</code><br />
+<code>#include &quot;map&quot;</code><br />
+<code>#include &quot;queue&quot;</code><br />
+<code>#include &quot;<a class="el" href="_pedido_8h_source.html">Pedido.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_aluno_8h_source.html">Aluno.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a9ccb09b6f7ef8f3ad1222e41ba4418cd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_menu_8cpp.html#a9ccb09b6f7ef8f3ad1222e41ba4418cd">name_order</a> (const <a class="el" href="class_aluno.html">Aluno</a> &amp;aluno1, const <a class="el" href="class_aluno.html">Aluno</a> &amp;aluno2)</td></tr>
+<tr class="separator:a9ccb09b6f7ef8f3ad1222e41ba4418cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace4276d3d2b65e8f6a5363679f5838ca"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_menu_8cpp.html#ace4276d3d2b65e8f6a5363679f5838ca">ucs_order</a> (const <a class="el" href="class_aluno.html">Aluno</a> &amp;aluno1, const <a class="el" href="class_aluno.html">Aluno</a> &amp;aluno2)</td></tr>
+<tr class="separator:ace4276d3d2b65e8f6a5363679f5838ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ab8019a320f544f60f2f21916650001"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_menu_8cpp.html#a2ab8019a320f544f60f2f21916650001">ucs_stu_order</a> (<a class="el" href="class_turma.html">Turma</a> &amp;turma1, const <a class="el" href="class_turma.html">Turma</a> &amp;turma2)</td></tr>
+<tr class="separator:a2ab8019a320f544f60f2f21916650001"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05c5a008049139767f3f1b9add22d1c1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_menu_8cpp.html#a05c5a008049139767f3f1b9add22d1c1">ucs_stu_order_r</a> (const <a class="el" href="class_turma.html">Turma</a> &amp;turma1, const <a class="el" href="class_turma.html">Turma</a> &amp;turma2)</td></tr>
+<tr class="separator:a05c5a008049139767f3f1b9add22d1c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a9ccb09b6f7ef8f3ad1222e41ba4418cd" name="a9ccb09b6f7ef8f3ad1222e41ba4418cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ccb09b6f7ef8f3ad1222e41ba4418cd">&#9670;&#160;</a></span>name_order()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool name_order </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_aluno.html">Aluno</a> &amp;&#160;</td>
+          <td class="paramname"><em>aluno1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_aluno.html">Aluno</a> &amp;&#160;</td>
+          <td class="paramname"><em>aluno2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ace4276d3d2b65e8f6a5363679f5838ca" name="ace4276d3d2b65e8f6a5363679f5838ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace4276d3d2b65e8f6a5363679f5838ca">&#9670;&#160;</a></span>ucs_order()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ucs_order </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_aluno.html">Aluno</a> &amp;&#160;</td>
+          <td class="paramname"><em>aluno1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_aluno.html">Aluno</a> &amp;&#160;</td>
+          <td class="paramname"><em>aluno2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2ab8019a320f544f60f2f21916650001" name="a2ab8019a320f544f60f2f21916650001"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ab8019a320f544f60f2f21916650001">&#9670;&#160;</a></span>ucs_stu_order()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ucs_stu_order </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_turma.html">Turma</a> &amp;&#160;</td>
+          <td class="paramname"><em>turma1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_turma.html">Turma</a> &amp;&#160;</td>
+          <td class="paramname"><em>turma2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a05c5a008049139767f3f1b9add22d1c1" name="a05c5a008049139767f3f1b9add22d1c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05c5a008049139767f3f1b9add22d1c1">&#9670;&#160;</a></span>ucs_stu_order_r()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ucs_stu_order_r </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_turma.html">Turma</a> &amp;&#160;</td>
+          <td class="paramname"><em>turma1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_turma.html">Turma</a> &amp;&#160;</td>
+          <td class="paramname"><em>turma2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

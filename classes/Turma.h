@@ -49,11 +49,8 @@ class Turma {
         ///@note Time complexity: O(1)
         bool can_add(map<string, int> Max_students_by_UC, Turma);
 
-        ///@brief Decrements the number of students in this class/UC.
-        void sub();
-
         ///@brief Sets the number of students of a class to 0.
-
+        ///@note Time complexity: O(1)
         void set_numeroalunos_0();
 };
 

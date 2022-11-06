@@ -10,7 +10,6 @@ using namespace std;
 class Menu {
     public:
         ///@brief Runs the interactive user menu.
-        ///@note Time complexity: O(
         static void readmenu();
 
         ///@brief Use of map to change a class' UcCode to its corresponding name.
