@@ -13,11 +13,13 @@ class Menu {
         ///@note Time complexity: O(
         static void readmenu();
 
+        ///@brief Use of map to change a class' UcCode to its corresponding name.
         ///@returns The corresponding UC's name given an UCcode
         ///@param uccode The UC's code.
         ///@note Time complexity: O(1)
         static string UcCodeToName1(const string &uccode);
 
+        ///@brief Converts hour from float to time.
         ///@returns An hour converted from float to time.
         ///@param time The hour we want to convert.
         ///@note Time complexity: O(1)

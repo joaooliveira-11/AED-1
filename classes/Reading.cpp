@@ -148,8 +148,11 @@ void Reading::writeDown(Bst* alunos)  {
     for (Aluno &aluno: Alunos) {
         aulas = aluno.getHorario().getAulas();
         for (Aula &aula: aulas) {
-            temp =  to_string(aluno.getStudentCode()) + "," + aluno.getStudentName() + "," + aula.get_UcCode() + "," +aula.get_ClassCode() + "\n";
-            NewFile << temp;
+            if (aula.get_Type()=="TP" or aula.get_Type()=="PL") {
+                temp = to_string(aluno.getStudentCode()) + "," + aluno.getStudentName() + "," + aula.get_UcCode() +
+                       "," + aula.get_ClassCode() + "\n";
+                NewFile << temp;
+            }
         }
     }
     NewFile.close();
