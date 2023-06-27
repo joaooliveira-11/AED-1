@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/nikas/Desktop/AED-1/cmake-build-debug",
-		"source" : "C:/Users/nikas/Desktop/AED-1"
+		"build" : "C:/Users/nikas/Desktop/aed1/cmake-build-debug",
+		"source" : "C:/Users/nikas/Desktop/aed1"
 	},
 	"version" : 
 	{
